@@ -1,0 +1,46 @@
+<resources>
+    <string name="startup_warning_window_title">Warnings</string>
+    <string name="startup_warning_dont_show_again">Don't show again</string>
+    <string name="startup_warning_understood">Understood</string>
+    <string name="startup_warning_incorrect_system_time">Incorrect system time</string>
+    <string name="startup_warning_non_english_eve_client">Non-English EVE Client</string>
+    <string name="startup_warning_non_english_eve_client_body">Your EVE client is set to a language other than English.
+RIFT features based on reading game logs won't work.</string>
+    <string name="startup_warning_fullscreen_eve_client">Fullscreen EVE Client</string>
+    <!-- Fixed Window and Window are EVE client display mode names -->
+    <string name="startup_warning_fullscreen_eve_client_body">Your EVE client is set to run in fullscreen mode.
+You might not be able to put RIFT windows on top of it.
+
+It's recommended to use Fixed Window or Window mode.</string>
+    <string name="startup_warning_msi_afterburner">MSI Afterburner</string>
+    <string name="startup_warning_msi_afterburner_body">You are running MSI Afterburner or RivaTuner, which is known to inject code into RIFT that causes freezes and crashes.</string>
+    <string name="startup_warning_chat_logs_are_disabled">Chat logs are disabled</string>
+    <string name="startup_warning_outdated_version">Outdated version</string>
+    <string name="startup_warning_outdated_version_body">You are running an outdated version of RIFT. Please check the About window to update to the latest version.</string>
+    <string name="startup_clock_behind">The clock on your computer is %1$s and %2$s behind the real time. You need to set your clock to the correct time to prevent issues like not receiving alerts.</string>
+    <string name="startup_clock_ahead">The clock on your computer is %1$s and %2$s ahead of the real time. You need to set your clock to the correct time to prevent issues like not receiving alerts.</string>
+    <plurals name="startup_clock_minutes">
+        <item quantity="one">%1$s minute</item>
+        <item quantity="other">%1$s minutes</item>
+    </plurals>
+    <plurals name="startup_clock_seconds">
+        <item quantity="one">%1$s second</item>
+        <item quantity="other">%1$s seconds</item>
+    </plurals>
+    <!-- Log Chat to File is the setting name in the English EVE client; %1$s is the account count -->
+    <plurals name="startup_chat_logs_disabled">
+        <item quantity="one">You need to enable the "Log Chat to File" option in EVE Settings, in the Gameplay section. RIFT won't be able to read intel messages or trigger alerts otherwise.
+
+You have it disabled on this account:</item>
+        <item quantity="other">You need to enable the "Log Chat to File" option in EVE Settings, in the Gameplay section. RIFT won't be able to read intel messages or trigger alerts otherwise.
+
+You have it disabled on these %1$s accounts:</item>
+    </plurals>
+    <string name="startup_account">Account with ID %1$s</string>
+    <!-- %1$s is an account ID; %2$s is a literal list of character names -->
+    <string name="startup_account_characters">Account with ID %1$s and characters %2$s</string>
+    <!-- %1$s is an account ID; %2$s is a literal list of character IDs -->
+    <string name="startup_account_character_ids">Account with ID %1$s and character IDs %2$s</string>
+    <!-- %1$s is a user profile name; %2$s is the translated account description -->
+    <string name="startup_account_profile">In profile %1$s: %2$s</string>
+</resources>

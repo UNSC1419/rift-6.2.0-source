@@ -1,0 +1,140 @@
+[versions]
+kotlin = "2.4.10"
+ksp = "2.3.11"
+compose = "1.11.1"
+compose-hot-reload = "1.2.0"
+spotless = "7.2.1"
+buildconfig = "6.0.10"
+
+kamel = "1.0.9"
+kotlin-logging = "8.0.4"
+logback = "1.6.3"
+koin = "4.2.2"
+koin-plugin = "1.1.0"
+kotlinx-serialization = "1.11.0"
+commons-lang3 = "3.20.0"
+commons-exec = "1.6.0"
+commons-math3 = "3.6.1"
+commons-csv = "1.14.1"
+httpclient5 = "5.6.4"
+jose4j = "0.9.6"
+flatlaf = "3.7.2"
+jsoup = "1.23.1"
+autolink = "0.12.0"
+jts = "1.20.0"
+haze = "2.0.0-alpha03"
+conveyor-control = "1.1"
+androidx-collection = "1.6.0"
+jbr-api = "1.5.0"
+cache4k = "0.14.0"
+snakeyaml-engine = "2.9"
+joal = "2.5.0"
+gluegen = "2.5.0"
+jlayer = "1.0.1"
+opencv = "4.10.0-1.5.11"
+smack = "4.4.8"
+jna = "5.14.0"
+compose-native-tray = "1.3.3"
+exposed = "1.4.0"
+sqlite-jdbc = "3.53.2.1"
+retrofit = "3.0.0"
+okhttp = "5.3.2"
+retrofit-kotlinx-serialization = "3.0.0"
+ktor = "3.5.2"
+sentry-bom = "7.8.0"
+posthog = "1.1.1"
+kotest = "5.8.1"
+mockk = "1.14.9"
+ktlint = "1.7.1"
+proguard = "7.8.2"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }
+compose-hotreload = { id = "org.jetbrains.compose.hot-reload", version.ref = "compose-hot-reload" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+buildconfig = { id = "com.github.gmazzo.buildconfig", version.ref = "buildconfig" }
+koin-compiler = { id = "io.insert-koin.compiler.plugin", version.ref = "koin-plugin" }
+
+[libraries]
+compose-desktop = { module = "org.jetbrains.compose.desktop:desktop-jvm", version.ref = "compose" }
+compose-desktop-linux = { module = "org.jetbrains.compose.desktop:desktop-jvm-linux-x64", version.ref = "compose" }
+compose-desktop-macos-x64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-macos-x64", version.ref = "compose" }
+compose-desktop-macos-arm64 = { module = "org.jetbrains.compose.desktop:desktop-jvm-macos-arm64", version.ref = "compose" }
+compose-desktop-windows = { module = "org.jetbrains.compose.desktop:desktop-jvm-windows-x64", version.ref = "compose" }
+compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "compose" }
+
+kamel-image = { module = "media.kamel:kamel-image", version.ref = "kamel" }
+kamel-decoder-image-bitmap = { module = "media.kamel:kamel-decoder-image-bitmap", version.ref = "kamel" }
+kamel-decoder-animatedimage = { module = "media.kamel:kamel-decoder-animated-image", version.ref = "kamel" }
+kamel-fetcher-resources = { module = "media.kamel:kamel-fetcher-resources-jvm", version.ref = "kamel" }
+
+kotlin-logging = { module = "io.github.oshai:kotlin-logging-jvm", version.ref = "kotlin-logging" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-logger-slf4j = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin" }
+koin-annotations = { module = "io.insert-koin:koin-annotations", version.ref = "koin" }
+
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
+commons-exec = { module = "org.apache.commons:commons-exec", version.ref = "commons-exec" }
+commons-math3 = { module = "org.apache.commons:commons-math3", version.ref = "commons-math3" }
+commons-csv = { module = "org.apache.commons:commons-csv", version.ref = "commons-csv" }
+httpclient5 = { module = "org.apache.httpcomponents.client5:httpclient5", version.ref = "httpclient5" }
+jose4j = { module = "org.bitbucket.b_c:jose4j", version.ref = "jose4j" }
+flatlaf = { module = "com.formdev:flatlaf", version.ref = "flatlaf" }
+jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }
+autolink = { module = "org.nibor.autolink:autolink", version.ref = "autolink" }
+jts-core = { module = "org.locationtech.jts:jts-core", version.ref = "jts" }
+haze = { module = "dev.chrisbanes.haze:haze", version.ref = "haze" }
+haze-blur = { module = "dev.chrisbanes.haze:haze-blur", version.ref = "haze" }
+conveyor-control = { module = "dev.hydraulic.conveyor:conveyor-control", version.ref = "conveyor-control" }
+androidx-collection = { module = "androidx.collection:collection", version.ref = "androidx-collection" }
+jbr-api = { module = "com.jetbrains:jbr-api", version.ref = "jbr-api" }
+cache4k  = { module = "io.github.reactivecircus.cache4k:cache4k", version.ref = "cache4k" }
+snakeyaml-engine = { module = "org.snakeyaml:snakeyaml-engine", version.ref = "snakeyaml-engine" }
+
+joal-main = { module = "org.jogamp.joal:joal-main", version.ref = "joal" }
+gluegen-rtmain = { module = "org.jogamp.gluegen:gluegen-rt-main", version.ref = "gluegen" }
+jlayer = { module = "javazoom:jlayer", version.ref = "jlayer" }
+
+opencv-platform = { module = "org.bytedeco:opencv-platform", version.ref = "opencv" }
+
+smack-java8 = { module = "org.igniterealtime.smack:smack-java8", version.ref = "smack" }
+smack-tcp = { module = "org.igniterealtime.smack:smack-tcp", version.ref = "smack" }
+smack-im = { module = "org.igniterealtime.smack:smack-im", version.ref = "smack" }
+smack-extensions = { module = "org.igniterealtime.smack:smack-extensions", version.ref = "smack" }
+
+jna = { module = "net.java.dev.jna:jna-jpms", version.ref = "jna" }
+jna-platform = { module = "net.java.dev.jna:jna-platform-jpms", version.ref = "jna" }
+compose-native-tray = { module = "io.github.kdroidfilter:composenativetray", version.ref = "compose-native-tray" }
+
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+sqlite-jdbc = { module = "org.xerial:sqlite-jdbc", version.ref = "sqlite-jdbc" }
+
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "retrofit" }
+retrofit-converter-kotlinx-serialization = { module = "com.squareup.retrofit2:converter-kotlinx-serialization", version.ref = "retrofit-kotlinx-serialization" }
+okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
+
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinxjson = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+sentry-bom = { module = "io.sentry:sentry-bom", version.ref = "sentry-bom" }
+sentry = { module = "io.sentry:sentry" }
+sentry-logback = { module = "io.sentry:sentry-logback" }
+
+posthog = { module = "com.posthog.java:posthog", version.ref = "posthog" }
+
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }

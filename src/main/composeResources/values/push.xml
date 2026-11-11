@@ -1,0 +1,43 @@
+<resources>
+    <string name="push_no_topic_title">No Topic</string>
+    <string name="push_no_topic_message">You need to enter a ntfy topic name.</string>
+    <string name="push_no_token_title">No API Token</string>
+    <string name="push_no_token_message">You need to enter a Pushover API Token.</string>
+    <string name="push_no_key_title">No User Key</string>
+    <string name="push_no_key_message">You need to enter your Pushover User Key.</string>
+    <string name="push_success_title">Success</string>
+    <string name="push_success_message">Notification sent successfully!</string>
+    <string name="push_failure_title">Failed to send</string>
+    <string name="push_unknown_error">Unknown error</string>
+    <string name="push_configuration_message">Congratulations, RIFT is setup correctly for push notifications.</string>
+    <string name="push_window_title">Mobile Notifications</string>
+    <string name="push_setup_heading">Setup</string>
+    <string name="push_ntfy_topic_placeholder">Topic name</string>
+    <!-- This segment surrounds an existing link widget; retain leading/trailing spaces and its position in the row -->
+    <string name="push_setup_account_intro">1. Go to the </string>
+    <!-- This segment surrounds an existing link widget; retain leading/trailing spaces and its position in the row -->
+    <string name="push_setup_account_outro"> and signup or login.</string>
+    <!-- This segment surrounds an existing link widget; retain leading/trailing spaces and its position in the row -->
+    <string name="push_setup_install_intro">4. Install the </string>
+    <!-- This segment surrounds an existing link widget; retain leading/trailing spaces and its position in the row -->
+    <string name="push_setup_platform_separator"> or </string>
+    <!-- This segment surrounds an existing link widget; retain leading/trailing spaces and its position in the row -->
+    <string name="push_ntfy_install_outro">ntfy app and enter the same topic name.</string>
+    <string name="push_setup_complete_instruction">5. All done! You can send a test notification below.</string>
+    <string name="push_send_test_action">Send test notification</string>
+    <string name="push_pushover_user_key_instruction">2. Paste your User Key below:</string>
+    <string name="push_pushover_user_key_placeholder">User Key</string>
+    <string name="push_pushover_create_token_action">Create an API Token</string>
+    <!-- This segment surrounds an existing link widget; retain leading/trailing spaces and its position in the row -->
+    <string name="push_pushover_token_outro"> and paste it below:</string>
+    <string name="push_pushover_token_placeholder">API Token</string>
+    <!-- This segment surrounds an existing link widget; retain leading/trailing spaces and its position in the row -->
+    <string name="push_pushover_install_outro"> Pushover app.</string>
+    <string name="push_service_website_action">%1$s website</string>
+    <!-- Service name argument remains literal and highlighted -->
+    <string name="push_service_description"><![CDATA[<font color="textHighlighted">%1$s</font> is a service for sending mobile push notifications. RIFT can use it to send you notifications for alerts.]]></string>
+    <!-- Arguments are exact English labels in ntfy; preserve their highlighted tags -->
+    <string name="push_ntfy_choose_topic_instruction"><![CDATA[2. Click <font color="textHighlighted">%1$s</font>, then click <font color="textHighlighted">%2$s</font> and paste the generated name below:]]></string>
+    <!-- Arguments are exact English labels in ntfy; preserve their highlighted tags -->
+    <string name="push_ntfy_subscribe_instruction"><![CDATA[3. Click <font color="textHighlighted">%1$s</font>.]]></string>
+</resources>

@@ -1,0 +1,216 @@
+<resources>
+    <!-- Number of assets in an owner's inventory; %1$s is the count, for example 1 or 12 -->
+    <plurals name="assets_owner_asset_count">
+        <item quantity="one">%1$s asset</item>
+        <item quantity="other">%1$s assets</item>
+    </plurals>
+    <string name="assets_assets_window_assets_title">Assets</string>
+    <string name="assets_toolbar_row_owners_text">Owners</string>
+    <string name="assets_assets_window_content_could_not_load_assets_text">Could not load assets</string>
+    <string name="assets_assets_window_content_try_again_text">Try again</string>
+    <string name="assets_owners_content_choose_owners_filter_assets_text">Choose owners to filter assets</string>
+    <string name="assets_owners_content_choose_characters_filter_assets_text">Choose characters to filter assets</string>
+    <string name="assets_update_filters_all_character_assets_text">All character assets</string>
+    <string name="assets_assets_loading_progress_loading_assets_text">Loading assets…</string>
+    <string name="assets_assets_loading_progress_loading_asset_locations_text">Loading asset locations…</string>
+    <string name="assets_assets_loading_progress_loading_division_names_text">Loading division names…</string>
+    <string name="assets_assets_loading_progress_stations_text">Stations</string>
+    <string name="assets_assets_loading_progress_structures_text">Structures</string>
+    <string name="assets_assets_loading_progress_unknown_text">Unknown</string>
+    <string name="assets_rename_location_dialog_name_location_title">Name location</string>
+    <string name="assets_rename_location_dialog_content_can_give_location_custom_name_text">You can give this location a custom name below:</string>
+    <string name="assets_rename_location_dialog_content_esi_does_not_provide_any_text">ESI does not provide any info about this location, but you can give it a name below:</string>
+    <string name="assets_rename_location_dialog_content_custom_name_text">Custom name</string>
+    <string name="assets_rename_location_dialog_content_rename_text">Rename</string>
+    <string name="assets_assets_content_sort_by_label">Sort By</string>
+    <string name="assets_assets_content_distance_text">Distance</string>
+    <string name="assets_assets_content_name_text">Name</string>
+    <string name="assets_assets_content_asset_count_text">Asset count</string>
+    <string name="assets_assets_content_total_price_text">Total price</string>
+    <string name="assets_assets_content_can_search_assets_by_name_text">You can search assets by:
+- Name (e.g. "Bait Fit")
+- Type (e.g. "Drake")
+- Group (e.g. "Battlecruiser")
+- Category (e.g. "Ship")
+- Structure name (e.g. "Staging Fort")
+- System (e.g. "Jita")
+- Region (e.g. "The Forge")</string>
+    <string name="assets_assets_content_filters_text">Filters</string>
+    <string name="assets_assets_content_new_filter_text">New Filter</string>
+    <string name="assets_assets_content_all_assets_filtered_out_text">All assets filtered out</string>
+    <string name="assets_assets_content_no_assets_text">No assets</string>
+    <string name="assets_assets_content_delayed_up_hour_text">Delayed up to 1 hour</string>
+    <string name="assets_assets_content_reload_text">Reload</string>
+    <string name="assets_location_header_unpin_assets_text">Unpin in Assets</string>
+    <string name="assets_location_header_unhide_assets_text">Unhide in Assets</string>
+    <string name="assets_location_header_pin_assets_text">Pin in Assets</string>
+    <string name="assets_location_header_hide_assets_text">Hide in Assets</string>
+    <string name="assets_location_header_rename_location_text">Rename location</string>
+    <string name="assets_location_header_unpin_text">Unpin</string>
+    <string name="assets_location_header_unhide_text">Unhide</string>
+    <string name="assets_location_header_hide_text">Hide</string>
+    <string name="assets_location_header_pin_text">Pin</string>
+    <string name="assets_asset_row_blueprint_copy_text">Blueprint Copy</string>
+    <string name="assets_asset_row_blueprint_original_text">Blueprint Original</string>
+    <string name="assets_asset_row_unknown_owner_text">Unknown Owner</string>
+    <string name="assets_asset_row_copy_fit_text">Copy fit</string>
+    <string name="assets_asset_row_copy_fit_cargo_text">Copy fit &amp; cargo</string>
+    <string name="assets_asset_row_view_fit_text">View fit</string>
+    <string name="assets_asset_filter_dialog_new_filter_text">New filter</string>
+    <string name="assets_asset_filter_dialog_edit_filter_text">Edit filter</string>
+    <string name="assets_asset_filter_dialog_content_add_attribute_text">Add Attribute</string>
+    <string name="assets_asset_filter_dialog_content_match_text">Match</string>
+    <string name="assets_asset_filter_dialog_content_all_text">All</string>
+    <string name="assets_asset_filter_dialog_content_any_text">Any</string>
+    <string name="assets_asset_filter_dialog_content_filter_name_text">Filter name</string>
+    <string name="assets_asset_filter_dialog_content_delete_text">Delete</string>
+    <string name="assets_asset_filter_dialog_content_save_text">Save</string>
+    <string name="assets_subfilter_row_true_text">Is true</string>
+    <string name="assets_subfilter_row_false_text">Is false</string>
+    <string name="assets_subfilter_row_value_placeholder">Value</string>
+    <string name="assets_filter_assembled">Assembled</string>
+    <string name="assets_filter_blueprint_copy">Blueprint copy</string>
+    <string name="assets_filter_contains">Contains</string>
+    <string name="assets_filter_does_not_contain">Does not contain</string>
+    <string name="assets_filter_does_not_start_with">Does not start with</string>
+    <string name="assets_filter_equal_to">Equal to</string>
+    <string name="assets_filter_greater_than">Greater than</string>
+    <string name="assets_filter_group">Group</string>
+    <string name="assets_filter_is">Is</string>
+    <string name="assets_filter_is_not">Is not</string>
+    <string name="assets_filter_less_than">Less than</string>
+    <string name="assets_filter_meta_group">Meta Group</string>
+    <string name="assets_filter_meta_level">Meta Level</string>
+    <string name="assets_filter_name">Name</string>
+    <string name="assets_filter_owner">Owner</string>
+    <string name="assets_filter_stack_size">Stack size</string>
+    <string name="assets_filter_starts_with">Starts with</string>
+    <string name="assets_filter_tech_level">Tech Level</string>
+    <string name="assets_filter_unit_price">Unit price</string>
+    <string name="assets_filter_volume">Volume</string>
+    <string name="assets_tech_level">Tech %1$s</string>
+    <plurals name="assets_stations_loaded">
+        <item quantity="one">%1$s station loaded</item>
+        <item quantity="other">%1$s stations loaded</item>
+    </plurals>
+    <plurals name="assets_stations_loading">
+        <item quantity="one">%1$s station loaded…</item>
+        <item quantity="other">%1$s stations loaded…</item>
+    </plurals>
+    <plurals name="assets_structures_loading">
+        <item quantity="one">%1$s structure loaded…</item>
+        <item quantity="other">%1$s structures loaded…</item>
+    </plurals>
+    <plurals name="assets_assets_loaded">
+        <item quantity="one">%1$s asset loaded</item>
+        <item quantity="other">%1$s assets loaded</item>
+    </plurals>
+    <plurals name="assets_asset_names_loading">
+        <item quantity="one">%1$s asset loaded, loading names…</item>
+        <item quantity="other">%1$s assets loaded, loading names…</item>
+    </plurals>
+    <plurals name="assets_assets_loading">
+        <item quantity="one">%1$s asset loaded…</item>
+        <item quantity="other">%1$s assets loaded…</item>
+    </plurals>
+    <plurals name="assets_location_count">
+        <item quantity="one">%1$s Location</item>
+        <item quantity="other">%1$s Locations</item>
+    </plurals>
+    <plurals name="assets_item_count">
+        <item quantity="one">%1$s Item</item>
+        <item quantity="other">%1$s Items</item>
+    </plurals>
+    <plurals name="assets_route_jumps">
+        <item quantity="one">Route: %1$s Jump</item>
+        <item quantity="other">Route: %1$s Jumps</item>
+    </plurals>
+    <plurals name="assets_contained_items">
+        <item quantity="one">%1$s item</item>
+        <item quantity="other">%1$s items</item>
+    </plurals>
+    <plurals name="assets_units">
+        <item quantity="one">%1$s unit</item>
+        <item quantity="other">%1$s units</item>
+    </plurals>
+    <!-- %1$s is a translated location count; %2$s is a translated item count; %3$s is formatted ISK; %4$s is formatted volume -->
+    <string name="assets_totals">Total: %1$s - %2$s - %3$s - %4$s m3</string>
+    <string name="assets_hidden_locations">Hidden [%1$s]</string>
+    <string name="assets_group_name">Group: %1$s</string>
+    <string name="assets_category_name">Category: %1$s</string>
+    <string name="assets_capsuleer_deliveries">Capsuleer Deliveries</string>
+    <string name="assets_projects">Projects</string>
+    <string name="assets_asset_safety">Asset Safety</string>
+    <string name="assets_unknown_location">Unknown</string>
+    <string name="assets_customs_office_skyhook">Customs Office / Skyhook</string>
+    <!-- %1$s is the hangar division number; actual player-assigned division names are kept literal -->
+    <string name="assets_corporation_hangar">Corporation Hangar %1$s</string>
+    <string name="assets_impounded">%1$s (Impounded)</string>
+    <string name="assets_location_flag_bonus">Bonus</string>
+    <string name="assets_location_flag_booster">Booster</string>
+    <string name="assets_location_flag_booster_hold">Booster Hold</string>
+    <string name="assets_location_flag_capsule">Capsule</string>
+    <string name="assets_location_flag_cargo">Cargo</string>
+    <string name="assets_location_flag_corporation_deliveries">Corporation Deliveries</string>
+    <string name="assets_location_flag_crate_loot">Crate Loot</string>
+    <string name="assets_location_flag_corpse_hold">Corpse Hold</string>
+    <string name="assets_location_flag_deliveries">Deliveries</string>
+    <string name="assets_location_flag_drone_bay">Drone Bay</string>
+    <string name="assets_location_flag_expedition_hold">Expedition Hold</string>
+    <string name="assets_location_flag_fighter_bay">Fighter Bay</string>
+    <string name="assets_location_flag_fighter_tube">Fighter Tube %1$s</string>
+    <string name="assets_location_flag_fleet_hangar">Fleet Hangar</string>
+    <string name="assets_location_flag_frigate_escape_bay">Frigate Escape Bay</string>
+    <string name="assets_location_flag_high_slot">High Slot %1$s</string>
+    <string name="assets_location_flag_hidden_modifiers">Hidden Modifiers</string>
+    <string name="assets_location_flag_implant">Implant</string>
+    <string name="assets_location_flag_impounded">Impounded</string>
+    <string name="assets_location_flag_infrastructure_hangar">Infrastructure Hangar</string>
+    <string name="assets_location_flag_junkyard_reprocessed">Junkyard Reprocessed</string>
+    <string name="assets_location_flag_junkyard_trashed">Junkyard Trashed</string>
+    <string name="assets_location_flag_low_slot">Low Slot %1$s</string>
+    <string name="assets_location_flag_locked">Locked</string>
+    <string name="assets_location_flag_medium_slot">Medium Slot %1$s</string>
+    <string name="assets_location_flag_mobile_depot_hold">Mobile Depot Hold</string>
+    <string name="assets_location_flag_moon_materials_hold">Moon Materials Hold</string>
+    <string name="assets_location_flag_pilot">Pilot</string>
+    <string name="assets_location_flag_planet_surface">Planet Surface</string>
+    <string name="assets_location_flag_quafe_hold">Quafe Hold</string>
+    <string name="assets_location_flag_quantum_core_room">Quantum Core Room</string>
+    <string name="assets_location_flag_reward">Reward</string>
+    <string name="assets_location_flag_rig_slot">Rig Slot %1$s</string>
+    <string name="assets_location_flag_secondary_storage">Secondary Storage</string>
+    <string name="assets_location_flag_service_slot">Service Slot %1$s</string>
+    <string name="assets_location_flag_ship_hangar">Ship Hangar</string>
+    <string name="assets_location_flag_ship_offline">Ship Offline</string>
+    <string name="assets_location_flag_skill">Skill</string>
+    <string name="assets_location_flag_skill_in_training">Skill In Training</string>
+    <string name="assets_location_flag_ammo_hold">Ammo Hold</string>
+    <string name="assets_location_flag_asteroid_hold">Asteroid Hold</string>
+    <string name="assets_location_flag_command_center_hold">Command Center Hold</string>
+    <string name="assets_location_flag_fuel_hold">Fuel Hold</string>
+    <string name="assets_location_flag_gas_hold">Gas Hold</string>
+    <string name="assets_location_flag_ice_hold">Ice Hold</string>
+    <string name="assets_location_flag_industrial_ship_hold">Industrial Ship Hold</string>
+    <string name="assets_location_flag_large_ship_hold">Large Ship Hold</string>
+    <string name="assets_location_flag_material_hold">Material Hold</string>
+    <string name="assets_location_flag_medium_ship_hold">Medium Ship Hold</string>
+    <string name="assets_location_flag_mineral_hold">Mineral Hold</string>
+    <string name="assets_location_flag_ore_hold">Ore Hold</string>
+    <string name="assets_location_flag_planetary_commodities_hold">Planetary Commodities Hold</string>
+    <string name="assets_location_flag_salvage_hold">Salvage Hold</string>
+    <string name="assets_location_flag_ship_hold">Ship Hold</string>
+    <string name="assets_location_flag_small_ship_hold">Small Ship Hold</string>
+    <string name="assets_location_flag_structure_active">Structure Active</string>
+    <string name="assets_location_flag_structure_fuel">Structure Fuel</string>
+    <string name="assets_location_flag_structure_inactive">Structure Inactive</string>
+    <string name="assets_location_flag_structure_offline">Structure Offline</string>
+    <string name="assets_location_flag_subsystem_hold">Subsystem Hold</string>
+    <string name="assets_location_flag_subsystem">Subsystem %1$s</string>
+    <string name="assets_location_flag_wallet">Wallet</string>
+    <string name="assets_location_flag_wardrobe">Wardrobe</string>
+    <!-- %1$s is the formatted total price; %2$s is the formatted price per unit; ISK is the in-game currency code -->
+    <string name="assets_price_details">Est. %1$s (%2$s per unit)</string>
+    <!-- %1$s is the formatted total volume; %2$s is the formatted volume per unit; m³ is the cubic metre unit symbol -->
+    <string name="assets_volume_details">%1$s m³ (%2$s m³ per unit)</string>
+</resources>

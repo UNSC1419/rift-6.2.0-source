@@ -1,0 +1,77 @@
+<resources>
+    <string name="overlay_display_overlay_content_system_info_text">System info</string>
+    <string name="overlay_display_overlay_content_nearby_intel_text">Nearby intel</string>
+    <string name="overlay_display_overlay_content_route_intel_text">Route intel</string>
+    <string name="overlay_system_info_overlay_content_ice_field_system_tooltip">Ice field system</string>
+    <string name="overlay_system_info_overlay_content_ansiblex_cost_zone_tooltip">Ansiblex cost zone</string>
+    <string name="overlay_system_info_overlay_content_jump_range_text">In jump range</string>
+    <string name="overlay_system_info_overlay_content_out_jump_range_text">Out of jump range</string>
+    <string name="overlay_show_sovereignty_unclaimed_text">Unclaimed</string>
+    <string name="overlay_space_type_safe_sec_text">Safe Sec</string>
+    <string name="overlay_space_type_high_sec_text">High Sec</string>
+    <string name="overlay_space_type_low_sec_text">Low Sec</string>
+    <string name="overlay_space_type_wormhole_space_text">Wormhole Space</string>
+    <string name="overlay_space_type_npc_null_sec_text">NPC Null Sec</string>
+    <string name="overlay_space_type_unclaimed_null_sec_text">Unclaimed Null Sec</string>
+    <string name="overlay_space_type_alliance_null_sec_text">Alliance Null Sec</string>
+    <string name="overlay_space_type_hostile_null_sec_text">Hostile Null Sec</string>
+    <string name="overlay_space_type_neutral_null_sec_text">Neutral Null Sec</string>
+    <string name="overlay_space_type_friendly_null_sec_text">Friendly Null Sec</string>
+    <string name="overlay_distance_intel_tooltip_current_system_text">Current system</string>
+    <string name="overlay_distance_intel_tooltip_no_recent_intel_text">No recent intel</string>
+    <string name="overlay_route_intel_indicator_route_intel_text">Route Intel</string>
+    <string name="overlay_route_intel_indicator_no_destination_text">No Destination</string>
+    <string name="overlay_next_system_summary_kills_text">Kills: —</string>
+    <string name="overlay_next_system_summary_kills_text_2">Kills: …</string>
+    <string name="overlay_next_system_summary_no_known_hostiles_no_kills_text">No known hostiles and no kills in the last 1 hour</string>
+    <string name="overlay_next_system_summary_system_clear_text">System clear</string>
+    <string name="overlay_next_system_summary_kills_last_hour_text">Kills in the last 1 hour</string>
+    <string name="overlay_jumps_tooltip">Jumps: %1$s</string>
+    <string name="overlay_podkills_tooltip">Pod kills: %1$s</string>
+    <string name="overlay_shipkills_tooltip">Ship kills: %1$s</string>
+    <string name="overlay_npckills_tooltip">NPC kills: %1$s</string>
+    <string name="overlay_assets_tooltip">Assets: %1$s</string>
+    <string name="overlay_stations_tooltip">Stations: %1$s</string>
+    <plurals name="overlay_asteroid_belts">
+        <item quantity="one">Asteroid belt: %1$s</item>
+        <item quantity="other">Asteroid belts: %1$s</item>
+    </plurals>
+    <!-- %1$s is a locale-formatted number; ly means light years -->
+    <string name="overlay_light_years">%1$sly</string>
+    <string name="overlay_rats_tooltip">Rats: %1$s</string>
+    <plurals name="overlay_jumps_away">
+        <item quantity="one">%1$s jump away</item>
+        <item quantity="other">%1$s jumps away</item>
+    </plurals>
+    <!-- %1$s is a translated system count; %2$s is a translated hostile count -->
+    <string name="overlay_distance_summary">%1$s - %2$s</string>
+    <plurals name="overlay_system_count">
+        <item quantity="one">%1$s system</item>
+        <item quantity="other">%1$s systems</item>
+    </plurals>
+    <plurals name="overlay_hostile_count">
+        <item quantity="one">%1$s hostile</item>
+        <item quantity="other">%1$s hostiles</item>
+    </plurals>
+    <plurals name="overlay_route_jumps">
+        <item quantity="one">%1$s Jump</item>
+        <item quantity="other">%1$s Jumps</item>
+    </plurals>
+    <string name="overlay_kill_count">Kills: %1$s</string>
+    <string name="overlay_route_hostile_count">Hostiles: %1$s, </string>
+    <!-- %1$s is the kill count; %2$s is a location name from the killmail -->
+    <plurals name="overlay_kills_at_location">
+        <item quantity="one">%1$s kill at the %2$s</item>
+        <item quantity="other">%1$s kills at the %2$s</item>
+    </plurals>
+    <plurals name="overlay_kills_in_system">
+        <item quantity="one">%1$s kill in system</item>
+        <item quantity="other">%1$s kills in system</item>
+    </plurals>
+    <plurals name="overlay_kills_elsewhere">
+        <item quantity="one">%1$s kill elsewhere in system</item>
+        <item quantity="other">%1$s kills elsewhere in system</item>
+    </plurals>
+    <!-- %1$s is a solar system name -->
+    <string name="overlay_route_stargate_name">%1$s stargate</string>
+</resources>

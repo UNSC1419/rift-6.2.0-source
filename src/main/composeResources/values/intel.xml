@@ -1,0 +1,41 @@
+<resources>
+    <string name="intel_label_bubbles">Bubbles</string>
+    <string name="intel_label_ess">ESS</string>
+    <string name="intel_label_skyhook">Skyhook</string>
+    <string name="intel_label_spike">Spike</string>
+    <string name="intel_label_wormhole">Wormhole</string>
+    <string name="intel_label_no_visual">No visual</string>
+    <!-- %1$s is the ship count and %2$s is the EVE ship name -->
+    <string name="intel_ship_count">%1$sx %2$s</string>
+    <!-- %1$s is a solar system name; these captions are also used for location interactions -->
+    <string name="intel_gate_name">%1$s Gate</string>
+    <string name="intel_ansiblex_name">%1$s Ansiblex</string>
+    <string name="intel_entity_npc_corporation_label">NPC Corp</string>
+    <string name="intel_entity_loss_label">Loss</string>
+    <string name="intel_entity_kill_label">Kill</string>
+    <string name="intel_entity_combat_probes_label">Combat probes</string>
+    <string name="intel_entity_gate_camp_label">Gate camp</string>
+    <plurals name="intel_entity_friendly_count">
+        <item quantity="one">%1$s friendly</item>
+        <item quantity="other">%1$s friendly</item>
+    </plurals>
+    <plurals name="intel_entity_hostile_count">
+        <item quantity="one">%1$s hostile</item>
+        <item quantity="other">%1$s hostiles</item>
+    </plurals>
+    <plurals name="intel_entity_additional_hostile_count">
+        <item quantity="one">+%1$s hostile</item>
+        <item quantity="other">+%1$s hostiles</item>
+    </plurals>
+    <string name="intel_message_link_label">Link</string>
+    <string name="intel_message_question_label">Question</string>
+    <string name="intel_message_movement_gate_label">gate</string>
+    <string name="intel_message_clear_label">Clear</string>
+    <string name="intel_message_gate_camp_label">Gate Camp</string>
+    <string name="intel_message_combat_probes_label">Combat Probes</string>
+    <!-- %1$s is the original external chat message, preserved verbatim -->
+    <string name="intel_message_original_tooltip">Original message:
+%1$s</string>
+    <!-- %1$s is an EVE ship name with an unspecified plural quantity; the English suffix preserves the existing caption and can be adapted or omitted in translation -->
+    <string name="intel_message_plural_ship_name">%1$ss</string>
+</resources>

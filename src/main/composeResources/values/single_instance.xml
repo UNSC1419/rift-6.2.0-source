@@ -1,0 +1,4 @@
+<resources>
+    <string name="single_instance_already_running">RIFT is already running. Starting multiple instances is not possible.</string>
+    <string name="single_instance_close">Close</string>
+</resources>

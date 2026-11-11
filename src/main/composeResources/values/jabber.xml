@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="jabber_window_title">Jabber</string>
+    <string name="jabber_logout_action">Logout</string>
+    <string name="jabber_bigger_font_action">Bigger font size</string>
+    <string name="jabber_connecting_status">Connecting…</string>
+    <string name="jabber_login_heading">Goonswarm Jabber</string>
+    <string name="jabber_import_account_button">Import Pidgin account</string>
+    <string name="jabber_manual_login_button">Login manually</string>
+    <string name="jabber_get_started_button">Get started</string>
+    <string name="jabber_username_label">Jabber username</string>
+    <string name="jabber_username_placeholder">Type your username</string>
+    <string name="jabber_password_label">Jabber password</string>
+    <string name="jabber_password_unchanged_placeholder">(unchanged)</string>
+    <string name="jabber_password_placeholder">Type your password</string>
+    <string name="jabber_account_recovery_action">Forgot username or password?</string>
+    <string name="jabber_connect_button">Connect</string>
+    <string name="jabber_reconnecting_status">Jabber connection lost. Reconnecting…</string>
+    <string name="jabber_contacts_tab">Contacts</string>
+    <string name="jabber_add_contact_button">Add contact</string>
+    <string name="jabber_add_room_button">Add chat room</string>
+    <string name="jabber_nickname_label">Choose nickname (optional)</string>
+    <string name="jabber_nickname_placeholder">Nickname</string>
+    <string name="jabber_group_label">Choose group (optional)</string>
+    <string name="jabber_group_placeholder">Group</string>
+    <string name="jabber_room_name_placeholder">Room name</string>
+    <string name="jabber_back_button">Back</string>
+    <string name="jabber_send_button">Send</string>
+    <string name="jabber_send_tooltip">Press Enter to send, Shift+Enter to insert a new line</string>
+    <string name="jabber_self_sender_name">You</string>
+    <string name="jabber_copy_row_action">Copy row</string>
+    <string name="jabber_copy_message_action">Copy message</string>
+    <string name="jabber_intro_pidgin_description">
+RIFT is a Jabber client with additional features specific for Goonswarm.
+
+You can receive pings in a better way without having to run Pidgin.</string>
+    <string name="jabber_intro_description">
+RIFT is a Jabber client with additional features specific for Goonswarm.
+
+You can receive pings in a better way without having to run a separate app.</string>
+    <string name="jabber_credentials_required_error">You need to enter a username and password</string>
+    <string name="jabber_contact_id_required_error">Enter the Jabber ID</string>
+    <string name="jabber_nickname_required_error">Enter the nickname</string>
+    <string name="jabber_room_name_required_error">Enter the room name</string>
+    <string name="jabber_incorrect_password_error">Couldn't connect because your password is incorrect</string>
+    <string name="jabber_authentication_error">Couldn't connect due to an authentication failure</string>
+    <string name="jabber_server_connection_error">Couldn't connect to the server</string>
+    <string name="jabber_invalid_certificate_error">Secure connection failed, because the Jabber server presented an invalid certificate. This typically happens when the certificate is expired or misconfigured.
+
+Check forums or with your corp, as the server may be undergoing maintenance.</string>
+    <string name="jabber_connection_error">Couldn't connect</string>
+    <string name="jabber_rooms_heading">Chat rooms</string>
+    <string name="jabber_remove_action">Remove</string>
+    <string name="jabber_unknown_presence">Unknown status</string>
+    <string name="jabber_ungrouped_heading">No group</string>
+    <string name="jabber_other_directors_heading" translatable="false">Director Team - Other</string>
+    <string name="jabber_nickname_tooltip">Nickname: %1$s</string>
+    <string name="jabber_presence_free_to_chat">FreeToChat</string>
+    <string name="jabber_presence_available">Available</string>
+    <string name="jabber_presence_away">Away</string>
+    <string name="jabber_presence_extended_away">ExtendedAway</string>
+    <string name="jabber_presence_do_not_disturb">DoNotDisturb</string>
+</resources>

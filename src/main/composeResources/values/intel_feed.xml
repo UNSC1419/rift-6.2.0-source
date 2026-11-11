@@ -1,0 +1,33 @@
+<resources>
+    <string name="intel_feed_intel_feed_window_intel_feed_title">Intel Feed</string>
+    <string name="intel_feed_get_tune_context_menu_items_compact_mode_text">Compact mode</string>
+    <string name="intel_feed_empty_state_all_locations_have_been_filtered_text">All locations have been filtered out.
+Update your locations filter.</string>
+    <string name="intel_feed_empty_state_all_types_have_been_filtered_text">All types have been filtered out.
+Update your types filter.</string>
+    <string name="intel_feed_empty_state_all_intel_has_been_filtered_text">All intel has been filtered out.
+Update your filters.</string>
+    <string name="intel_feed_empty_state_no_intel_available_waiting_reports_text">No intel available.
+Waiting for reports.</string>
+    <string name="intel_feed_intel_feed_item_cleared_text">Cleared</string>
+    <string name="intel_feed_filters_row_filters_text">Filters:</string>
+    <string name="intel_feed_filters_row_known_space_text">Known space</string>
+    <string name="intel_feed_filters_row_wormhole_space_text">Wormhole space</string>
+    <string name="intel_feed_filters_row_abyssal_space_text">Abyssal space</string>
+    <string name="intel_feed_filters_row_opened_map_regions_text">Opened map regions</string>
+    <string name="intel_feed_filters_row_location_text">Location</string>
+    <string name="intel_feed_filters_row_all_text">All</string>
+    <string name="intel_feed_filters_row_within_region_text">Within region</string>
+    <string name="intel_feed_filters_row_within_jumps_text">Within 9 jumps</string>
+    <string name="intel_feed_filters_row_within_jumps_text_2">Within 7 jumps</string>
+    <string name="intel_feed_filters_row_within_jumps_text_3">Within 5 jumps</string>
+    <string name="intel_feed_filters_row_within_jumps_text_4">Within 3 jumps</string>
+    <string name="intel_feed_filters_row_distance_text">Distance</string>
+    <string name="intel_feed_filters_row_killmails_text">Killmails</string>
+    <string name="intel_feed_filters_row_characters_ships_text">Characters &amp; ships</string>
+    <string name="intel_feed_filters_row_other_intel_text">Other intel</string>
+    <string name="intel_feed_filters_row_types_text">Types</string>
+    <string name="intel_feed_filters_row_by_time_text">By time</string>
+    <string name="intel_feed_filters_row_by_distance_text">By distance</string>
+    <string name="intel_feed_filters_row_sorting_text">Sorting</string>
+</resources>

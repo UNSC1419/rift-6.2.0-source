@@ -1,0 +1,65 @@
+<resources>
+    <string name="map_markers_window_title">Map Markers</string>
+    <string name="map_markers_group_description">Groups allow you to organize your markers.</string>
+    <string name="map_markers_empty">No map markers created</string>
+    <string name="map_markers_default_group">Default</string>
+    <string name="map_markers_system_placeholder">System name</string>
+    <string name="map_markers_label_placeholder">Label</string>
+    <string name="map_markers_action_import">Import</string>
+    <string name="map_markers_action_export">Export</string>
+    <string name="map_markers_action_create_group">Create group</string>
+    <string name="map_markers_action_update">Update</string>
+    <string name="map_markers_action_add">Add marker</string>
+    <string name="map_markers_color_label">Marker color</string>
+    <string name="map_markers_icon_label">Marker icon</string>
+    <string name="map_markers_export_title">Export map markers</string>
+    <string name="map_markers_export_description">Choose which marker groups to export:</string>
+    <string name="map_markers_action_disable_group">Disable all markers</string>
+    <string name="map_markers_action_enable_group">Enable all markers</string>
+    <string name="map_markers_action_rename_group">Rename group</string>
+    <string name="map_markers_action_delete_group">Delete group</string>
+    <string name="map_markers_action_delete_group_keep_markers">Delete group and move markers to default</string>
+    <string name="map_markers_group_empty">No map markers in this group</string>
+    <string name="map_markers_action_unpin">Unpin marker</string>
+    <string name="map_markers_action_pin">Pin marker</string>
+    <string name="map_markers_pin_description">Pinned systems are visible on all zoom levels</string>
+    <string name="map_markers_group_label">Group:</string>
+    <string name="map_markers_action_show">Show</string>
+    <string name="map_markers_action_edit">Edit</string>
+    <string name="map_markers_action_delete">Delete</string>
+    <!-- Count summary after the separately styled group name; %1$s is its marker count -->
+    <plurals name="map_markers_group_summary">
+        <item quantity="one">%1$s marker</item>
+        <item quantity="other">%1$s markers</item>
+    </plurals>
+    <!-- Count summary after the separately styled group name; %1$s is its marker count; %2$s is the localized enabled-count summary -->
+    <plurals name="map_markers_group_enabled_summary">
+        <item quantity="one">%1$s marker - %2$s</item>
+        <item quantity="other">%1$s markers - %2$s</item>
+    </plurals>
+    <string name="map_markers_unknown_location">Unknown</string>
+    <!-- %1$s is a system name; %2$s is a region name -->
+    <string name="map_markers_location">%1$s (%2$s)</string>
+    <string name="map_markers_export_success_title">Export successful</string>
+    <string name="map_markers_export_success_message">Map markers copied to clipboard.</string>
+    <string name="map_markers_import_empty_title">No markers found</string>
+    <string name="map_markers_import_empty_message">The clipboard does not contain any valid map markers.</string>
+    <string name="map_markers_import_success_title">Import complete</string>
+    <string name="map_markers_create_error_title">Cannot create marker</string>
+    <string name="map_markers_system_required_message">You need to enter a system name</string>
+    <string name="map_markers_system_not_found_message">System "%1$s" does not exist</string>
+    <plurals name="map_markers_imported_count">
+        <item quantity="one">%1$s map marker imported from clipboard.</item>
+        <item quantity="other">%1$s map markers imported from clipboard.</item>
+    </plurals>
+    <plurals name="map_markers_skipped_count">
+        <item quantity="one">%1$s identical marker was skipped.</item>
+        <item quantity="other">%1$s identical markers were skipped.</item>
+    </plurals>
+    <!-- %1$s is the localized import summary; %2$s is the localized skipped-duplicate summary -->
+    <string name="map_markers_import_with_duplicates">%1$s %2$s</string>
+    <plurals name="map_markers_enabled_count">
+        <item quantity="one">%1$s enabled</item>
+        <item quantity="other">%1$s enabled</item>
+    </plurals>
+</resources>

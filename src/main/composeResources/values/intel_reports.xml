@@ -1,0 +1,23 @@
+<resources>
+    <string name="intel_reports_intel_reports_window_intel_reports_title">Intel Reports</string>
+    <string name="intel_reports_get_tune_context_menu_items_user_interface_text">User interface</string>
+    <string name="intel_reports_get_tune_context_menu_items_compact_mode_text">Compact mode</string>
+    <string name="intel_reports_get_tune_context_menu_items_show_newest_top_text">Show newest on top</string>
+    <string name="intel_reports_get_tune_context_menu_items_shown_information_text">Shown information</string>
+    <string name="intel_reports_get_tune_context_menu_items_show_reporter_name_text">Show reporter name</string>
+    <string name="intel_reports_get_tune_context_menu_items_show_channel_name_text">Show channel name</string>
+    <string name="intel_reports_get_tune_context_menu_items_show_channel_region_text">Show channel region</string>
+    <string name="intel_reports_intel_reports_window_content_no_intel_channels_configured_set_text">No intel channels configured.
+Set some up in the settings.</string>
+    <string name="intel_reports_intel_reports_window_content_no_intel_messages_found_change_text">No intel messages found.
+Change your search term to see others.</string>
+    <string name="intel_reports_intel_reports_window_content_no_intel_messages_received_make_text">No intel messages received.
+Make sure you have your intel channels open in-game.</string>
+    <string name="intel_reports_intel_reports_window_content_no_intel_messages_received_log_text">No intel messages received.
+Log in to the game.</string>
+    <string name="intel_reports_filters_row_all_channels_text">All channels</string>
+    <string name="intel_reports_filters_row_filter_label">Filter:</string>
+    <!-- %1$s is a user or game channel name -->
+    <string name="intel_reports_no_messages_in_channel">No intel messages received in %1$s.
+Change your filter to see others.</string>
+</resources>

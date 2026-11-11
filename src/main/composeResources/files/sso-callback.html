@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="{{languageTag}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#070a0c">
+    <title>{{documentTitle}}</title>
+    <link rel="icon" href="data:image/png;base64,{{riftIcon}}">
+    <style>
+        @font-face {
+            font-family: "Eve Sans Neue";
+            font-style: normal;
+            font-weight: 400 700;
+            font-display: swap;
+            src: url("data:font/otf;base64,{{riftFont}}") format("opentype");
+        }
+
+        :root {
+            color-scheme: dark;
+            --blue-light: #c3e9ff;
+            --red: #ff5b61;
+            --text: rgba(255, 255, 255, 0.92);
+            --text-secondary: rgba(255, 255, 255, 0.58);
+            --side-banner-width: clamp(132px, 10vw, 190px);
+            --rx: 0deg;
+            --ry: 0deg;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { min-height: 100%; }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background: #050708;
+            color: var(--text);
+            font-family: "Eve Sans Neue", "Segoe UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .page {
+            position: relative;
+            isolation: isolate;
+            display: grid;
+            min-height: 100vh;
+            min-height: 100svh;
+            place-items: center;
+            padding: 48px 24px;
+            perspective: 1200px;
+        }
+
+        .background-effects {
+            position: fixed;
+            z-index: -3;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            background: linear-gradient(135deg, #050708 0%, #090d10 48%, #040506 100%);
+        }
+
+        .background-layer {
+            position: absolute;
+            inset: 0;
+        }
+
+        .background-canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .background-identity {
+            overflow: hidden;
+        }
+
+        .identity-emblem {
+            position: absolute;
+            top: -4%;
+            display: grid;
+            place-items: center;
+            width: var(--side-banner-width);
+            height: 108%;
+            border: solid rgba(113, 190, 211, .14);
+            border-width: 0 1px;
+            background: linear-gradient(180deg, rgba(15, 24, 28, .68), rgba(7, 12, 14, .42));
+            box-shadow: 0 0 70px rgba(0, 0, 0, .42);
+            transition: transform 600ms cubic-bezier(.16, 1, .3, 1), opacity 400ms ease;
+        }
+
+        .identity-emblem img {
+            width: 76%;
+            height: 76%;
+            object-fit: contain;
+            filter: drop-shadow(0 16px 28px rgba(0, 0, 0, .65));
+        }
+
+        .identity-corporation {
+            left: 0;
+        }
+
+        .identity-alliance {
+            right: 0;
+            opacity: .76;
+        }
+
+        .state-finished .identity-corporation {
+            opacity: 0;
+            transform: translateX(-110%);
+        }
+
+        .state-finished .identity-alliance {
+            opacity: 0;
+            transform: translateX(110%);
+        }
+
+        .foreground-character {
+            position: fixed;
+            z-index: -2;
+            left: var(--side-banner-width);
+            bottom: 0;
+            width: min(38vw, 520px);
+            height: min(76vh, 720px);
+            opacity: .4;
+            pointer-events: none;
+            transition: opacity 700ms ease;
+        }
+
+        .foreground-character-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+
+        .state-finished .foreground-character {
+            opacity: 0;
+        }
+
+        .status-icon {
+            position: relative;
+            display: grid;
+            width: 58px; height: 58px;
+            margin-bottom: 28px;
+            border: 1px solid rgba(255,91,97,.62);
+            border-radius: 50%;
+            background: rgba(255,91,97,.08);
+            color: var(--red);
+            place-items: center;
+            box-shadow: 0 0 36px rgba(255,91,97,.12);
+        }
+
+        .status-icon::before, .status-icon::after {
+            content: "";
+            position: absolute;
+            inset: -8px;
+            border: 1px solid rgba(255,91,97,.12);
+            border-radius: 50%;
+            animation: status-ring 2.8s ease-out infinite;
+        }
+
+        .status-icon::after { inset: -16px; animation-delay: .8s; }
+        .status-icon svg { width: 25px; height: 25px; stroke: currentColor; stroke-dasharray: 36; stroke-dashoffset: 36; animation: draw-icon .55s .55s ease-out forwards; }
+
+        h1, p { margin: 0; }
+        .message { max-width: 390px; color: var(--text-secondary); font-size: 15px; }
+        .message strong { color: rgba(255,255,255,.86); font-weight: 600; }
+        .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; }
+
+        .button {
+            position: relative;
+            isolation: isolate;
+            display: inline-flex;
+            min-height: 42px;
+            align-items: center;
+            justify-content: center;
+            padding: 9px 18px;
+            border: 0;
+            background: var(--button-border);
+            color: inherit;
+            font-size: 13px;
+            font-weight: 650;
+            letter-spacing: .015em;
+            text-decoration: none;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 9px 100%, 0 calc(100% - 9px));
+            transition:
+                background 300ms cubic-bezier(.2, .9, .2, 1.25),
+                color 300ms cubic-bezier(.2, .9, .2, 1.25),
+                box-shadow 300ms cubic-bezier(.2, .9, .2, 1.25);
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 1px;
+            background: var(--button-background);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px));
+            transition: background 300ms cubic-bezier(.2, .9, .2, 1.25);
+        }
+
+        .button:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 3px; }
+        .button-primary { --button-border: #41707f; --button-background: #172327; color: rgba(255,255,255,.78); }
+        .button-secondary { --button-border: #213841; --button-background: #070a0c; color: rgba(255,255,255,.74); }
+        .button:hover {
+            --button-border: #71bed3;
+            --button-background: #36525e;
+            color: rgba(255,255,255,.96);
+            box-shadow: 0 0 10px rgba(113,190,211,.55);
+        }
+        .button:active {
+            --button-border: #fff;
+            --button-background: #fff;
+            color: #595959;
+            box-shadow: 0 0 14px rgba(255,255,255,.85);
+            transition-duration: 90ms;
+        }
+        .button.is-loading { pointer-events: none; opacity: .62; }
+
+        .character-field {
+            position: fixed;
+            z-index: -1;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .constellation-lines {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .handoff-connection {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+            opacity: 0;
+            transition: opacity 500ms ease;
+        }
+
+        .state-success .character-field.is-ready .handoff-connection { opacity: 1; }
+        .handoff-line {
+            fill: none;
+            stroke: rgba(195, 233, 255, .72);
+            stroke-width: 1.75;
+            stroke-dasharray: 4 10;
+            filter: drop-shadow(0 0 5px rgba(88, 167, 191, .65));
+            animation: dash-flow 1.35s linear infinite;
+        }
+
+        .constellation-lines line {
+            stroke: rgba(88, 167, 191, 0.14);
+            stroke-width: 1;
+            stroke-dasharray: 4 10;
+            vector-effect: non-scaling-stroke;
+            animation: dash-flow 1.35s linear infinite;
+        }
+
+        .character-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 64px;
+            height: 64px;
+            border: 1px solid rgba(88, 167, 191, 0.28);
+            border-radius: 50%;
+            background: #071013;
+            opacity: 0;
+            filter: saturate(0.88) brightness(0.92);
+            box-shadow: 0 0 0 7px rgba(88, 167, 191, 0.05), 0 0 28px rgba(0, 0, 0, 0.8);
+            transform: translate(-50%, -50%) scale(0.5);
+            transition:
+                opacity 700ms calc(120ms + var(--order) * 80ms) ease,
+                filter 300ms ease,
+                box-shadow 300ms ease,
+                transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: auto;
+        }
+
+        .character-field.is-ready .character-node {
+            opacity: 1;
+            transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1);
+        }
+
+        .character-node:hover {
+            z-index: 3;
+            filter: saturate(1) brightness(1.05);
+            box-shadow: 0 0 0 7px rgba(88, 167, 191, 0.07), 0 0 34px rgba(88, 167, 191, 0.16);
+        }
+
+        .character-node img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-fit: cover;
+        }
+
+        .character-name {
+            position: absolute;
+            top: calc(100% + 11px);
+            left: 50%;
+            max-width: 170px;
+            padding: 4px 8px;
+            border: 1px solid rgba(88, 167, 191, 0.2);
+            background: rgba(7, 7, 7, 0.9);
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .state-success .character-node.latest-character {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .rift-node {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 82px;
+            height: 82px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(7, 16, 19, 0.92);
+            opacity: 0;
+            box-shadow: 0 18px 42px rgba(0, 0, 0, .52);
+            transform: translate(-50%, -50%) scale(0.55);
+            transition:
+                width 800ms cubic-bezier(.16,1,.3,1),
+                height 800ms cubic-bezier(.16,1,.3,1),
+                opacity 800ms ease,
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .state-success .rift-node,
+        .state-finished .rift-node {
+            width: 132px;
+            height: 132px;
+        }
+
+        .state-success .rift-node {
+            box-shadow: 0 22px 54px rgba(0, 0, 0, .58);
+        }
+
+        .character-field.is-ready .rift-node {
+            opacity: 1;
+            transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1);
+        }
+
+        .state-finished.orbiting .character-node {
+            transition: filter 300ms ease, box-shadow 300ms ease;
+        }
+
+        .rift-node img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+        }
+
+        .rift-node span {
+            position: absolute;
+            top: calc(100% + 12px);
+            left: 50%;
+            color: rgba(195, 233, 255, 0.84);
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-shadow: 0 0 12px rgba(88, 167, 191, 0.5);
+            transform: translateX(-50%);
+        }
+
+        .center-stage {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            width: min(100%, 540px);
+            min-height: 500px;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 34px 24px;
+            text-align: center;
+            transform: rotateX(var(--rx)) rotateY(var(--ry));
+            transition: transform 500ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .center-stage h1 {
+            margin-bottom: 26px;
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 400;
+            line-height: 1.2;
+            color: rgba(255, 255, 255, 0.94);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
+        }
+
+        .focused-character {
+            width: 132px;
+            height: 132px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(88, 167, 191, 0.28);
+            border-radius: 50%;
+            background: #071013;
+            box-shadow: 0 28px 60px rgba(0, 0, 0, 0.55);
+            animation: focused-character-arrive 900ms 120ms cubic-bezier(0.16, 1, 0.3, 1) both;
+            transition: opacity 600ms ease, transform 800ms cubic-bezier(.16,1,.3,1);
+        }
+
+        .state-success .focused-character {
+            --focus-shift: -132px;
+        }
+
+        .focused-character img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-fit: cover;
+        }
+
+        .center-stage .message {
+            max-width: 440px;
+            font-size: 16px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+        }
+
+        .state-success .center-stage .message {
+            margin-top: 22px;
+        }
+
+        .center-stage .actions {
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .center-stage .button {
+            min-width: 150px;
+            min-height: 46px;
+            padding-right: 22px;
+            padding-left: 22px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.32), 0 0 20px rgba(88, 167, 191, 0.035);
+            backdrop-filter: blur(10px);
+        }
+
+        .center-stage .status-icon {
+            margin-bottom: 26px;
+        }
+
+        .state-success .center-stage .status-icon,
+        .state-finished .center-stage .status-icon {
+            display: none;
+        }
+
+        .state-finished .focused-character {
+            animation: none;
+            opacity: 0;
+            transform: scale(.45);
+        }
+
+        .state-finished .actions {
+            visibility: hidden;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: opacity 250ms ease, transform 250ms ease, visibility 250ms;
+        }
+
+        .state-finished .center-stage h1,
+        .state-finished .center-stage .message {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            width: auto;
+        }
+
+        .state-finished .center-stage h1 {
+            top: calc(50% - 174px);
+            margin: 0;
+        }
+
+        .state-finished .center-stage .message {
+            top: calc(50% - 118px);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .state-finished .message { max-width: none; }
+        @keyframes dash-flow { from { stroke-dashoffset: 28; } to { stroke-dashoffset: 0; } }
+        @keyframes focused-character-arrive { from { opacity: 0; transform: translateX(var(--focus-shift, 0px)) scale(.65); filter: blur(5px); } to { opacity: 1; transform: translateX(var(--focus-shift, 0px)) scale(1); filter: blur(0); } }
+        @keyframes status-ring { 0% { opacity: 0; transform: scale(.78); } 30% { opacity: 1; } 75%,100% { opacity: 0; transform: scale(1.12); } }
+        @keyframes draw-icon { to { stroke-dashoffset: 0; } }
+
+        @media (max-width: 720px) {
+            :root { --side-banner-width: 100px; }
+            .page { align-items: start; padding: 24px 14px; }
+            .center-stage { min-height: calc(100vh - 48px); padding: 28px 10px; }
+            .focused-character { width: 100px; height: 100px; }
+            .button { flex: 1 1 auto; }
+            .character-node { width: 48px; height: 48px; }
+            .character-name { top: calc(100% + 7px); max-width: 108px; padding: 3px 6px; font-size: 10px; }
+            .rift-node { width: 60px; height: 60px; }
+            .state-success .rift-node,
+            .state-finished .rift-node { width: 100px; height: 100px; }
+            .state-success .focused-character {
+                --focus-shift: -105px;
+            }
+            .rift-node span { top: calc(100% + 8px); font-size: 10px; }
+            .foreground-character { width: 46vw; height: 52vh; opacity: .3; }
+        }
+
+        @media (max-width: 420px) {
+            .actions { display: grid; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .001ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; transition-delay: 0ms !important; }
+        }
+    </style>
+</head>
+<body class="{{stateClass}}" data-finished-title="{{finishedTitle}}" data-finished-message="{{finishedMessage}}">
+    <div class="background-effects" aria-hidden="true">
+        <canvas class="background-layer background-canvas"></canvas>
+        <div class="background-layer background-identity">{{identityBanners}}</div>
+    </div>
+    {{foregroundPortrait}}
+    <main class="page">
+        <div class="character-field" aria-label="{{charactersLabel}}">
+            <svg class="constellation-lines" aria-hidden="true"></svg>
+            <svg class="handoff-connection" aria-hidden="true">
+                <path class="handoff-line"></path>
+            </svg>
+            {{characters}}
+            <div class="rift-node" aria-label="RIFT">
+                <img src="data:image/png;base64,{{riftIcon}}" alt="">
+                <span>RIFT</span>
+            </div>
+        </div>
+        <section class="center-stage" aria-labelledby="page-title">
+            <h1 id="page-title">{{title}}</h1>
+            {{portraitBackdrop}}
+            <div class="status-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"></path></svg>
+            </div>
+            <p class="message">{{message}}</p>
+            {{actions}}
+        </section>
+    </main>
+    <script>
+        (() => {
+            const body = document.body;
+            const root = document.documentElement;
+            const centerStage = document.querySelector('.center-stage');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const backgroundCanvas = document.querySelector('.background-canvas');
+            const backgroundContext = backgroundCanvas?.getContext('2d');
+            const identityLayer = document.querySelector('.background-identity');
+            const foregroundImage = document.querySelector('.foreground-character-image');
+            const characterField = document.querySelector('.character-field');
+            const characterNodes = characterField
+                ? [...characterField.querySelectorAll('.character-node')]
+                : [];
+            const riftNode = characterField?.querySelector('.rift-node');
+            const constellation = characterField?.querySelector('.constellation-lines');
+            const handoffPath = characterField?.querySelector('.handoff-line');
+            const pageTitle = document.querySelector('#page-title');
+            const message = document.querySelector('.message');
+            const finishButton = document.querySelector('#finish-button');
+            const vortex = {
+                lineCount: 18,
+                stepCount: 72,
+                turns: 2.4,
+                speed: .00022,
+                radiusX: .48,
+                radiusY: .4,
+            };
+            let canvasWidth = window.innerWidth;
+            let canvasHeight = window.innerHeight;
+            let orbitStartedAt;
+
+            const resizeBackgroundCanvas = () => {
+                if (!backgroundCanvas || !backgroundContext) return;
+                const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+                canvasWidth = window.innerWidth;
+                canvasHeight = window.innerHeight;
+                backgroundCanvas.width = Math.round(canvasWidth * pixelRatio);
+                backgroundCanvas.height = Math.round(canvasHeight * pixelRatio);
+                backgroundCanvas.style.width = `${canvasWidth}px`;
+                backgroundCanvas.style.height = `${canvasHeight}px`;
+                backgroundContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+            };
+
+            const getRiftCenter = () => {
+                const bounds = riftNode?.getBoundingClientRect();
+                return bounds && bounds.width
+                    ? { x: bounds.left + bounds.width / 2, y: bounds.top + bounds.height / 2 }
+                    : { x: canvasWidth * .66, y: canvasHeight * .5 };
+            };
+
+            const drawLiquidVortex = (time) => {
+                const focus = getRiftCenter();
+                const focusX = focus.x;
+                const focusY = focus.y;
+                const timeOffset = time * vortex.speed;
+                for (let line = 0; line < vortex.lineCount; line++) {
+                    backgroundContext.beginPath();
+                    for (let step = 0; step <= vortex.stepCount; step++) {
+                        const progress = step / vortex.stepCount;
+                        const angle = progress * Math.PI * vortex.turns + line * .35 + timeOffset;
+                        const radiusX = progress * canvasWidth * vortex.radiusX;
+                        const radiusY = progress * canvasHeight * vortex.radiusY;
+                        const x = focusX + Math.cos(angle) * radiusX;
+                        const y = focusY + Math.sin(angle) * radiusY;
+                        if (step === 0) backgroundContext.moveTo(x, y);
+                        else backgroundContext.lineTo(x, y);
+                    }
+                    backgroundContext.strokeStyle = `rgba(86, 172, 193, ${0.025 + line % 4 * .012})`;
+                    backgroundContext.lineWidth = .6 + line % 3 * .3;
+                    backgroundContext.stroke();
+                }
+            };
+
+            const maskForegroundCharacter = () => {
+                if (body.classList.contains('state-finished')) return;
+                if (!foregroundImage?.complete || !foregroundImage.naturalWidth || !foregroundImage.naturalHeight) return;
+                const bounds = foregroundImage.getBoundingClientRect();
+                const scale = Math.min(
+                    bounds.width / foregroundImage.naturalWidth,
+                    bounds.height / foregroundImage.naturalHeight,
+                );
+                const width = foregroundImage.naturalWidth * scale;
+                const height = foregroundImage.naturalHeight * scale;
+                const x = bounds.left + (bounds.width - width) / 2;
+                const y = bounds.bottom - height;
+                backgroundContext.globalCompositeOperation = 'destination-out';
+                backgroundContext.drawImage(foregroundImage, x, y, width, height);
+                backgroundContext.globalCompositeOperation = 'source-over';
+            };
+
+            const renderBackground = (time = 0) => {
+                if (!backgroundContext) return;
+                backgroundContext.clearRect(0, 0, canvasWidth, canvasHeight);
+                drawLiquidVortex(time);
+                maskForegroundCharacter();
+                if (!reducedMotion) {
+                    requestAnimationFrame(renderBackground);
+                }
+            };
+
+            resizeBackgroundCanvas();
+            renderBackground();
+            window.addEventListener('resize', () => {
+                resizeBackgroundCanvas();
+                if (reducedMotion) renderBackground();
+            });
+            if (centerStage && !reducedMotion && window.matchMedia('(pointer: fine)').matches) {
+                document.addEventListener('pointermove', (event) => {
+                    const x = event.clientX / window.innerWidth - 0.5;
+                    const y = event.clientY / window.innerHeight - 0.5;
+                    root.style.setProperty('--rx', `${(-y * 1.4).toFixed(2)}deg`);
+                    root.style.setProperty('--ry', `${(x * 1.8).toFixed(2)}deg`);
+                });
+                document.addEventListener('pointerleave', () => {
+                    root.style.setProperty('--rx', '0deg');
+                    root.style.setProperty('--ry', '0deg');
+                });
+            }
+            document.querySelector('.button-primary')
+                ?.addEventListener('click', (event) => event.currentTarget.classList.add('is-loading'));
+            const layoutCharacters = (timestamp = performance.now()) => {
+                if (!characterField || !constellation || !riftNode || !centerStage) return;
+                const fieldCenterX = window.innerWidth / 2;
+                const fieldCenterY = window.innerHeight / 2;
+                const focalElement = document.querySelector('.focused-character') || document.querySelector('.center-stage .status-icon');
+                const focalRect = focalElement.getBoundingClientRect();
+                const stageRect = centerStage.getBoundingClientRect();
+                const centerX = stageRect.left + stageRect.width / 2;
+                const isFinished = body.classList.contains('state-finished');
+                const isSuccess = body.classList.contains('state-success');
+                let centerY = stageRect.top + stageRect.height / 2;
+                if (!isFinished && focalRect.width > 0 && focalRect.height > 0) {
+                    centerY = focalRect.top + focalRect.height / 2;
+                }
+                const activeCharacters = isFinished
+                    ? characterNodes
+                    : characterNodes.filter((node) => !node.classList.contains('latest-character') || !isSuccess);
+                const layoutNodes = isFinished || isSuccess ? activeCharacters : [...activeCharacters, riftNode];
+                const compact = window.innerWidth <= 720;
+                const handoffOffset = compact ? 105 : 132;
+                let centralRiftPosition = null;
+                let radiusX;
+                let radiusY;
+                if (isFinished) {
+                    centralRiftPosition = { x: centerX, y: centerY };
+                    radiusX = Math.min(window.innerWidth * .36, 410);
+                    radiusY = Math.min(window.innerHeight * .35, 315);
+                } else if (isSuccess) {
+                    centralRiftPosition = { x: centerX + handoffOffset, y: centerY };
+                    radiusX = Math.min(window.innerWidth * .31, 430);
+                    radiusY = Math.min(window.innerHeight * .39, 350);
+                } else {
+                    radiusX = Math.min(window.innerWidth * .4, centerStage.offsetWidth / 2 + 300);
+                    radiusY = Math.min(window.innerHeight * .4, centerStage.offsetHeight / 2 + 140);
+                }
+                const bannerWidth = identityLayer?.querySelector('.identity-emblem')?.getBoundingClientRect().width || 0;
+                const marginX = bannerWidth ? Math.ceil(bannerWidth + (compact ? 56 : 58)) : compact ? 58 : 105;
+                const marginY = compact ? 54 : 76;
+                const orbitOffset = isFinished && orbitStartedAt !== undefined
+                    ? (timestamp - orbitStartedAt) * 0.000075
+                    : 0;
+                const positions = new Map();
+                layoutNodes.forEach((node, index) => {
+                    const halfArcStart = layoutNodes.length <= 2 ? -Math.PI / 3 : -Math.PI / 2;
+                    const halfArcLength = layoutNodes.length <= 2 ? Math.PI * 2 / 3 : Math.PI;
+                    let angle;
+                    if (isSuccess) {
+                        angle = layoutNodes.length > 1
+                            ? halfArcStart + index * halfArcLength / (layoutNodes.length - 1)
+                            : 0;
+                    } else {
+                        angle = -Math.PI * .82
+                            + index * Math.PI * 2 / Math.max(layoutNodes.length, 1)
+                            + orbitOffset;
+                    }
+                    const orbitCenterX = isSuccess ? centralRiftPosition.x : centerX;
+                    const x = Math.max(marginX, Math.min(window.innerWidth - marginX, orbitCenterX + Math.cos(angle) * radiusX));
+                    const y = Math.max(marginY, Math.min(window.innerHeight - marginY, centerY + Math.sin(angle) * radiusY));
+                    node.style.setProperty('--x', `${x - fieldCenterX}px`);
+                    node.style.setProperty('--y', `${y - fieldCenterY}px`);
+                    positions.set(node, { x, y });
+                });
+
+                const riftPosition = centralRiftPosition || positions.get(riftNode);
+                if (centralRiftPosition) {
+                    riftNode.style.setProperty('--x', `${riftPosition.x - fieldCenterX}px`);
+                    riftNode.style.setProperty('--y', `${riftPosition.y - fieldCenterY}px`);
+                }
+
+                if (isSuccess) {
+                    const riftRadius = compact ? 50 : 66;
+                    const startX = focalRect.right + 15;
+                    const endX = riftPosition.x - riftRadius;
+                    handoffPath?.setAttribute('d', `M ${startX} ${centerY} L ${endX} ${centerY}`);
+                }
+
+                let lineIndex = 0;
+                const setLine = (start, end) => {
+                    const line = constellation.children[lineIndex]
+                        || document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    if (!line.parentElement) constellation.append(line);
+                    line.setAttribute('x1', start.x);
+                    line.setAttribute('y1', start.y);
+                    line.setAttribute('x2', end.x);
+                    line.setAttribute('y2', end.y);
+                    lineIndex++;
+                };
+                activeCharacters.forEach((node) => {
+                    const position = positions.get(node);
+                    if (position) setLine(position, riftPosition);
+                });
+                while (constellation.children.length > lineIndex) {
+                    constellation.lastElementChild.remove();
+                }
+            };
+
+            layoutCharacters();
+            window.addEventListener('resize', () => layoutCharacters());
+            if (reducedMotion) characterField?.classList.add('is-ready');
+            else requestAnimationFrame(() => characterField?.classList.add('is-ready'));
+
+            const beginFinishedState = () => {
+                body.classList.remove('state-success', 'state-failure');
+                body.classList.add('state-finished');
+                pageTitle.textContent = body.dataset.finishedTitle;
+                message.textContent = body.dataset.finishedMessage;
+                layoutCharacters();
+                if (!reducedMotion) {
+                    window.setTimeout(() => {
+                        body.classList.add('orbiting');
+                        orbitStartedAt = performance.now();
+                        const animateOrbit = (timestamp) => {
+                            layoutCharacters(timestamp);
+                            requestAnimationFrame(animateOrbit);
+                        };
+                        requestAnimationFrame(animateOrbit);
+                    }, 1000);
+                }
+            };
+
+            finishButton?.addEventListener('click', async (event) => {
+                event.preventDefault();
+                if (finishButton.classList.contains('is-loading')) return;
+                finishButton.classList.add('is-loading');
+                try {
+                    const response = await fetch(finishButton.href);
+                    if (!response.ok) throw new Error(`Finish request failed: ${response.status}`);
+                    beginFinishedState();
+                } catch (error) {
+                    finishButton.classList.remove('is-loading');
+                    console.error(error);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

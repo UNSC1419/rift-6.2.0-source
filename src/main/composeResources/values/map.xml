@@ -1,0 +1,331 @@
+<resources>
+    <string name="map_window_title">Intel Map</string>
+    <string name="map_shortcut_focus_current_location">Enter</string>
+    <string name="map_action_focus_current_location">Focus Current Location</string>
+    <string name="map_shortcut_fit_to_window">Space</string>
+    <string name="map_action_fit_to_window">Fit To Window</string>
+    <string name="map_action_toggle_2d_layout">Toggle 2D Layout</string>
+    <string name="map_ansiblex_capital_system_placeholder">System</string>
+    <string name="map_ansiblex_capital_system_valid">Valid system</string>
+    <string name="map_ansiblex_capital_system_not_found">No such system</string>
+    <string name="map_jump_range_source_placeholder">System or character</string>
+    <string name="map_jump_range_source_valid_character">Valid character</string>
+    <string name="map_jump_range_source_not_found">No such system or character</string>
+    <string name="map_settings_system_color_label">System:</string>
+    <string name="map_settings_background_color_label">Background:</string>
+    <string name="map_settings_indicators_label">Indicators:</string>
+    <string name="map_settings_none">None</string>
+    <string name="map_settings_info_box_label">Info box:</string>
+    <string name="map_settings_system_color_title">System color</string>
+    <string name="map_settings_background_color_title">System background color</string>
+    <string name="map_settings_indicators_title">Indicators (always visible)</string>
+    <string name="map_settings_info_box_title">Info box details (visible on hover)</string>
+    <string name="map_ansiblex_zones_title">Ansiblex zones</string>
+    <string name="map_ansiblex_zones_capital_label">Capital:</string>
+    <string name="map_jump_range_title">Jump range</string>
+    <string name="map_jump_range_source_label">From:</string>
+    <string name="map_jump_range_distance_label">Range:</string>
+    <string name="map_planet_types_title">Planet types</string>
+    <string name="map_sovereignty_upgrade_types_title">Sovereignty upgrade types</string>
+    <string name="map_distance_title">Distance map</string>
+    <string name="map_distance_center_label">Centered on:</string>
+    <string name="map_alternative_layouts_label">Alternative maps:</string>
+    <string name="map_star_info_type_color_name_actual_color_name">Actual color</string>
+    <string name="map_star_info_type_color_name_actual_color_description">Colored with the
+actual color of the star</string>
+    <string name="map_star_info_type_color_name_security_status_name">Security Status</string>
+    <string name="map_star_info_type_color_name_security_status_description">Colored according to the
+security status</string>
+    <string name="map_star_info_type_color_name_null_sec_status_name">Null-Sec Status</string>
+    <string name="map_star_info_type_color_name_null_sec_status_description">Colored according to the
+negative security status</string>
+    <string name="map_star_info_type_color_name_hostiles_count_name">Hostiles count</string>
+    <string name="map_star_info_type_color_name_hostiles_count_description">Colored according to the
+number of reported hostiles</string>
+    <string name="map_star_info_type_color_name_jumps_name">Jumps</string>
+    <string name="map_star_info_type_color_name_jumps_description">Colored according to the
+number of jumps in the last hour</string>
+    <string name="map_star_info_type_color_name_kills_name">Kills</string>
+    <string name="map_star_info_type_color_name_kills_description">Colored according to the
+number of ship and pod kills in the last hour</string>
+    <string name="map_star_info_type_color_name_npc_kills_name">NPC Kills</string>
+    <string name="map_star_info_type_color_name_npc_kills_description">Colored according to the
+number of NPCs killed in the last hour</string>
+    <string name="map_star_info_type_color_name_assets_name">Assets</string>
+    <string name="map_star_info_type_color_name_assets_description">Colored according to the
+number of owned assets located here</string>
+    <string name="map_star_info_type_color_name_asset_safety_name">Asset Safety</string>
+    <string name="map_star_info_type_color_name_asset_safety_description">Colored according to the
+number of systems targeting this system for Asset Safety</string>
+    <string name="map_star_info_type_color_name_incursions_name">Incursions</string>
+    <string name="map_star_info_type_color_name_incursions_description">Colored according to the
+incursion status</string>
+    <string name="map_star_info_type_color_name_stations_name">Stations</string>
+    <string name="map_star_info_type_color_name_stations_description">Colored according to the
+number of stations</string>
+    <string name="map_star_info_type_color_name_faction_warfare_name">Faction Warfare</string>
+    <string name="map_star_info_type_color_name_faction_warfare_description">Colored according to the
+faction warfare occupier</string>
+    <string name="map_star_info_type_color_name_sovereignty_name">Sovereignty</string>
+    <string name="map_star_info_type_color_name_sovereignty_description">Colored according to the
+sovereignty holder</string>
+    <string name="map_star_info_type_color_name_sovereignty_upgrades_name">Sovereignty Upgrades</string>
+    <string name="map_star_info_type_color_name_sovereignty_upgrades_description">Colored according to the
+installed sovereignty upgrades</string>
+    <string name="map_star_info_type_color_name_strategic_index_name">Strategic Index</string>
+    <string name="map_star_info_type_color_name_strategic_index_description">Colored according to the
+sovereignty strategic index</string>
+    <string name="map_star_info_type_color_name_military_index_name">Military Index</string>
+    <string name="map_star_info_type_color_name_military_index_description">Colored according to the
+sovereignty military index</string>
+    <string name="map_star_info_type_color_name_industrial_index_name">Industrial Index</string>
+    <string name="map_star_info_type_color_name_industrial_index_description">Colored according to the
+sovereignty industrial index</string>
+    <string name="map_star_info_type_color_name_activity_defense_multiplier_name">Activity Defense Multiplier</string>
+    <string name="map_star_info_type_color_name_activity_defense_multiplier_description">Colored according to the
+activity defense multiplier</string>
+    <string name="map_star_info_type_color_name_raidable_skyhooks_name">Raidable Skyhooks</string>
+    <string name="map_star_info_type_color_name_raidable_skyhooks_description">Colored when
+a Skyhook is or will shortly be raidable</string>
+    <string name="map_star_info_type_color_name_metaliminal_storms_name">Metaliminal Storms</string>
+    <string name="map_star_info_type_color_name_metaliminal_storms_description">Colored according to the
+presence of metaliminal storms</string>
+    <string name="map_star_info_type_color_name_ansiblex_zones_name">Ansiblex Zones</string>
+    <string name="map_star_info_type_color_name_ansiblex_zones_description">Colored according to the
+Ansiblex cost zone</string>
+    <string name="map_star_info_type_color_name_jump_range_name">Jump Range</string>
+    <string name="map_star_info_type_color_name_jump_range_description">Colored according to
+jump range</string>
+    <string name="map_star_info_type_color_name_jove_observatories_name">Jove Observatories</string>
+    <string name="map_star_info_type_color_name_jove_observatories_description">Colored when a
+Jove Observatory is present</string>
+    <string name="map_star_info_type_color_name_wormholes_name">Wormholes</string>
+    <string name="map_star_info_type_color_name_wormholes_description">Colored when a
+Thera or Turnur wormhole is present</string>
+    <string name="map_star_info_type_color_name_pi_colonies_name">PI Colonies</string>
+    <string name="map_star_info_type_color_name_pi_colonies_description">Colored when you have a
+PI colony present</string>
+    <string name="map_star_info_type_color_name_clones_name">Clones</string>
+    <string name="map_star_info_type_color_name_clones_description">Colored when you have
+jump clones present</string>
+    <string name="map_star_info_type_color_name_standings_name">Standings</string>
+    <string name="map_star_info_type_color_name_standings_description">Colored based on standings
+towards the sovereignty holder.
+Low and high sec are always yellow and green.</string>
+    <string name="map_star_info_type_color_name_rats_name">Rats</string>
+    <string name="map_star_info_type_color_name_rats_description">Colored according to the
+faction of rats in the system</string>
+    <string name="map_star_info_type_color_name_asteroid_belts_name">Asteroid Belts</string>
+    <string name="map_star_info_type_color_name_asteroid_belts_description">Colored when
+asteroid belts are present</string>
+    <string name="map_star_info_type_color_name_ice_fields_name">Ice Fields</string>
+    <string name="map_star_info_type_color_name_ice_fields_description">Colored when
+ice fields are present</string>
+    <string name="map_star_info_type_color_name_copying_index_name">Copying Index</string>
+    <string name="map_star_info_type_color_name_copying_index_description">Colored according to the
+industry cost index of Copying</string>
+    <string name="map_star_info_type_color_name_invention_index_name">Invention Index</string>
+    <string name="map_star_info_type_color_name_invention_index_description">Colored according to the
+industry cost index of Invention</string>
+    <string name="map_star_info_type_color_name_manufacturing_index_name">Manufacturing Index</string>
+    <string name="map_star_info_type_color_name_manufacturing_index_description">Colored according to the
+industry cost index of Manufacturing</string>
+    <string name="map_star_info_type_color_name_reactions_index_name">Reactions Index</string>
+    <string name="map_star_info_type_color_name_reactions_index_description">Colored according to the
+industry cost index of Reactions</string>
+    <string name="map_star_info_type_color_name_material_efficiency_index_name">Material Efficiency Index</string>
+    <string name="map_star_info_type_color_name_material_efficiency_index_description">Colored according to the
+industry cost index of Researching Material Efficiency</string>
+    <string name="map_star_info_type_color_name_time_efficiency_index_name">Time Efficiency Index</string>
+    <string name="map_star_info_type_color_name_time_efficiency_index_description">Colored according to the
+industry cost index of Researching Time Efficiency</string>
+    <string name="map_star_info_type_color_name_none_description">No background color</string>
+    <string name="map_star_info_type_indicator_name_security_status_name">Security status</string>
+    <string name="map_star_info_type_indicator_name_security_status_description">Security status of the system</string>
+    <string name="map_star_info_type_indicator_name_jumps_description">Number of jumps in the last hour</string>
+    <string name="map_star_info_type_indicator_name_kills_description">Number of ship and pod kills in the last hour</string>
+    <string name="map_star_info_type_indicator_name_npc_kills_description">Number of NPCs killed in the last hour</string>
+    <string name="map_star_info_type_indicator_name_assets_description">Number of owned assets located here</string>
+    <string name="map_star_info_type_indicator_name_asset_safety_description">Asset Safety destination and number of systems targeting this system</string>
+    <string name="map_star_info_type_indicator_name_incursions_description">Indicator for systems with an incursion</string>
+    <string name="map_star_info_type_indicator_name_stations_description">Number of stations</string>
+    <string name="map_star_info_type_indicator_name_sovereignty_description">Sovereignty holder logo</string>
+    <string name="map_star_info_type_indicator_name_sovereignty_upgrades_description">Indicators for installed sovereignty upgrades</string>
+    <string name="map_star_info_type_indicator_name_strategic_index_description">Sovereignty strategic index</string>
+    <string name="map_star_info_type_indicator_name_military_index_description">Sovereignty military index</string>
+    <string name="map_star_info_type_indicator_name_industrial_index_description">Sovereignty industrial index</string>
+    <string name="map_star_info_type_indicator_name_activity_defense_multiplier_description">Activity defense multiplier</string>
+    <string name="map_star_info_type_indicator_name_capital_system_name">Capital System</string>
+    <string name="map_star_info_type_indicator_name_capital_system_description">Alliance capital system</string>
+    <string name="map_star_info_type_indicator_name_raidable_skyhooks_description">Indicators for raidable Skyhooks</string>
+    <string name="map_star_info_type_indicator_name_metaliminal_storms_description">Indicator for systems with a storm</string>
+    <string name="map_star_info_type_indicator_name_ansiblex_zones_description">Ansiblex cost zone based on distance from the alliance capital</string>
+    <string name="map_star_info_type_indicator_name_jump_range_description">Indicator for systems in jump range</string>
+    <string name="map_star_info_type_indicator_name_planets_name">Planets</string>
+    <string name="map_star_info_type_indicator_name_planets_description">Indicators for planets</string>
+    <string name="map_star_info_type_indicator_name_jove_observatories_description">Indicators for Jove Observatories</string>
+    <string name="map_star_info_type_indicator_name_wormholes_description">Indicators for Thera and Turnur wormholes</string>
+    <string name="map_star_info_type_indicator_name_pi_colonies_description">Indicators for PI colonies</string>
+    <string name="map_star_info_type_indicator_name_clones_description">Indicators for jump clones</string>
+    <string name="map_star_info_type_indicator_name_standings_description">Standings towards the sovereignty holder</string>
+    <string name="map_star_info_type_indicator_name_asteroid_belts_description">Indicators for asteroid belts</string>
+    <string name="map_star_info_type_indicator_name_ice_fields_description">Indicators for ice fields</string>
+    <string name="map_star_info_type_indicator_name_region_name">Region</string>
+    <string name="map_star_info_type_indicator_name_region_description">Region name</string>
+    <string name="map_star_info_type_indicator_name_constellation_name">Constellation</string>
+    <string name="map_star_info_type_indicator_name_constellation_description">Constellation name</string>
+    <string name="map_star_info_type_indicator_name_copying_index_description">Industry cost index of Copying</string>
+    <string name="map_star_info_type_indicator_name_invention_index_description">Industry cost index of Invention</string>
+    <string name="map_star_info_type_indicator_name_manufacturing_index_description">Industry cost index of Manufacturing</string>
+    <string name="map_star_info_type_indicator_name_reactions_index_description">Industry cost index of Reactions</string>
+    <string name="map_star_info_type_indicator_name_material_efficiency_index_description">Industry cost index of Researching Material Efficiency</string>
+    <string name="map_star_info_type_indicator_name_time_efficiency_index_description">Industry cost index of Researching Time Efficiency</string>
+    <string name="map_star_info_type_info_box_name_incursions_description">Incursion status</string>
+    <string name="map_star_info_type_info_box_name_faction_warfare_description">Faction warfare details</string>
+    <string name="map_star_info_type_info_box_name_sovereignty_description">Sovereignty holder</string>
+    <string name="map_star_info_type_info_box_name_sovereignty_upgrades_description">Installed sovereignty upgrades</string>
+    <string name="map_star_info_type_info_box_name_raidable_skyhooks_description">Raidable Skyhooks information and timers</string>
+    <string name="map_star_info_type_info_box_name_metaliminal_storms_description">Metaliminal storm type</string>
+    <string name="map_star_info_type_info_box_name_jump_range_description">Jump distance to system</string>
+    <string name="map_star_info_type_info_box_name_planets_description">Planets information</string>
+    <string name="map_star_info_type_info_box_name_jove_observatories_description">Jove Observatory presence information</string>
+    <string name="map_star_info_type_info_box_name_wormholes_description">Thera and Turnur wormholes information</string>
+    <string name="map_star_info_type_info_box_name_pi_colonies_description">PI colonies information</string>
+    <string name="map_star_info_type_info_box_name_clones_description">Jump clones information</string>
+    <string name="map_star_info_type_info_box_name_rats_description">Faction of rats in the system</string>
+    <string name="map_star_info_type_info_box_name_asteroid_belts_description">Asteroid belts presence information</string>
+    <string name="map_star_info_type_info_box_name_ice_fields_description">Ice fields presence information</string>
+    <plurals name="map_enabled_count">
+        <item quantity="one">%1$s enabled</item>
+        <item quantity="other">%1$s enabled</item>
+    </plurals>
+    <plurals name="map_jump_count">
+        <item quantity="one">%1$s jump</item>
+        <item quantity="other">%1$s jumps</item>
+    </plurals>
+    <!-- ly means light years; ship classes are EVE terminology -->
+    <string name="map_jump_range_six_ly">6ly – Supercarriers, Titans</string>
+    <!-- ly means light years; Faxes is shorthand for Force Auxiliaries -->
+    <string name="map_jump_range_seven_ly">7ly – Carriers, Dreadnoughts, Faxes</string>
+    <!-- ly means light years; Black Ops is an EVE ship class -->
+    <string name="map_jump_range_eight_ly">8ly – Black Ops</string>
+    <!-- ly means light years; Rorquals is the plural of the ship type Rorqual -->
+    <string name="map_jump_range_ten_ly">10ly – Jump Freighters, Rorquals</string>
+    <string name="map_regions_tab">Regions</string>
+    <string name="map_distance_tab">Distance</string>
+    <string name="map_ansiblex_zone">Zone %1$s</string>
+    <string name="map_system_info_ansiblex_zone_tooltip">Ansiblex cost zone</string>
+    <string name="map_system_info_jove_observatory_tooltip">Jove Observatory</string>
+    <string name="map_system_info_jump_range_in_range_tooltip">Jump distance - in range</string>
+    <string name="map_system_info_jump_range_out_of_range_tooltip">Jump distance - out of range</string>
+    <string name="map_system_info_ice_field_tooltip">Ice field system</string>
+    <string name="map_system_info_unknown_name">Unknown</string>
+    <string name="map_system_info_activity_defense_multiplier_name">Activity Defense Multiplier</string>
+    <string name="map_system_info_strategic_index_name">Strategic Index</string>
+    <string name="map_system_info_military_index_name">Military Index</string>
+    <string name="map_system_info_industry_index_name">Industry Index</string>
+    <string name="map_system_info_capital_name">Capital</string>
+    <string name="map_system_info_standing_high_sec_tooltip">High sec</string>
+    <string name="map_system_info_standing_low_sec_tooltip">Low sec</string>
+    <string name="map_system_info_standing_no_sovereignty_tooltip">No sovereignty</string>
+    <string name="map_system_info_standing_terrible_tooltip">Terrible standing</string>
+    <string name="map_system_info_standing_bad_tooltip">Bad standing</string>
+    <string name="map_system_info_standing_neutral_tooltip">Neutral standing</string>
+    <string name="map_system_info_standing_good_tooltip">Good standing</string>
+    <string name="map_system_info_standing_excellent_tooltip">Excellent standing</string>
+    <string name="map_system_info_intel_cleared">Cleared</string>
+    <string name="map_system_info_jumps_tooltip">Jumps: %1$s</string>
+    <string name="map_system_info_pod_kills_tooltip">Pod kills: %1$s</string>
+    <string name="map_system_info_ship_kills_tooltip">Ship kills: %1$s</string>
+    <string name="map_system_info_npc_kills_tooltip">NPC kills: %1$s</string>
+    <string name="map_system_info_assets_tooltip">Assets: %1$s</string>
+    <string name="map_system_info_stations_tooltip">Stations: %1$s</string>
+    <string name="map_system_info_colonies_tooltip">Colonies: %1$s</string>
+    <string name="map_system_info_faction_warfare_owner">Owner: %1$s</string>
+    <string name="map_system_info_faction_warfare_occupier">Occupier: %1$s</string>
+    <string name="map_system_info_faction_warfare_points">Points: %1$s/%2$s</string>
+    <string name="map_system_info_rats_summary">Rats: %1$s</string>
+    <!-- %1$s is the planet name; %2$s is the planet type label -->
+    <string name="map_system_info_planet_summary">%1$s – %2$s</string>
+    <string name="map_system_info_asset_safety_target_tooltip">Asset Safety destination: %1$s</string>
+    <!-- Preserve the existing English caption; translators can use language-specific plural forms -->
+    <plurals name="map_system_info_online_character_count">
+        <item quantity="one">%1$s characters</item>
+        <item quantity="other">%1$s characters</item>
+    </plurals>
+    <plurals name="map_system_info_asteroid_belt_tooltip">
+        <item quantity="one">Asteroid belt: %1$s</item>
+        <item quantity="other">Asteroid belts: %1$s</item>
+    </plurals>
+    <plurals name="map_system_info_clone_count">
+        <item quantity="one">%1$s clone</item>
+        <item quantity="other">%1$s clones</item>
+    </plurals>
+    <plurals name="map_system_info_clone_total">
+        <item quantity="one">%1$s clone</item>
+        <item quantity="other">%1$s clones</item>
+    </plurals>
+    <plurals name="map_system_info_asset_safety_source_count">
+        <item quantity="one">%1$s source system</item>
+        <item quantity="other">%1$s source systems</item>
+    </plurals>
+    <!-- %1$s is a system name; %2$s is the source-system count -->
+    <plurals name="map_system_info_asset_safety_source_tooltip">
+        <item quantity="one">%1$s is the Asset Safety destination for %2$s other system</item>
+        <item quantity="other">%1$s is the Asset Safety destination for %2$s other systems</item>
+    </plurals>
+    <string name="map_system_info_incursion_summary">%1$s: %2$s</string>
+    <string name="map_system_info_faction_warfare_status">Faction warfare: %1$s</string>
+    <string name="map_system_info_incursion_state_withdrawing">Withdrawing</string>
+    <string name="map_system_info_incursion_state_mobilizing">Mobilizing</string>
+    <string name="map_system_info_incursion_state_established">Established</string>
+    <string name="map_system_info_faction_warfare_state_captured">Captured</string>
+    <string name="map_system_info_faction_warfare_state_contested">Contested</string>
+    <string name="map_system_info_faction_warfare_state_uncontested">Uncontested</string>
+    <string name="map_system_info_faction_warfare_state_vulnerable">Vulnerable</string>
+    <string name="map_system_info_storm_strong_gamma">Storm: Strong Gamma</string>
+    <string name="map_system_info_storm_strong_electric">Storm: Strong Electric</string>
+    <string name="map_system_info_storm_strong_plasma">Storm: Strong Plasma</string>
+    <string name="map_system_info_storm_strong_exotic">Storm: Strong Exotic</string>
+    <string name="map_system_info_storm_weak_gamma">Storm: Weak Gamma</string>
+    <string name="map_system_info_storm_weak_electric">Storm: Weak Electric</string>
+    <string name="map_system_info_storm_weak_plasma">Storm: Weak Plasma</string>
+    <string name="map_system_info_storm_weak_exotic">Storm: Weak Exotic</string>
+    <string name="map_system_info_wormhole_size_small">Small</string>
+    <string name="map_system_info_wormhole_size_medium">Medium</string>
+    <string name="map_system_info_wormhole_size_large">Large</string>
+    <string name="map_system_info_wormhole_size_very_large">Very large</string>
+    <!-- Text after the highlighted wormhole type; preserve the leading space -->
+    <string name="map_system_info_wormhole_type_suffix"> wormhole</string>
+    <!-- Text after the highlighted ship-size label; preserve the leading space -->
+    <string name="map_system_info_wormhole_size_suffix"> ships can pass through</string>
+    <string name="map_system_info_wormhole_unknown_size">Unknown max ship size</string>
+    <!-- Text after the highlighted origin signature; %1$s is a system name; %2$s is the original region value; preserve the leading space -->
+    <string name="map_system_info_wormhole_origin_suffix"> in %1$s (%2$s)</string>
+    <!-- Text after the highlighted destination signature; %1$s is a system name; preserve the leading space -->
+    <string name="map_system_info_wormhole_destination_suffix"> in %1$s</string>
+    <!-- %1$s is an upgrade or effect type name -->
+    <string name="map_system_info_upgrade_effect">Affected by %1$s</string>
+    <!-- %1$s is the count; %2$s is an upgrade type name -->
+    <string name="map_system_info_upgrade_count">%1$sx %2$s</string>
+    <!-- %1$s is the count; %2$s is an effect type name -->
+    <string name="map_system_info_upgrade_effect_count">Affected by %1$sx %2$s</string>
+    <string name="map_system_info_industry_copying_index">Copying Index: %1$s%</string>
+    <string name="map_system_info_industry_invention_index">Invention Index: %1$s%</string>
+    <string name="map_system_info_industry_manufacturing_index">Manufacturing Index: %1$s%</string>
+    <string name="map_system_info_industry_reactions_index">Reactions Index: %1$s%</string>
+    <string name="map_system_info_industry_material_efficiency_index">Material Efficiency Index: %1$s%</string>
+    <string name="map_system_info_industry_time_efficiency_index">Time Efficiency Index: %1$s%</string>
+    <string name="map_system_info_wormhole_size_capital">Capital</string>
+    <!-- Text before the highlighted countdown for a currently raidable Skyhook; preserve the trailing space -->
+    <string name="map_system_info_skyhook_raidable_prefix">Raidable for </string>
+    <!-- Text before the highlighted countdown until a Skyhook is raidable; preserve the trailing space -->
+    <string name="map_system_info_skyhook_upcoming_prefix">Raidable in </string>
+    <!-- Text between the highlighted jump count and character name; preserve leading and trailing spaces -->
+    <plurals name="map_system_info_distance_from_character_suffix">
+        <item quantity="one"> jump from </item>
+        <item quantity="other"> jumps from </item>
+    </plurals>
+    <!-- Count before a separately rendered upgrade icon; preserve the trailing space -->
+    <string name="map_system_info_upgrade_count_compact">%1$sx </string>
+</resources>

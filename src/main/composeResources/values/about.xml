@@ -1,0 +1,51 @@
+<resources>
+    <string name="about_patrons_become_member_patreon_text">Become a member on Patreon</string>
+    <string name="about_patrons_patrons_text">PATRONS</string>
+    <string name="about_patrons_support_rift_text">Support RIFT</string>
+    <string name="about_affiliate_code_click_copy_discount_code_text">Click to copy discount code</string>
+    <string name="about_affiliate_code_discount_code_text">3% DISCOUNT CODE</string>
+    <string name="about_affiliate_code_plex_omega_more_text">PLEX, Omega and more</string>
+    <string name="about_creator_copy">Click to copy code</string>
+    <string name="about_creator_title">CREATOR CODE</string>
+    <!-- The entire label links to the EVE Store; EVE Store is a service name -->
+    <string name="about_creator_store">Use on the EVE Store</string>
+    <string name="about_window_title">About RIFT</string>
+    <string name="about_update_available_status">Update available</string>
+    <string name="about_update_ready_description">A newer version of RIFT is ready to install.</string>
+    <string name="about_update_button">Update now</string>
+    <string name="about_legal_action">Legal &amp; info</string>
+    <string name="about_credits_action">Credits</string>
+    <string name="about_update_check_error">Could not check for updates</string>
+    <string name="about_update_check_status">Checking for updates…</string>
+    <string name="about_development_version_status">Development version</string>
+    <string name="about_portable_version_status">Portable version</string>
+    <string name="about_update_availability_unknown">Couldn't check for updates</string>
+    <string name="about_up_to_date_status">Up to date</string>
+    <string name="about_developer_caption">Developed by Nohus</string>
+    <string name="about_discord_description">Join the Discord!</string>
+    <string name="about_discord_invite_action">Invite link</string>
+    <string name="about_debug_action">Debug</string>
+    <string name="about_release_notes_action">What's new</string>
+    <!-- Preserve highlighted package/tool identities, archive suffix, and the exact shell command -->
+    <string name="about_linux_update_description"><![CDATA[If you installed the <font color="textHighlighted">DEB</font> package, you can update the app with your package manager as normal. For example you can run <font color="textHighlighted">sudo apt update && sudo apt upgrade</font>.
+
+If you downloaded the <font color="textHighlighted">AppImage</font>, you can either use the AppImageUpdate tool, or just download the new version manually.
+
+If you downloaded the <font color="textHighlighted">.tar.gz</font> package, then you have to redownload it manually.]]></string>
+    <string name="about_windows_update_description">Updates to the app are managed by Windows, which will update it from time to time. If you want to force update to the new version, you can rerun the downloaded installer manually, or check the Microsoft Store if you installed from there.</string>
+    <string name="about_macos_move_application_description">Cannot update when ran from the download location. Please move the app to Applications.</string>
+    <string name="about_macos_restart_description">Restart the app to apply the latest update.</string>
+    <string name="about_legal_description" translatable="false"><![CDATA[EVE related materials © 2014 CCP hf. All rights reserved. "EVE", "EVE Online", "CCP", and all related logos and images are trademarks or registered trademarks of CCP hf.
+
+RIFT collects anonymous statistics, like the number of people using it. This <font color="textHighlighted">does not</font> include any personal data.
+
+These metrics are required by FC for the EVE Online Partnership Program.
+]]></string>
+    <!-- Preserve contributor identities and their highlighted color -->
+    <string name="about_credits_description"><![CDATA[Thanks to <font color="textHighlighted">smultar</font> for designing the app icon.
+Thanks to <font color="textHighlighted">Wollari</font> for the region map layouts.
+Thanks to <font color="textHighlighted">FC</font> for creating EVE Online.]]></string>
+    <string name="about_build_time_caption">Built: %1$s</string>
+    <!-- Shared version caption used by About, Splash, Debug and release-note headings; keep the version identifier unchanged -->
+    <string name="about_version_caption">Version %1$s</string>
+</resources>

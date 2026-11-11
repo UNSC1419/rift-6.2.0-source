@@ -1,0 +1,14 @@
+<resources>
+    <string name="sounds_notification_1_name">Notification 1</string>
+    <string name="sounds_notification_2_name">Notification 2</string>
+    <string name="sounds_notification_3_name">Notification 3</string>
+    <string name="sounds_notification_4_name">Notification 4</string>
+    <string name="sounds_pop_name">Pop</string>
+    <string name="sounds_ding_name">Ding</string>
+    <string name="sounds_bonus_name">Bonus</string>
+    <string name="sounds_swoosh_name">Swoosh</string>
+    <string name="sounds_metal_whoosh_name">Metal whoosh</string>
+    <string name="sounds_magic_sparkle_name">Magic sparkle</string>
+    <string name="sounds_surprise_name">Surprise</string>
+    <string name="sounds_power_up_name">Power up</string>
+</resources>

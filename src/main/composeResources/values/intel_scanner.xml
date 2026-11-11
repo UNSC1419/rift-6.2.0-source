@@ -1,0 +1,347 @@
+<resources>
+    <string name="intel_scanner_column_character_name">Character</string>
+    <string name="intel_scanner_column_character_description">The character's name, portrait, standings, and optionally their corporation and alliance.</string>
+    <string name="intel_scanner_column_age_name">Age</string>
+    <string name="intel_scanner_column_age_description">The character's age.</string>
+    <string name="intel_scanner_column_corporation_name">Corp</string>
+    <string name="intel_scanner_column_corporation_description">The character's corporation name, ticker, and logo.</string>
+    <string name="intel_scanner_column_alliance_name">Alliance</string>
+    <string name="intel_scanner_column_alliance_description">The character's alliance name, ticker, and logo.</string>
+    <string name="intel_scanner_column_faction_name">FW</string>
+    <string name="intel_scanner_column_faction_description">The faction the character is enlisted with in Factional Warfare.</string>
+    <string name="intel_scanner_column_security_name">Security</string>
+    <string name="intel_scanner_column_security_description">The character's security status.</string>
+    <string name="intel_scanner_column_danger_name">Danger</string>
+    <string name="intel_scanner_column_danger_description">An all-time kill and loss efficiency score calculated from ships destroyed and lost plus their zKillboard point values. Points account for ship size and PvP fitting, the number of attackers, and the relative sizes of the attacking and victim ships. A higher rating means the character is considered more dangerous.</string>
+    <string name="intel_scanner_column_gang_name">Gang</string>
+    <string name="intel_scanner_column_gang_description">The percentage of activity in gangs and the character's average gang size over their entire recorded history.</string>
+    <string name="intel_scanner_column_solo_kills_name">Solo</string>
+    <string name="intel_scanner_column_solo_kills_description">The number of solo kills attributed to the character over their entire recorded history.</string>
+    <string name="intel_scanner_column_kill_death_ratio_name">K/D</string>
+    <string name="intel_scanner_column_kill_death_ratio_description">The ratio and totals of ships destroyed to ships lost over the character's entire recorded history.</string>
+    <string name="intel_scanner_column_group_size_name">Group size</string>
+    <string name="intel_scanner_column_group_size_description">A chart of kills and losses grouped by the number of involved pilots over the character's entire recorded history.</string>
+    <string name="intel_scanner_column_cyno_name">Cyno</string>
+    <string name="intel_scanner_column_cyno_description">The number of losses with a cynosural field generator fitted in the past year, with a breakdown by generator type.</string>
+    <string name="intel_scanner_column_space_name">Space</string>
+    <string name="intel_scanner_column_space_description">A chart of kills and losses across highsec, lowsec, nullsec, wormhole, and abyssal space over the character's entire recorded history.</string>
+    <string name="intel_scanner_column_isk_name">ISK</string>
+    <string name="intel_scanner_column_isk_description">A chart of kills and losses grouped by the ISK value of the ships involved over the character's entire recorded history.</string>
+    <string name="intel_scanner_column_tags_name">Tags</string>
+    <string name="intel_scanner_column_tags_description">Playstyle tags inferred from the character's combat activity according to zKillboard.</string>
+    <string name="intel_scanner_column_fleet_commander_name">FC</string>
+    <string name="intel_scanner_column_fleet_commander_description">How likely the character is to be a fleet commander based on data in the past year. It counts appearances in a Monitor, Command Ships, and participation in large fleets. The score adds 20 points per Monitor appearance (maximum 100), 2 per Command Ship appearance (maximum 40), and 1 per five large-fleet appearances (maximum 20). The combined score produces Low (35+), Medium (60+), or High (100+), so large-fleet participation cannot earn the label by itself.</string>
+    <string name="intel_scanner_column_top_ships_name">Top ships</string>
+    <string name="intel_scanner_column_top_ships_description">The ships the character most often flew and lost in the past year.</string>
+    <string name="intel_scanner_column_recent_ships_name">Recent ships</string>
+    <string name="intel_scanner_column_recent_ships_description">The ships the character most often flew and lost in the past 90 days.</string>
+    <string name="intel_scanner_column_affiliates_name">Affiliates</string>
+    <string name="intel_scanner_column_affiliates_description">The alliances the character most often shared kills with according to zKillboard.</string>
+    <string name="intel_scanner_column_associates_name">Associates</string>
+    <string name="intel_scanner_column_associates_description">The size of the connected group of scanned characters who share kills according to zKillboard. When there are multiple groups, an identifier letter will also be shown. These characters are likely working together.</string>
+    <string name="intel_scanner_column_awox_name">Awox</string>
+    <string name="intel_scanner_column_awox_description">The number of kills against members of the character's own group in the past year. Low: 5+, Medium: 10+, High: 25+ matches.</string>
+    <string name="intel_scanner_column_bait_name">Bait</string>
+    <string name="intel_scanner_column_bait_description">Based on PvP ship losses under 10M ISK value followed within 5 minutes by a killmail with 2+ attackers no more than 250km from the loss that does not include the lost pilot in the past year. Low: 5+, Medium: 10+, High: 25+ matches.</string>
+    <string name="intel_scanner_column_ganker_name">Gank</string>
+    <string name="intel_scanner_column_ganker_description">How often the character was detected as a ganker. Low: 5+, Medium: 10+, High: 25+ matches in the past year.</string>
+    <string name="intel_scanner_settings_general_title">General</string>
+    <string name="intel_scanner_settings_compact_mode_label">Compact mode</string>
+    <string name="intel_scanner_settings_compact_mode_description">Use a denser layout.</string>
+    <string name="intel_scanner_settings_local_scan_limit_label">How many Local Scans can be opened?</string>
+    <string name="intel_scanner_settings_dscan_limit_label">How many D-Scans can be opened?</string>
+    <string name="intel_scanner_settings_scan_limit_description">When at the limit, a new scan will close the tab of the oldest scan.</string>
+    <string name="intel_scanner_settings_local_scan_title">Local Scan</string>
+    <string name="intel_scanner_settings_summary_label">Show summary</string>
+    <string name="intel_scanner_settings_summary_description">Show character and organization counts above the scanner table.</string>
+    <string name="intel_scanner_settings_summary_characters_label">Show character counts in summary</string>
+    <string name="intel_scanner_settings_summary_factions_label">Show Faction Warfare factions in summary</string>
+    <string name="intel_scanner_settings_summary_alliances_label">Show alliances in summary</string>
+    <string name="intel_scanner_settings_alliance_limit_label">Maximum alliances shown:</string>
+    <string name="intel_scanner_settings_summary_corporations_label">Show corporations in summary</string>
+    <string name="intel_scanner_settings_corporation_limit_label">Maximum corporations shown:</string>
+    <string name="intel_scanner_settings_open_on_character_copy_label">Open the Intel Scanner automatically when copying a list of characters</string>
+    <string name="intel_scanner_settings_ignored_characters_title">Local Scan ignored characters</string>
+    <string name="intel_scanner_settings_ignore_positive_standings_label">Ignore characters with positive standings</string>
+    <string name="intel_scanner_settings_ignore_own_characters_label">Ignore your own characters</string>
+    <string name="intel_scanner_settings_ignore_own_characters_description">Your own characters are already ignored because they have positive standings.</string>
+    <string name="intel_scanner_settings_ignored_factions_label">Ignore characters from specific Faction Warfare militias:</string>
+    <string name="intel_scanner_settings_faction_ignored">Ignored</string>
+    <string name="intel_scanner_settings_faction_visible">Visible</string>
+    <string name="intel_scanner_settings_ignored_characters_description">You can add specific characters you want to ignore regardless of standings, for example if you are on an NPSI fleet. The Add button will add all characters currently in the Scanner.</string>
+    <string name="intel_scanner_settings_clear_ignored_characters">Clear</string>
+    <string name="intel_scanner_settings_add_ignored_characters">Add</string>
+    <string name="intel_scanner_settings_columns_title">Local Scan columns</string>
+    <string name="intel_scanner_settings_columns_description">Choose which columns are shown and arrange them in display order.</string>
+    <string name="intel_scanner_settings_dscan_title">D-Scan</string>
+    <string name="intel_scanner_settings_dscan_mass_label">Show mass total on ships</string>
+    <string name="intel_scanner_settings_dscan_mass_description">Show the total mass of all ships at the bottom of Ships and Ships by class sections</string>
+    <string name="intel_scanner_settings_open_on_dscan_copy_label">Open the Intel Scanner automatically when copying a D-Scan</string>
+    <string name="intel_scanner_settings_dscan_sections_title">D-Scan sections</string>
+    <string name="intel_scanner_settings_dscan_sections_description">Choose which sections are shown.</string>
+    <string name="intel_scanner_settings_dscan_section_collapsed_label">Collapsed by default</string>
+    <string name="intel_scanner_settings_dscan_ships_in_class_label">Show ships under each ship class group</string>
+    <string name="intel_scanner_settings_character_column_required">The Character column is always shown</string>
+    <string name="intel_scanner_settings_disable_column">Disable column</string>
+    <string name="intel_scanner_settings_enable_column">Enable column</string>
+    <string name="intel_scanner_settings_move_column_up">Move column up</string>
+    <string name="intel_scanner_settings_move_column_down">Move column down</string>
+    <string name="intel_scanner_settings_faction_name_label">Show faction name</string>
+    <string name="intel_scanner_settings_average_gang_size_label">Show average gang size</string>
+    <string name="intel_scanner_settings_kill_loss_totals_label">Show kill and loss totals</string>
+    <string name="intel_scanner_settings_fleet_commander_score_label">Show score</string>
+    <string name="intel_scanner_settings_detected_count_label">Show number of times detected</string>
+    <string name="intel_scanner_settings_ship_limit_label">Maximum ships shown:</string>
+    <string name="intel_scanner_settings_affiliate_kill_threshold_label">Exclude alliances with this many kills or fewer:</string>
+    <string name="intel_scanner_settings_organization_name_label">Show name</string>
+    <string name="intel_scanner_settings_organization_ticker_label">Show ticker</string>
+    <string name="intel_scanner_settings_character_corporation_label">Show corporation</string>
+    <string name="intel_scanner_settings_character_alliance_label">Show alliance</string>
+    <string name="intel_scanner_settings_character_tickers_label">Show tickers</string>
+    <plurals name="intel_scanner_ignored_count">
+        <item quantity="one">Currently there is %1$s character on the ignore list.</item>
+        <item quantity="other">Currently there are %1$s characters on the ignore list.</item>
+    </plurals>
+    <plurals name="intel_scanner_alliance_count">
+        <item quantity="one">%1$s alliance</item>
+        <item quantity="other">%1$s alliances</item>
+    </plurals>
+    <plurals name="intel_scanner_corporation_count">
+        <item quantity="one">%1$s corporation</item>
+        <item quantity="other">%1$s corporations</item>
+    </plurals>
+    <plurals name="intel_scanner_ship_count">
+        <item quantity="one">%1$s ship</item>
+        <item quantity="other">%1$s ships</item>
+    </plurals>
+    <plurals name="intel_scanner_kill_count">
+        <item quantity="one">%1$s kill</item>
+        <item quantity="other">%1$s kills</item>
+    </plurals>
+    <string name="intel_scanner_dscan_section_ships_by_class_name">Ships by class</string>
+    <string name="intel_scanner_dscan_section_ships_by_class_description">Ships grouped by ship class (e.g. 5x Frigate)</string>
+    <string name="intel_scanner_dscan_section_ships_name">Ships</string>
+    <string name="intel_scanner_dscan_section_ships_description">Ships grouped by ship type (e.g. 3x Rifter, 2x Kestrel)</string>
+    <string name="intel_scanner_dscan_section_structures_name">Structures</string>
+    <string name="intel_scanner_dscan_section_structures_description">List of all Upwell structures</string>
+    <string name="intel_scanner_dscan_section_stations_name">Stations</string>
+    <string name="intel_scanner_dscan_section_stations_description">List of all stations</string>
+    <string name="intel_scanner_dscan_section_celestial_bodies_name">Celestial Bodies</string>
+    <string name="intel_scanner_dscan_section_celestial_bodies_description">List of all moons, planets, and the sun</string>
+    <string name="intel_scanner_dscan_section_stargates_name">Stargates</string>
+    <string name="intel_scanner_dscan_section_stargates_description">List of all stargates</string>
+    <string name="intel_scanner_dscan_section_celestials_name">Celestials</string>
+    <string name="intel_scanner_dscan_section_celestials_description">Other celestials grouped by type (e.g. 3x Cargo Container, 2x Abyssal Trace)</string>
+    <string name="intel_scanner_dscan_section_wrecks_name">Wrecks</string>
+    <string name="intel_scanner_dscan_section_wrecks_description">Wrecks grouped by group (e.g. 6x Angel Medium Wreck)</string>
+    <string name="intel_scanner_dscan_section_drones_name">Drones</string>
+    <string name="intel_scanner_dscan_section_drones_description">Drones grouped by type (e.g. 5x Acolyte II)</string>
+    <string name="intel_scanner_dscan_section_corpses_name">Corpses</string>
+    <string name="intel_scanner_dscan_section_corpses_description">List of all corpses</string>
+    <string name="intel_scanner_dscan_section_other_name">Other</string>
+    <string name="intel_scanner_dscan_section_other_description">All other scanned objects. Each category will show in its own section.</string>
+    <string name="intel_scanner_data_source">Data sourced from %1$s</string>
+    <string name="intel_scanner_window_title">Intel Scanner</string>
+    <string name="intel_scanner_share_copied">Copied!</string>
+    <string name="intel_scanner_action_share">Share</string>
+    <string name="intel_scanner_share_hint_title">Image copied</string>
+    <string name="intel_scanner_share_hint_message">The image of your scan is in your clipboard, you can paste it somewhere.</string>
+    <string name="intel_scanner_empty_instruction">Copy a list of character names or a D-Scan to clipboard.</string>
+    <!-- %1$s is the formatted number of scanned characters -->
+    <string name="intel_scanner_local_scan_tab">Local Scan (%1$s)</string>
+    <!-- %1$s is the scanned ship count -->
+    <string name="intel_scanner_dscan_tab">D-Scan (%1$s)</string>
+    <!-- %1$s is a system name; %2$s is the scanned ship count -->
+    <string name="intel_scanner_system_dscan_tab">%1$s D-Scan (%2$s)</string>
+    <string name="intel_scanner_settings_tab">Settings</string>
+    <!-- Text before the Ctrl+A and Ctrl+C key badges; preserve the trailing space -->
+    <string name="intel_scanner_empty_shortcuts_prefix">You can press </string>
+    <!-- Text between the Ctrl+A and Ctrl+C key badges; preserve the trailing space -->
+    <string name="intel_scanner_empty_shortcuts_separator">, </string>
+    <!-- Text after the Ctrl+A and Ctrl+C key badges; preserve the leading space -->
+    <string name="intel_scanner_empty_shortcuts_suffix"> in your Local Chat member list or the D-Scan window.</string>
+    <string name="intel_scanner_summary_factions">Factions</string>
+    <string name="intel_scanner_summary_alliances">Alliances</string>
+    <string name="intel_scanner_summary_corporations">Corporations</string>
+    <plurals name="intel_scanner_character_count">
+        <item quantity="one">%1$s character</item>
+        <item quantity="other">%1$s characters</item>
+    </plurals>
+    <plurals name="intel_scanner_loading_count">
+        <item quantity="one">%1$s loading…</item>
+        <item quantity="other">%1$s loading…</item>
+    </plurals>
+    <plurals name="intel_scanner_source_loading_count">
+        <item quantity="one">%1$s: %2$s loading…</item>
+        <item quantity="other">%1$s: %2$s loading…</item>
+    </plurals>
+    <string name="intel_scanner_dscan_heading_ships_by_class">Ships by class: %1$s</string>
+    <string name="intel_scanner_dscan_heading_ships">Ships: %1$s</string>
+    <string name="intel_scanner_dscan_heading_structures">Structures: %1$s</string>
+    <string name="intel_scanner_dscan_heading_stations">Stations: %1$s</string>
+    <string name="intel_scanner_dscan_heading_celestial_bodies">Celestial Bodies: %1$s</string>
+    <string name="intel_scanner_dscan_heading_stargates">Stargates: %1$s</string>
+    <string name="intel_scanner_dscan_heading_celestials">Celestials: %1$s</string>
+    <string name="intel_scanner_dscan_heading_wrecks">Wrecks: %1$s</string>
+    <string name="intel_scanner_dscan_heading_drones">Drones: %1$s</string>
+    <string name="intel_scanner_dscan_heading_corpses">Corpses: %1$s</string>
+    <!-- %1$s is an EVE category name or the localized unknown label; %2$s is its item count -->
+    <string name="intel_scanner_dscan_heading_category">%1$s: %2$s</string>
+    <string name="intel_scanner_dscan_unknown_category">Unknown</string>
+    <string name="intel_scanner_dscan_grid_filter_all">All</string>
+    <string name="intel_scanner_dscan_grid_filter_on_grid">On grid</string>
+    <string name="intel_scanner_dscan_grid_filter_off_grid">Off grid</string>
+    <string name="intel_scanner_dscan_total_mass">Total mass: %1$s kg</string>
+    <plurals name="intel_scanner_dscan_on_grid_count">
+        <item quantity="one">On grid: %1$s</item>
+        <item quantity="other">On grid: %1$s</item>
+    </plurals>
+    <plurals name="intel_scanner_dscan_off_grid_count">
+        <item quantity="one">Off grid: %1$s</item>
+        <item quantity="other">Off grid: %1$s</item>
+    </plurals>
+    <string name="intel_scanner_average_gang_size">avg. %1$s</string>
+    <string name="intel_scanner_average_gang_size_tooltip">Average gang size: %1$s</string>
+    <string name="intel_scanner_kill_loss_totals_tooltip">Ships destroyed: %1$s
+Ships lost: %2$s</string>
+    <string name="intel_scanner_age_new">New</string>
+    <!-- Compact character age in years; %1$s is the number of years -->
+    <plurals name="intel_scanner_age_years">
+        <item quantity="one">%1$sy</item>
+        <item quantity="other">%1$sy</item>
+    </plurals>
+    <!-- Compact character age in months; %1$s is the number of months -->
+    <plurals name="intel_scanner_age_months">
+        <item quantity="one">%1$sm</item>
+        <item quantity="other">%1$sm</item>
+    </plurals>
+    <string name="intel_scanner_space_highsec">Highsec</string>
+    <string name="intel_scanner_space_lowsec">Lowsec</string>
+    <string name="intel_scanner_space_nullsec">Nullsec</string>
+    <string name="intel_scanner_space_wormhole_space">W-space</string>
+    <string name="intel_scanner_space_abyssal">Abyssal</string>
+    <string name="intel_scanner_isk_range_under_one_billion">&lt;1B</string>
+    <string name="intel_scanner_isk_range_one_billion">1B+</string>
+    <string name="intel_scanner_isk_range_five_billion">5B+</string>
+    <string name="intel_scanner_isk_range_ten_billion">10B+</string>
+    <string name="intel_scanner_isk_range_one_hundred_billion">100B+</string>
+    <string name="intel_scanner_isk_range_one_trillion">1T+</string>
+    <string name="intel_scanner_character_not_found">Not found</string>
+    <string name="intel_scanner_character_load_failed">Failed to load</string>
+    <string name="intel_scanner_character_no_alliance">No alliance</string>
+    <string name="intel_scanner_cyno_standard">Standard</string>
+    <string name="intel_scanner_cyno_covert">Covert</string>
+    <string name="intel_scanner_cyno_industrial">Industrial</string>
+    <string name="intel_scanner_kills_heading">Destroyed</string>
+    <string name="intel_scanner_losses_heading">Lost</string>
+    <plurals name="intel_scanner_tag_logistics_tooltip">
+        <item quantity="one">%1$s combat appearance flying a Logistics ship.</item>
+        <item quantity="other">%1$s combat appearances flying a Logistics ship.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_black_ops_tooltip">
+        <item quantity="one">%1$s combat appearance flying a Black Ops battleship.</item>
+        <item quantity="other">%1$s combat appearances flying a Black Ops battleship.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_supercarrier_tooltip">
+        <item quantity="one">%1$s combat appearance flying a Supercarrier.</item>
+        <item quantity="other">%1$s combat appearances flying a Supercarrier.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_titan_tooltip">
+        <item quantity="one">%1$s combat appearance flying a Titan.</item>
+        <item quantity="other">%1$s combat appearances flying a Titan.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_capital_tooltip">
+        <item quantity="one">%1$s combat appearance flying a capital ship.</item>
+        <item quantity="other">%1$s combat appearances flying a capital ship.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_highsec_tooltip">
+        <item quantity="one">%1$s kill in high-security space, representing at least 75% of all kills.</item>
+        <item quantity="other">%1$s kills in high-security space, representing at least 75% of all kills.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_lowsec_tooltip">
+        <item quantity="one">%1$s kill in low-security space, representing at least 75% of all kills.</item>
+        <item quantity="other">%1$s kills in low-security space, representing at least 75% of all kills.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_pochven_tooltip">
+        <item quantity="one">%1$s kill in Pochven, representing at least 75% of all kills.</item>
+        <item quantity="other">%1$s kills in Pochven, representing at least 75% of all kills.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_ganker_tooltip">
+        <item quantity="one">Detected as a ganker %1$s time.</item>
+        <item quantity="other">Detected as a ganker %1$s times.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_cyno_tooltip">
+        <item quantity="one">%1$s loss with a fitted cynosural field generator.</item>
+        <item quantity="other">%1$s losses with a fitted cynosural field generator.</item>
+    </plurals>
+    <plurals name="intel_scanner_tag_bait_tooltip">
+        <item quantity="one">Detected as bait %1$s time.</item>
+        <item quantity="other">Detected as bait %1$s times.</item>
+    </plurals>
+    <string name="intel_scanner_tag_fleet_commander_tooltip">Fleet commander score: %1$s.</string>
+    <string name="intel_scanner_tag_rookie_tooltip">A character less than 180 days old with more losses than kills, excluding recent capital, cyno, and bait pilots.</string>
+    <string name="intel_scanner_tag_default_tooltip">A combat activity classification inferred from zKillboard data.</string>
+    <string name="intel_scanner_likelihood_none">None</string>
+    <string name="intel_scanner_likelihood_low">Low</string>
+    <string name="intel_scanner_likelihood_medium">Medium</string>
+    <string name="intel_scanner_likelihood_high">High</string>
+    <string name="intel_scanner_fleet_commander_likelihood_tooltip">FC likelihood: %1$s (Score: %2$s)</string>
+    <string name="intel_scanner_fleet_commander_likelihood_description">%1$s FC likelihood</string>
+    <plurals name="intel_scanner_monitor_appearances">
+        <item quantity="one">%1$s Monitor appearance</item>
+        <item quantity="other">%1$s Monitor appearances</item>
+    </plurals>
+    <plurals name="intel_scanner_command_ship_appearances">
+        <item quantity="one">%1$s Command Ship appearance</item>
+        <item quantity="other">%1$s Command Ship appearances</item>
+    </plurals>
+    <plurals name="intel_scanner_large_fleet_appearances">
+        <item quantity="one">%1$s Large fleet appearance</item>
+        <item quantity="other">%1$s Large fleet appearances</item>
+    </plurals>
+    <string name="intel_scanner_ganker_name">Ganker</string>
+    <string name="intel_scanner_activity_likelihood_tooltip">%1$s likelihood: %2$s</string>
+    <plurals name="intel_scanner_detected_count">
+        <item quantity="one">%1$s time detected</item>
+        <item quantity="other">%1$s times detected</item>
+    </plurals>
+    <string name="intel_scanner_group_size_tooltip">Group size %1$s</string>
+    <!-- %1$s is a ship type; %2$s is a localized kill count; %3$s is a localized loss count -->
+    <string name="intel_scanner_ship_combat_summary">%1$s: %2$s, %3$s</string>
+    <!-- %1$s is a faction, corporation or alliance name; %2$s is its character count -->
+    <plurals name="intel_scanner_entity_character_count">
+        <item quantity="one">%1$s: %2$s character</item>
+        <item quantity="other">%1$s: %2$s characters</item>
+    </plurals>
+    <plurals name="intel_scanner_ship_loss_count">
+        <item quantity="one">%1$s lost</item>
+        <item quantity="other">%1$s lost</item>
+    </plurals>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_fleet_commander_name">FC</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_logistics_name">LOGI</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_black_ops_name">BLOPS</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_supercarrier_name">SUPER</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_titan_name">TITAN</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_capital_name">CAPITAL</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_highsec_name">HIGHSEC</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_lowsec_name">LOWSEC</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_ganker_name">GANKER</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_cyno_name">CYNO</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_bait_name">BAIT</string>
+    <!-- Compact combat classification badge; its internal tag ID is not translated -->
+    <string name="intel_scanner_tag_rookie_name">ROOKIE</string>
+    <!-- %1$s is the formatted count and %2$s is a type name or external scan-item name -->
+    <string name="intel_scanner_dscan_item_count">%1$sx %2$s</string>
+    <string name="intel_scanner_dscan_ship_count_compact">%1$sx</string>
+</resources>

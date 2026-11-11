@@ -1,0 +1,81 @@
+package dev.nohus.rift.dynamicportraits
+
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.toComposeImageBitmap
+import io.github.oshai.kotlinlogging.KotlinLogging
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.bytedeco.opencv.global.opencv_imgcodecs.imwrite
+import org.bytedeco.opencv.opencv_core.Mat
+import org.jetbrains.skia.Image
+import org.koin.core.annotation.Single
+import java.io.IOException
+import java.nio.file.Path
+import kotlin.io.path.createDirectories
+import kotlin.io.path.exists
+import kotlin.io.path.readBytes
+
+private val logger = KotlinLogging.logger {}
+
+@Single
+class DynamicPortraitDiskRepository(
+    dynamicPortraitsDirectory: DynamicPortraitsDirectory,
+) {
+    private val portraitsDirectory = dynamicPortraitsDirectory.path.apply {
+        createDirectories()
+    }
+
+    suspend fun save(key: DynamicPortraitKey, output: DynamicPortraitImageProcessor.Output) {
+        try {
+            val directory = portraitsDirectory.resolve(key.characterId.toString()).apply { createDirectories() }
+            withContext(Dispatchers.IO) {
+                save(directory, "portrait-${key.portraitSize}.png", output.portrait)
+                save(directory, "background-${key.backgroundSize}.png", output.background)
+            }
+        } catch (e: IOException) {
+            logger.error { "Failed saving portrait for character ${key.characterId}: ${e.message}" }
+        }
+    }
+
+    suspend fun load(key: DynamicPortraitKey): DynamicPortrait? {
+        return try {
+            val directory = portraitsDirectory.resolve(key.characterId.toString())
+            val portraitPath = directory.resolve("portrait-${key.portraitSize}.png")
+            if (!portraitPath.exists()) return null
+            val backgroundPath = directory.resolve("background-${key.backgroundSize}.png")
+            if (!backgroundPath.exists()) return null
+
+            withContext(Dispatchers.IO) {
+                DynamicPortrait(
+                    portrait = loadImageBitmap(portraitPath).await(),
+                    background = loadImageBitmap(backgroundPath).await(),
+                )
+            }
+        } catch (e: IllegalArgumentException) {
+            logger.error { "Failed decoding portrait for character ${key.characterId}: ${e.message}" }
+            null
+        } catch (e: IOException) {
+            logger.error { "Failed loading portrait for character ${key.characterId}: ${e.message}" }
+            null
+        }
+    }
+
+    private fun CoroutineScope.save(directory: Path, name: String, mat: Mat) {
+        launch {
+            val path = directory.resolve(name).toString()
+            imwrite(path, mat)
+        }
+    }
+
+    private fun CoroutineScope.loadImageBitmap(path: Path): Deferred<ImageBitmap> {
+        return async {
+            val bytes = path.readBytes()
+            val skiaImage = Image.makeFromEncoded(bytes)
+            skiaImage.toComposeImageBitmap()
+        }
+    }
+}

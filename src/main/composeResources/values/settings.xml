@@ -1,0 +1,399 @@
+<resources>
+    <string name="settings_window_title">RIFT Settings</string>
+    <string name="settings_user_interface_title">User Interface</string>
+    <string name="settings_language_label">Language:</string>
+    <!-- %1$s is the Discord link text; keep the placeholder so the link can be placed anywhere in the sentence -->
+    <string name="settings_translation_feedback_text">Translation issues? Want to add your language? Join the %1$s.</string>
+    <string name="settings_translation_feedback_link">Discord</string>
+    <string name="settings_language_restart_notice">Language changes take effect after restarting RIFT.</string>
+    <string name="settings_restart_required_title">Restart required</string>
+    <string name="settings_remember_open_windows_label">Remember open windows</string>
+    <string name="settings_remember_open_windows_tooltip">Enable to remember open windows
+across app restarts</string>
+    <string name="settings_remember_window_placement_label">Remember window placement</string>
+    <string name="settings_remember_window_placement_tooltip">Enable to remember window positions and
+sizes across app restarts</string>
+    <!-- EVE time means UTC, independently of the selected language -->
+    <string name="settings_display_eve_time_label">Display times in EVE time</string>
+    <string name="settings_display_eve_time_tooltip">Enable to show times in EVE time,
+instead of your own time zone.</string>
+    <!-- ISK is the in-game currency code and must remain unchanged -->
+    <string name="settings_show_isk_cents_label">Show ISK cents</string>
+    <string name="settings_show_isk_cents_tooltip">Enable to show decimal places in ISK amounts</string>
+    <!-- Keeps RIFT windows above other windows only while an EVE client has focus -->
+    <string name="settings_smart_always_above_label">Smart always above</string>
+    <string name="settings_smart_always_above_tooltip">Windows set to "always above" will
+only be on top while an EVE client is focused.</string>
+    <string name="settings_show_system_distance_label">Show distance on systems</string>
+    <string name="settings_show_system_distance_tooltip">Enable to show the number of jumps to
+the closest character next to system names.</string>
+    <string name="settings_use_jump_bridges_label">Use jump bridges for distance</string>
+    <string name="settings_use_jump_bridges_tooltip">Enable to include jump bridges in system distances</string>
+    <string name="settings_enable_transparent_windows_label">Enable transparent windows</string>
+    <string name="settings_enable_transparent_windows_tooltip">Enable to be able to set
+windows transparent.</string>
+    <string name="settings_window_transparency_label">Window transparency:</string>
+    <!-- These values describe the amount of window transparency -->
+    <string name="settings_window_transparency_maximal">Maximal</string>
+    <string name="settings_window_transparency_high">High</string>
+    <string name="settings_window_transparency_medium">Medium</string>
+    <string name="settings_window_transparency_low">Low</string>
+    <string name="settings_window_transparency_minimal">Minimal</string>
+    <string name="settings_window_transparency_custom">Custom</string>
+    <string name="settings_ui_scale_label">UI scale:</string>
+    <string name="settings_ui_sound_volume_label">UI sound volume:</string>
+
+    <string name="settings_logs_not_found_title">Cannot find logs</string>
+    <string name="settings_launcher_logs_not_found_title">Cannot find launcher logs</string>
+    <string name="settings_launcher_logs_not_found_message">Cannot find your EVE Launcher logs directory.
+Please enter it manually.</string>
+    <string name="settings_installation_not_found_title">Cannot find installation</string>
+    <string name="settings_cache_not_found_title">Cannot find shared cache</string>
+    <string name="settings_restart_enable_killmail_monitoring">Enabling killmail monitoring will take effect after you restart the application.</string>
+    <string name="settings_restart_disable_killmail_monitoring">Disabling killmail monitoring will take effect after you restart the application.</string>
+    <string name="settings_restart_enable_transparency">Window transparency will be enabled after you restart the application. This feature requires a modern GPU.</string>
+    <string name="settings_restart_disable_transparency">Window transparency will be disabled after you restart the application.</string>
+    <string name="settings_restart_ui_scale">Changing the UI scale will take effect after you restart the application.</string>
+    <string name="settings_restart_configuration_pack">Some elements of a configuration pack will only take effect after you restart the application.</string>
+    <string name="settings_export_successful_title">Export successful</string>
+    <string name="settings_jump_bridges_copied">Jump Bridge network copied to clipboard</string>
+    <string name="settings_sovereignty_upgrades_copied">Sovereignty upgrades copied to clipboard</string>
+    <!-- %1$s is a required directory name/path and must remain unchanged -->
+    <string name="settings_logs_not_found_message">Cannot find your EVE Online logs directory.
+Please enter a path ending in "%1$s" manually.</string>
+    <!-- %1$s is a required directory name/path and must remain unchanged -->
+    <string name="settings_installation_not_found_message">Cannot find your EVE Online settings directory.
+Please enter a path ending in "%1$s" manually.</string>
+    <!-- %1$s is a required directory name/path and must remain unchanged -->
+    <string name="settings_cache_not_found_message">Cannot find your EVE Online shared cache directory.
+Please select the directory containing "%1$s" manually.</string>
+    <string name="settings_settings_window_jump_bridge_search_title">Jump Bridge Search</string>
+    <string name="settings_settings_window_feature_not_unique_rift_no_text">This feature is not unique to RIFT, and no problems were reported with it, but some concerns were raised that it might trip ESI's hidden rate limits and block your IP address.</string>
+    <string name="settings_settings_window_use_at_own_risk_text">Use at your own risk!</string>
+    <string name="settings_settings_window_content_show_icon_only_space_type_label">Show icon only for space type</string>
+    <string name="settings_settings_window_content_show_icon_only_sovereignty_label">Show icon only for sovereignty</string>
+    <string name="settings_settings_window_content_ansiblex_capital_label">Ansiblex capital:</string>
+    <string name="settings_settings_window_content_jump_range_from_label">Jump range from:</string>
+    <string name="settings_settings_window_content_jump_range_label">Jump range:</string>
+    <string name="settings_toolbar_row_general_settings_title">General Settings</string>
+    <string name="settings_toolbar_row_intel_alerts_title">Intel &amp; Alerts</string>
+    <string name="settings_toolbar_row_map_title">Map</string>
+    <string name="settings_toolbar_row_sovereignty_title">Sovereignty</string>
+    <string name="settings_toolbar_row_overlay_title">Overlay</string>
+    <string name="settings_toolbar_row_misc_title">Misc</string>
+    <string name="settings_alerts_alerts_title">Alerts</string>
+    <string name="settings_alerts_choose_notification_position_text">Choose notification position:</string>
+    <string name="settings_alerts_edit_position_text">Edit position</string>
+    <string name="settings_alerts_alert_volume_label">Alert volume:</string>
+    <string name="settings_alerts_mobile_push_notifications_text">Mobile push notifications:</string>
+    <string name="settings_alerts_configure_text">Configure</string>
+    <string name="settings_killmail_monitoring_killmail_monitoring_title">Killmail Monitoring</string>
+    <string name="settings_killmail_monitoring_rift_watches_killmails_valuable_intel_text">RIFT watches killmails for valuable intel,
+for example to show attackers on the map</string>
+    <string name="settings_killmail_monitoring_monitor_zkillboard_com_label">Monitor zKillboard.com</string>
+    <string name="settings_killmail_monitoring_rift_will_subscribe_zkillboard_com_tooltip">RIFT will subscribe to zKillboard.com
+to receive new killmails live</string>
+    <string name="settings_killmail_posting_killmail_posting_title">Killmail posting</string>
+    <string name="settings_killmail_posting_when_copy_killmail_link_text">When you copy a killmail link:</string>
+    <string name="settings_killmail_posting_do_nothing_label">Do nothing</string>
+    <string name="settings_killmail_posting_show_dialog_posting_killmail_label">Show a dialog for posting the killmail</string>
+    <string name="settings_killmail_posting_automatically_post_killmail_label">Automatically post the killmail</string>
+    <string name="settings_killmail_posting_posting_delay_label">Posting delay:</string>
+    <string name="settings_other_settings_other_settings_title">Other Settings</string>
+    <string name="settings_other_settings_configuration_pack_label">Configuration pack:</string>
+    <string name="settings_other_settings_default_text">Default</string>
+    <string name="settings_other_settings_enables_settings_specific_player_group_tooltip">Enables settings specific to a player group,
+like intel channel suggestions.
+Contact me on Discord if you'd like to add yours.</string>
+    <string name="settings_other_settings_show_setup_wizard_next_start_label">Show setup wizard on next start</string>
+    <string name="settings_other_settings_did_know_that_aura_wizard_tooltip">Did you know that Aura is a wizard?</string>
+    <string name="settings_storage_storage_title">Storage</string>
+    <string name="settings_storage_rift_data_directory_text">RIFT data directory</string>
+    <string name="settings_storage_open_app_data_text">Open app data</string>
+    <string name="settings_storage_all_data_text">All data:</string>
+    <string name="settings_storage_rift_cache_directory_text">RIFT cache directory</string>
+    <string name="settings_storage_open_app_cache_text">Open app cache</string>
+    <string name="settings_storage_esi_cache_text">ESI cache:</string>
+    <string name="settings_storage_killmail_cache_text">Killmail cache:</string>
+    <string name="settings_storage_http_cache_text">HTTP cache:</string>
+    <string name="settings_storage_portraits_cache_text">Portraits cache:</string>
+    <string name="settings_storage_other_cache_text">Other cache:</string>
+    <string name="settings_used_space_calculating_text">Calculating…</string>
+    <string name="settings_clipboard_clipboard_title">Clipboard</string>
+    <string name="settings_clipboard_rift_can_import_some_data_text">RIFT can import some data from your clipboard, like Jump Bridges and Sovereignty Upgrades</string>
+    <string name="settings_clipboard_troubleshoot_import_issues_text">Troubleshoot import issues</string>
+    <string name="settings_clipboard_clipboard_tester_text">Clipboard tester</string>
+    <string name="settings_dev_development_title">Development</string>
+    <string name="settings_dev_mocked_equinox_requests_label">Mocked Equinox requests</string>
+    <string name="settings_eve_installation_eve_installation_title">EVE Installation</string>
+    <string name="settings_eve_installation_eve_online_logs_directory_text">EVE Online logs directory</string>
+    <string name="settings_eve_installation_logs_directory_valid_text">Logs directory valid</string>
+    <string name="settings_eve_installation_no_logs_directory_text">No logs directory</string>
+    <string name="settings_eve_installation_invalid_logs_directory_text">Invalid logs directory</string>
+    <string name="settings_eve_installation_chat_logs_directory_types_description">Chat logs directory</string>
+    <string name="settings_eve_installation_detect_text">Detect</string>
+    <string name="settings_eve_installation_eve_online_character_settings_directory_text">EVE Online character settings directory</string>
+    <string name="settings_eve_installation_settings_directory_valid_text">Settings directory valid</string>
+    <string name="settings_eve_installation_no_settings_directory_text">No settings directory</string>
+    <string name="settings_eve_installation_invalid_settings_directory_text">Invalid settings directory</string>
+    <string name="settings_eve_installation_game_logs_directory_types_description">Game logs directory</string>
+    <string name="settings_eve_installation_eve_online_shared_cache_directory_text">EVE Online shared cache directory</string>
+    <string name="settings_eve_installation_shared_cache_directory_valid_text">Shared cache directory valid</string>
+    <string name="settings_eve_installation_no_shared_cache_directory_text">No shared cache directory</string>
+    <string name="settings_eve_installation_invalid_shared_cache_directory_text">Invalid shared cache directory</string>
+    <string name="settings_eve_installation_eve_shared_cache_directory_types_description">EVE shared cache directory</string>
+    <string name="settings_eve_installation_eve_launcher_logs_directory_text">EVE Launcher logs directory</string>
+    <string name="settings_eve_installation_launcher_logs_directory_valid_text">Launcher logs directory valid</string>
+    <string name="settings_eve_installation_no_launcher_logs_directory_text">No launcher logs directory</string>
+    <string name="settings_eve_installation_invalid_launcher_logs_directory_text">Invalid launcher logs directory</string>
+    <string name="settings_eve_installation_launcher_logs_directory_types_description">Launcher logs directory</string>
+    <string name="settings_character_portraits_character_portraits_title">Character Portraits</string>
+    <string name="settings_character_portraits_parallax_effect_label">Parallax effect:</string>
+    <string name="settings_character_portraits_turned_off_text">Turned off</string>
+    <string name="settings_character_portraits_reduced_text">Reduced</string>
+    <string name="settings_character_portraits_normal_text">Normal</string>
+    <string name="settings_character_portraits_shown_characters_characters_outside_intel_tooltip">Shown for your characters and&#32;
+characters outside of intel contexts</string>
+    <string name="settings_character_portraits_standings_background_label">Standings background:</string>
+    <string name="settings_character_portraits_all_text">For all</string>
+    <string name="settings_character_portraits_friendly_text">For friendly</string>
+    <string name="settings_character_portraits_hostile_text">For hostile</string>
+    <string name="settings_character_portraits_non_neutral_text">For non-neutral</string>
+    <string name="settings_character_portraits_shown_characters_intel_contexts_tooltip">Shown for characters
+in intel contexts</string>
+    <string name="settings_character_portraits_standings_background_strength_label">Standings background strength:</string>
+    <string name="settings_intel_channels_intel_channels_title">Intel Channels</string>
+    <string name="settings_intel_channels_intel_reports_will_read_from_text">Intel reports will be read from these channels:</string>
+    <string name="settings_intel_channels_no_intel_channels_configured_text">No intel channels configured</string>
+    <string name="settings_intel_channels_channel_name_placeholder">Channel name</string>
+    <string name="settings_intel_channels_choose_region_text">Choose region</string>
+    <string name="settings_intel_channels_all_regions_text">All regions</string>
+    <string name="settings_intel_channels_enter_channel_name_text">Enter a channel name</string>
+    <string name="settings_intel_channels_choose_region_channel_text">Choose a region for this channel</string>
+    <string name="settings_intel_channels_add_channel_text">Add channel</string>
+    <string name="settings_intel_timeout_intel_timeout_title">Intel Timeout</string>
+    <string name="settings_intel_timeout_one_minute">1 minute</string>
+    <string name="settings_intel_timeout_two_minutes">2 minutes</string>
+    <string name="settings_intel_timeout_five_minutes">5 minutes</string>
+    <string name="settings_intel_timeout_ten_minutes">10 minutes</string>
+    <string name="settings_intel_timeout_fifteen_minutes">15 minutes</string>
+    <string name="settings_intel_timeout_thirty_minutes">30 minutes</string>
+    <string name="settings_intel_timeout_one_hour">1 hour</string>
+    <string name="settings_intel_timeout_don_t_expire_text">Don't expire</string>
+    <string name="settings_intel_timeout_expire_intel_after_label">Expire intel after:</string>
+    <string name="settings_intel_timeout_time_after_piece_intel_will_tooltip">Time after a piece of intel will no longer
+be shown on the feed or map.</string>
+    <string name="settings_map_user_interface_map_user_interface_title">Map User Interface</string>
+    <string name="settings_map_user_interface_compact_mode_label">Compact mode</string>
+    <string name="settings_map_user_interface_move_map_follow_character_label">Move map to follow character</string>
+    <string name="settings_map_user_interface_when_jump_another_system_visible_tooltip">When you jump to another system visible
+on your current map, the map will move
+to center on the new system</string>
+    <string name="settings_map_user_interface_switch_maps_follow_character_label">Switch maps to follow character</string>
+    <string name="settings_map_user_interface_when_jump_another_system_not_tooltip">When you jump to another system not visible
+on the current map, the map will switch
+to a region showing that system</string>
+    <string name="settings_map_user_interface_invert_scroll_wheel_zoom_label">Invert scroll wheel zoom</string>
+    <string name="settings_map_user_interface_zoom_direction_will_reversed_tooltip">Zoom direction will be reversed</string>
+    <string name="settings_map_user_interface_always_show_system_labels_label">Always show system labels</string>
+    <string name="settings_map_user_interface_system_labels_won_t_hide_tooltip">System labels won't hide when zooming out</string>
+    <string name="settings_map_user_interface_prefer_showing_systems_region_maps_label">Prefer showing systems on region maps</string>
+    <string name="settings_map_user_interface_when_clicking_system_somewhere_rift_tooltip">When clicking a system somewhere in RIFT, it will
+open on a region map instead of the New Eden map</string>
+    <string name="settings_map_user_interface_view_edit_map_markers_text">View and edit your map markers</string>
+    <string name="settings_map_user_interface_map_markers_text">Map markers</string>
+    <string name="settings_map_autopilot_autopilot_title">Autopilot</string>
+    <string name="settings_map_autopilot_when_setting_autopilot_destination_use_text">When setting autopilot destination, use:</string>
+    <string name="settings_map_autopilot_rift_calculated_route_label">RIFT calculated route</string>
+    <string name="settings_map_autopilot_route_as_shown_rift_map_tooltip">Route as shown on the RIFT map.
+Ignores your EVE autopilot settings.</string>
+    <string name="settings_map_autopilot_eve_calculated_route_label">EVE calculated route</string>
+    <string name="settings_map_autopilot_route_as_set_by_eve_tooltip">Route as set by EVE.
+May not match the route on the RIFT map.</string>
+    <string name="settings_map_autopilot_security_preference_text">Security preference:</string>
+    <string name="settings_map_autopilot_prefer_shorter_ignore_security_status_label">Prefer Shorter – Ignore Security Status</string>
+    <string name="settings_map_autopilot_prefer_safer_stay_high_sec_label">Prefer Safer – Stay in High Sec where possible</string>
+    <string name="settings_map_autopilot_prefer_less_secure_stay_low_label">Prefer Less Secure – Stay in Low Sec where possible</string>
+    <string name="settings_map_autopilot_prefer_insecure_stay_null_sec_label">Prefer Insecure – Stay in Null Sec where possible</string>
+    <string name="settings_map_intel_popups_intel_popups_title">Intel Popups</string>
+    <string name="settings_map_intel_popups_don_t_show_text">Don't show</string>
+    <string name="settings_map_intel_popups_ten_seconds">10 seconds</string>
+    <string name="settings_map_intel_popups_thirty_seconds">30 seconds</string>
+    <string name="settings_map_intel_popups_no_limit_text">No limit</string>
+    <string name="settings_map_intel_popups_automatically_show_popups_label">Automatically show popups for:</string>
+    <string name="settings_map_intel_popups_how_long_will_intel_popups_tooltip">For how long will intel popups be visible
+when new information is available.
+They are visible on hover even after this time.</string>
+    <string name="settings_jump_bridge_network_jump_bridge_network_title">Jump Bridge Network</string>
+    <string name="settings_jump_bridge_network_no_jump_bridges_imported_text">No jump bridges imported</string>
+    <string name="settings_jump_bridge_network_import_jump_bridges_by_copying_text">Import jump bridges by copying a list to clipboard</string>
+    <string name="settings_jump_bridge_network_can_press_ctrl_ctrl_c_text">You can press Ctrl+A, Ctrl+C on this page:</string>
+    <string name="settings_jump_bridge_network_click_use_text">Click to use it</string>
+    <string name="settings_jump_bridge_network_any_format_will_work_as_text">Any format will work as long as there are
+two system names somewhere in each line:</string>
+    <string name="settings_jump_bridge_network_format_info_text">Format info</string>
+    <string name="settings_jump_bridge_network_more_text">And more…</string>
+    <string name="settings_jump_bridge_network_copied_network_text">Copied network</string>
+    <string name="settings_jump_bridge_network_copy_text">Copy</string>
+    <string name="settings_jump_bridge_network_forget_text">Forget</string>
+    <string name="settings_jump_bridge_network_search_automatically_text">Search automatically?</string>
+    <string name="settings_jump_bridge_network_search_text">Search</string>
+    <string name="settings_jump_bridge_network_import_text">Import</string>
+    <string name="settings_jump_bridge_network_show_network_map_label">Show network on map</string>
+    <string name="settings_jump_bridge_network_jump_bridge_connection_lines_will_tooltip">Jump bridge connection lines
+will be shown on the map</string>
+    <string name="settings_jump_bridge_network_connection_opacity_label">Connection opacity:</string>
+    <string name="settings_jump_bridge_network_visibility_jump_bridge_connection_lines_tooltip">Visibility of the jump bridge
+connection lines.</string>
+    <string name="settings_sovereignty_upgrades_sovereignty_upgrades_title">Sovereignty Upgrades</string>
+    <string name="settings_sovereignty_upgrades_no_sovereignty_upgrades_imported_text">No sovereignty upgrades imported</string>
+    <string name="settings_sovereignty_upgrades_import_upgrades_by_copying_list_text">Import upgrades by copying a list to clipboard</string>
+    <string name="settings_sovereignty_upgrades_can_press_ctrl_ctrl_c_text">You can press Ctrl+A, Ctrl+C on the list
+you can find on this page:</string>
+    <string name="settings_sovereignty_upgrades_alliance_sovereignty_upgrades_list_text">Alliance Sovereignty Upgrades List</string>
+    <string name="settings_sovereignty_upgrades_need_system_name_upgrade_names_text">You need a system name and the upgrade names on each line</string>
+    <string name="settings_sovereignty_upgrades_copied_upgrades_text">Copied upgrades</string>
+    <string name="settings_sovereignty_upgrades_import_upgrades_from_hacked_sovereignty_label">Import upgrades from hacked Sovereignty Hubs</string>
+    <string name="settings_sovereignty_upgrades_automatically_import_sovereignty_upgrades_when_tooltip">Automatically import sovereignty upgrades
+when clicking the copy button on
+a hacked Sovereignty Hub result</string>
+    <string name="settings_sovereignty_upgrades_import_offline_upgrades_from_hacked_label">Import offline upgrades from hacked Sovereignty Hubs</string>
+    <string name="settings_sovereignty_upgrades_when_importing_sovereignty_upgrades_from_tooltip">When importing sovereignty upgrades from
+a hacked Sovereignty Hub,
+also import offline upgrades</string>
+    <string name="settings_system_info_overlay_system_info_panel_title">System info panel</string>
+    <string name="settings_system_info_overlay_system_info_overlay_shows_information_text">The system info overlay shows you information about the system you are in. Choose what should be shown:</string>
+    <string name="settings_overlay_general_no_eve_window_currently_showing_text">No EVE window is currently showing an overlay</string>
+    <string name="settings_overlay_general_enable_overlay_label">Enable overlay</string>
+    <string name="settings_overlay_general_finish_moving_text">Finish moving</string>
+    <string name="settings_overlay_general_move_overlay_text">Move overlay</string>
+    <string name="settings_overlay_general_overlay_already_at_its_default_text">Overlay is already at its default position</string>
+    <string name="settings_overlay_general_reset_position_text">Reset position</string>
+    <string name="settings_overlay_general_drag_handle_shown_eve_window_text">Drag the handle shown on an EVE window overlay to position it.</string>
+    <string name="settings_distance_intel_overlay_nearby_intel_panel_title">Nearby intel panel</string>
+    <string name="settings_distance_intel_overlay_always_show_hostile_count_nearby_label">Always show hostile count for nearby intel</string>
+    <string name="settings_distance_intel_overlay_nearby_intel_max_jumps_label">Nearby intel max jumps:</string>
+    <string name="settings_overlay_status_eve_windows_title">Overlay status</string>
+    <string name="settings_overlay_status_no_eve_windows_detected_text">No EVE windows detected</string>
+    <string name="settings_overlay_status_log_game_see_overlays_text">Log in to the game to see overlays</string>
+    <string name="settings_overlay_status_detecting_eve_windows_text">Detecting EVE windows…</string>
+    <string name="settings_overlay_status_eve_window_detection_needs_accessibility_text">EVE window detection needs Accessibility permission</string>
+    <string name="settings_overlay_status_open_accessibility_settings_text">Open Accessibility Settings</string>
+    <string name="settings_overlay_info_system">System</string>
+    <string name="settings_overlay_info_system_name_security_status">System name and security status</string>
+    <string name="settings_overlay_info_constellation">Constellation</string>
+    <string name="settings_overlay_info_constellation_name">Constellation name</string>
+    <string name="settings_overlay_info_region">Region</string>
+    <string name="settings_overlay_info_region_name">Region name</string>
+    <string name="settings_overlay_info_rats">Rats</string>
+    <string name="settings_overlay_info_faction_rats_system">Faction of rats in the system</string>
+    <string name="settings_overlay_info_space_type">Space type</string>
+    <string name="settings_overlay_info_type_space_standings_towards_sovereignty">Type of space and standings towards the sovereignty holder</string>
+    <string name="settings_overlay_info_alliance_or_faction_holding_sovereignty">Alliance or faction holding sovereignty, or unclaimed status</string>
+    <string name="settings_overlay_info_markers_added_system_map">Markers added to this system on the map</string>
+    <string name="settings_overlay_info_jumps">Jumps</string>
+    <string name="settings_overlay_info_number_jumps_last_hour">Number of jumps in the last hour</string>
+    <string name="settings_overlay_info_kills">Kills</string>
+    <string name="settings_overlay_info_number_ship_pod_kills_last">Number of ship and pod kills in the last hour</string>
+    <string name="settings_overlay_info_npc_kills">NPC kills</string>
+    <string name="settings_overlay_info_number_npcs_killed_last_hour">Number of NPCs killed in the last hour</string>
+    <string name="settings_overlay_info_assets">Assets</string>
+    <string name="settings_overlay_info_number_owned_assets_located_here">Number of owned assets located here</string>
+    <string name="settings_overlay_info_stations">Stations</string>
+    <string name="settings_overlay_info_number_stations">Number of stations</string>
+    <string name="settings_overlay_info_asteroid_belts">Asteroid belts</string>
+    <string name="settings_overlay_info_indicator_asteroid_belts">Indicator for asteroid belts</string>
+    <string name="settings_overlay_info_ice_fields">Ice fields</string>
+    <string name="settings_overlay_info_indicator_ice_fields">Indicator for ice fields</string>
+    <string name="settings_overlay_info_colonies">Colonies</string>
+    <string name="settings_overlay_info_indicator_pi_colonies">Indicator for PI colonies</string>
+    <string name="settings_overlay_info_jove_observatories">Jove observatories</string>
+    <string name="settings_overlay_info_indicator_jove_observatories">Indicator for Jove Observatories</string>
+    <string name="settings_overlay_info_ansiblex_zone">Ansiblex zone</string>
+    <string name="settings_overlay_info_ansiblex_cost_zone_based_distance">Ansiblex cost zone based on distance from the alliance capital</string>
+    <string name="settings_overlay_info_jump_range">Jump range</string>
+    <string name="settings_overlay_info_jump_distance_system">Jump distance to system</string>
+    <string name="settings_overlay_info_clones">Clones</string>
+    <string name="settings_overlay_info_indicator_jump_clones">Indicator for jump clones</string>
+    <string name="settings_overlay_info_planets">Planets</string>
+    <string name="settings_overlay_info_indicator_planets">Indicator for planets</string>
+    <string name="settings_overlay_info_sovereignty_upgrades">Sovereignty upgrades</string>
+    <string name="settings_overlay_info_indicators_installed_sovereignty_upgrades">Indicators for installed sovereignty upgrades</string>
+    <string name="settings_overlay_info_raidable_skyhooks">Raidable skyhooks</string>
+    <string name="settings_overlay_info_indicators_raidable_skyhooks">Indicators for raidable Skyhooks</string>
+    <string name="settings_storage_used">%1$s used</string>
+    <string name="settings_map_zoom_tip">Tip: Press Page Up/Down or scroll on the map to zoom</string>
+    <!-- %1$s is a formatted size; B is the byte unit symbol -->
+    <string name="settings_storage_bytes">%1$s B</string>
+    <!-- %1$s is a formatted size; KB is the kilobyte unit symbol -->
+    <string name="settings_storage_kilobytes">%1$s KB</string>
+    <!-- %1$s is a formatted size; MB is the megabyte unit symbol -->
+    <string name="settings_storage_megabytes">%1$s MB</string>
+    <!-- %1$s is a formatted size; GB is the gigabyte unit symbol -->
+    <string name="settings_storage_gigabytes">%1$s GB</string>
+    <plurals name="settings_storage_characters">
+        <item quantity="one">%1$s character,</item>
+        <item quantity="other">%1$s characters,</item>
+    </plurals>
+    <plurals name="settings_import_connections">
+        <item quantity="one">Import %1$s connection</item>
+        <item quantity="other">Import %1$s connections</item>
+    </plurals>
+    <plurals name="settings_network_loaded">
+        <item quantity="one">Network with %1$s connection loaded</item>
+        <item quantity="other">Network with %1$s connections loaded</item>
+    </plurals>
+    <plurals name="settings_search_connections">
+        <item quantity="one">Found %1$s jump gate connection</item>
+        <item quantity="other">Found %1$s jump gate connections</item>
+    </plurals>
+    <plurals name="settings_search_network">
+        <item quantity="one">Found network with %1$s connection</item>
+        <item quantity="other">Found network with %1$s connections</item>
+    </plurals>
+    <plurals name="settings_import_systems">
+        <item quantity="one">Import for %1$s system</item>
+        <item quantity="other">Import for %1$s systems</item>
+    </plurals>
+    <plurals name="settings_upgrades_loaded">
+        <item quantity="one">Upgrades for %1$s system loaded</item>
+        <item quantity="other">Upgrades for %1$s systems loaded</item>
+    </plurals>
+    <!-- %1$s is a player coalition name; preserve its spelling -->
+    <string name="settings_jump_bridge_list">%1$s Jump Bridge List</string>
+    <string name="settings_jump_bridge_available">A list of jump bridges for %1$s from %2$s is available</string>
+    <!-- %1$s is a locale-formatted percentage number; keep the placeholder and percentage sign -->
+    <string name="settings_search_progress">Searching – %1$s%</string>
+    <string name="settings_pack_would_like_intel_channels_imperium_imperium">Would you like intel channels of the Imperium to be configured automatically?</string>
+    <string name="settings_pack_add_imperium_channels">Add Imperium channels</string>
+    <string name="settings_pack_would_like_intel_channels_initiative_initiative">Would you like intel channels of The Initiative. to be configured automatically?</string>
+    <string name="settings_pack_add_init_channels">Add Init channels</string>
+    <string name="settings_pack_would_like_intel_channels_phoenix_phoenix">Would you like intel channels of the Phoenix Coalition to be configured automatically?</string>
+    <string name="settings_pack_add_phoenix_coalition_channels">Add Phoenix Coalition channels</string>
+    <string name="settings_pack_enabled">Configuration pack for %1$s enabled.
+Restart the application for the change to take effect.</string>
+    <string name="settings_pack_offer">You currently have alliances features disabled.
+Would you like to enable the configuration pack for %1$s?</string>
+    <string name="settings_pack_reminder_title">Alliance Features</string>
+    <string name="settings_pack_decline">No, thanks</string>
+    <string name="settings_overlay_no_eve_window">No EVE window</string>
+    <string name="settings_overlay_disabled">Overlay disabled</string>
+    <string name="settings_overlay_window_minimized">Window minimized</string>
+    <string name="settings_overlay_window_hidden">Window hidden</string>
+    <string name="settings_overlay_window_position_unavailable">Window position unavailable</string>
+    <string name="settings_overlay_unknown_character">Unknown character</string>
+    <string name="settings_overlay_character_hidden">Character hidden in RIFT</string>
+    <string name="settings_overlay_location_unavailable">Location unavailable</string>
+    <string name="settings_overlay_system_unavailable">System information unavailable</string>
+    <string name="settings_overlay_window_too_large">Window too large for overlay</string>
+    <string name="settings_overlay_native_window_unavailable">Overlay unavailable; retrying</string>
+    <string name="settings_overlay_ready">Overlay ready</string>
+    <!-- %1$s is a literal technical diagnostic; translate the surrounding explanation -->
+    <string name="settings_overlay_unsupported">Overlay unavailable: %1$s</string>
+    <!-- %1$s is a literal technical diagnostic; translate the surrounding explanation -->
+    <string name="settings_overlay_detection_failed">Could not detect EVE windows: %1$s</string>
+    <!-- %1$s is the localized Read structures scope-group caption, shared with character authentication -->
+    <string name="settings_jump_bridge_search_no_authorized_characters">No characters with %1$s scope</string>
+    <string name="settings_jump_bridge_search_structure_details_failed">Could not get structure details from ESI</string>
+    <string name="settings_jump_bridge_search_results_failed">Could not get search results from ESI</string>
+</resources>

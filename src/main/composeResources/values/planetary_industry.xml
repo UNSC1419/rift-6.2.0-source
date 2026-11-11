@@ -1,0 +1,161 @@
+<resources>
+    <string name="planetary_industry_window_title">Planetary Industry</string>
+    <string name="planetary_industry_load_failed">Could not load your colonies</string>
+    <string name="planetary_industry_retry_action">Try again</string>
+    <string name="planetary_industry_loading_colonies">Loading colonies…</string>
+    <string name="planetary_industry_loading_character">Loading…</string>
+    <string name="planetary_industry_unestablished_colony">Unestablished Colony</string>
+    <string name="planetary_industry_empty">No established planetary colonies.</string>
+    <string name="planetary_industry_details_view_action">Details view</string>
+    <string name="planetary_industry_list_view_action">List view</string>
+    <string name="planetary_industry_grid_view_action">Grid view</string>
+    <string name="planetary_industry_view_mode_action">View mode</string>
+    <string name="planetary_industry_sort_status_action">By status</string>
+    <string name="planetary_industry_sort_expiry_action">By expiry time</string>
+    <string name="planetary_industry_sort_character_action">By character account and age</string>
+    <string name="planetary_industry_sort_character_name_action">By character name</string>
+    <string name="planetary_industry_sort_action">Sort By</string>
+    <string name="planetary_industry_copy_google_sheets_action">Copy for Google Sheets</string>
+    <string name="planetary_industry_copy_excel_action">Copy for Excel</string>
+    <string name="planetary_industry_copy_excel_addin_action">Copy for Excel with EVE Online add-in</string>
+    <string name="planetary_industry_copy_spreadsheet_action">Copy to spreadsheet</string>
+    <plurals name="planetary_industry_planet_count">
+        <item quantity="one">%1$s planet</item>
+        <item quantity="other">%1$s planets</item>
+    </plurals>
+    <!-- Suffix after the planet count; retain the leading comma and space -->
+    <string name="planetary_industry_idle_count_suffix">, %1$s idle</string>
+    <!-- Suffix after the planet/idle counts; retain the leading comma and space -->
+    <plurals name="planetary_industry_attention_count_suffix">
+        <item quantity="one">, %1$s needs attention</item>
+        <item quantity="other">, %1$s need attention</item>
+    </plurals>
+    <string name="planetary_industry_return_action">Return</string>
+    <string name="planetary_industry_details_action">Details</string>
+    <string name="planetary_industry_now_action">Now</string>
+    <string name="planetary_industry_fast_forward_heading">Time fast-forward</string>
+    <string name="planetary_industry_seek_expiry_action">Expires</string>
+    <string name="planetary_industry_future_idle_status">All production stops</string>
+    <string name="planetary_industry_not_setup_status">Not setup</string>
+    <string name="planetary_industry_producing_status">Producing</string>
+    <string name="planetary_industry_extracting_status">Extracting</string>
+    <string name="planetary_industry_return_present_action">Return to present</string>
+    <string name="planetary_industry_fast_forward_action">Fast-forward</string>
+    <string name="planetary_industry_expires_in_caption">Expires in</string>
+    <plurals name="planetary_industry_future_extractors_expired">
+        <item quantity="one">Extractor expires</item>
+        <item quantity="other">Extractors expire</item>
+    </plurals>
+    <plurals name="planetary_industry_future_extractors_inactive">
+        <item quantity="one">Extractor becomes inactive</item>
+        <item quantity="other">Extractors become inactive</item>
+    </plurals>
+    <!-- %1$s is the existing pin display name; pin naming is reviewed separately -->
+    <string name="planetary_industry_future_storage_full">%1$s becomes full</string>
+    <string name="planetary_industry_input_not_routed">No input routes</string>
+    <string name="planetary_industry_output_not_routed">Not routed</string>
+    <string name="planetary_industry_commodity_not_selected">Not selected</string>
+    <!-- %1$s is the original raw output quantity; %2$s is the complete localized cycle duration -->
+    <plurals name="planetary_industry_cycle_output_summary">
+        <item quantity="one">%1$s unit every %2$s</item>
+        <item quantity="other">%1$s units every %2$s</item>
+    </plurals>
+    <string name="planetary_industry_routes_heading">Routes</string>
+    <!-- Separate route-row label between quantity/icon and destination/source pin; retain the leading space -->
+    <string name="planetary_industry_route_export_caption"> exporting to</string>
+    <!-- Separate route-row label between quantity/icon and destination/source pin; retain the leading space -->
+    <string name="planetary_industry_route_import_caption"> importing from</string>
+    <!-- %1$s is the original integer route quantity; retain the space before x -->
+    <string name="planetary_industry_route_quantity">%1$s x</string>
+    <string name="planetary_industry_toggle_routes_action">Toggle routes</string>
+    <string name="planetary_industry_current_cycle_caption">Current Cycle</string>
+    <string name="planetary_industry_idle_status">Idle</string>
+    <string name="planetary_industry_program_inactive_caption">Program not active</string>
+    <string name="planetary_industry_time_remaining_caption">Time remaining</string>
+    <string name="planetary_industry_average_hourly_output_caption">Avg. Per hour</string>
+    <string name="planetary_industry_current_cycle_output_caption">Current Cycle Output</string>
+    <string name="planetary_industry_total_output_caption">Total Output</string>
+    <string name="planetary_industry_none_caption">None</string>
+    <string name="planetary_industry_in_production_caption">In production</string>
+    <string name="planetary_industry_waiting_resources_caption">Waiting for resources</string>
+    <string name="planetary_industry_input_heading">Input</string>
+    <string name="planetary_industry_storage_caption">Storage</string>
+    <string name="planetary_industry_stored_items_heading">Stored Items</string>
+    <!-- %1$s is the raw stored quantity; %2$s is the raw required quantity; selection follows the required quantity -->
+    <plurals name="planetary_industry_factory_input_quantity">
+        <item quantity="one">%1$s/%2$s unit</item>
+        <item quantity="other">%1$s/%2$s units</item>
+    </plurals>
+    <!-- %1$s is the existing formatted stored quantity -->
+    <plurals name="planetary_industry_stored_quantity">
+        <item quantity="one">%1$s unit</item>
+        <item quantity="other">%1$s units</item>
+    </plurals>
+    <string name="planetary_industry_storage_empty">Storage empty</string>
+    <string name="planetary_industry_graph_accumulated_caption">Accumulated:</string>
+    <!-- %1$s is the original one-based cycle index -->
+    <string name="planetary_industry_graph_cycle_caption">Cycle %1$s</string>
+    <string name="planetary_industry_graph_program_start_caption">Program start</string>
+    <!-- %1$s is the pin type name with the existing first-word removal; %2$s is the invariant designator -->
+    <string name="planetary_industry_pin_name">%1$s %2$s</string>
+    <!-- %1$s is the complete pin display name; %2$s is the raw extractor head count -->
+    <plurals name="planetary_industry_extractor_name">
+        <item quantity="one">%1$s with %2$s head</item>
+        <item quantity="other">%1$s with %2$s heads</item>
+    </plurals>
+    <!-- %1$s is the complete pin display name; %2$s is the raw command-center level -->
+    <string name="planetary_industry_command_center_name">%1$s Level %2$s</string>
+    <string name="planetary_industry_needs_attention_status">Needs attention</string>
+    <string name="planetary_industry_product_storage_caption">Product storage</string>
+    <!-- %1$s is the existing planet type name; planet data and enum identity remain unchanged -->
+    <string name="planetary_industry_planet_type_caption">%1$s planet</string>
+    <!-- %1$s is the existing percentage formatted with one decimal and a percent sign -->
+    <string name="planetary_industry_cpu_caption">CPU: %1$s</string>
+    <!-- %1$s is the existing percentage formatted with one decimal and a percent sign -->
+    <string name="planetary_industry_power_caption">Power: %1$s</string>
+    <!-- %1$s is CPU usage; %2$s is CPU supply; retain the tf unit -->
+    <string name="planetary_industry_cpu_usage">%1$s/%2$s tf</string>
+    <!-- %1$s is power usage; %2$s is power supply; retain the MW unit -->
+    <string name="planetary_industry_power_usage">%1$s/%2$s MW</string>
+    <!-- Arguments retain the existing zero-decimal formatting; preserve the volume notation -->
+    <string name="planetary_industry_storage_usage">%1$s/%2$s m3</string>
+    <!-- %1$s is the complete localized compact duration -->
+    <string name="planetary_industry_idle_duration">Idle for %1$s</string>
+    <!-- Original output-metric wording uses units even for one unit -->
+    <string name="planetary_industry_output_units">%1$s units</string>
+    <string name="planetary_industry_commodity_raw_resource">Raw Resource</string>
+    <string name="planetary_industry_commodity_tier_1">Tier 1</string>
+    <string name="planetary_industry_commodity_tier_2">Tier 2</string>
+    <string name="planetary_industry_commodity_tier_3">Tier 3</string>
+    <string name="planetary_industry_commodity_tier_4">Tier 4</string>
+    <string name="planetary_industry_commodity_unknown">Unknown</string>
+
+    <string name="planetary_industry_export_character_name_header">Character name</string>
+    <string name="planetary_industry_export_character_id_header">Character ID</string>
+    <string name="planetary_industry_export_planet_name_header">Planet name</string>
+    <string name="planetary_industry_export_planet_type_header">Planet type</string>
+    <string name="planetary_industry_export_system_name_header">System name</string>
+    <string name="planetary_industry_export_system_id_header">System ID</string>
+    <string name="planetary_industry_export_status_header">Status</string>
+    <string name="planetary_industry_export_is_working_header">Is working</string>
+    <string name="planetary_industry_export_final_products_header">Final products</string>
+    <string name="planetary_industry_export_product_capacity_header">Product capacity</string>
+    <string name="planetary_industry_export_used_capacity_header">Used capacity</string>
+    <string name="planetary_industry_export_used_product_capacity_header">Used capacity (products)</string>
+    <string name="planetary_industry_export_used_other_capacity_header">Used capacity (other)</string>
+    <string name="planetary_industry_export_expires_at_header">Expires at</string>
+    <string name="planetary_industry_export_expiry_reason_header">Expiry reason</string>
+    <string name="planetary_industry_export_expires_at_date_header">Expires at (Date)</string>
+    <string name="planetary_industry_export_character_header">Character</string>
+    <string name="planetary_industry_export_system_header">System</string>
+    <string name="planetary_industry_export_final_product_header">Final product</string>
+    <string name="planetary_industry_export_extraction_rate_header">Avg. per hour (%1$s)</string>
+    <string name="planetary_industry_export_stored_quantity_header">Stored (%1$s)</string>
+    <string name="planetary_industry_export_extractor_expired_status">Extractor expired</string>
+    <string name="planetary_industry_export_extractor_inactive_status">Extractor inactive</string>
+    <string name="planetary_industry_export_factory_idle_status">Factory idle</string>
+    <string name="planetary_industry_export_input_not_routed_status">Input not routed</string>
+    <string name="planetary_industry_export_output_not_routed_status">Output not routed</string>
+    <string name="planetary_industry_export_static_status">Static</string>
+    <string name="planetary_industry_export_storage_full_status">Storage full</string>
+</resources>

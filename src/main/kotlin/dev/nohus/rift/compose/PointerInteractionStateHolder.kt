@@ -1,0 +1,155 @@
+package dev.nohus.rift.compose
+
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.FiniteAnimationSpec
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.Transition
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.updateTransition
+import androidx.compose.foundation.background
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.awt.awtEventOrNull
+import androidx.compose.ui.composed
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.input.pointer.PointerEventType
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalWindowInfo
+import dev.nohus.rift.compose.theme.RiftTheme
+import dev.nohus.rift.di.koinOrNull
+import dev.nohus.rift.utils.sound.SoundPlayer
+import dev.nohus.rift.utils.sound.UiSound
+import dev.nohus.rift.windowing.LocalRiftWindowState
+import java.awt.event.MouseEvent
+import java.time.Duration
+import java.time.Instant
+
+class PointerInteractionStateHolder {
+    var isHovered by mutableStateOf(false)
+    var isPressed by mutableStateOf(false)
+    var isSelected by mutableStateOf(false)
+    val current
+        @Composable get() = when {
+            isPressed || isSelected -> PointerInteractionState.Press
+            isHovered -> PointerInteractionState.Hover
+            else -> PointerInteractionState.Normal
+        }
+}
+
+@Composable
+fun rememberPointerInteractionStateHolder() = remember { PointerInteractionStateHolder() }
+
+enum class PointerInteractionState {
+    Normal,
+    Hover,
+    Press,
+}
+
+private val IGNORE_HOVER_ON_LOST_FOCUS_DURATION = Duration.ofMillis(100)
+
+@Composable
+fun Modifier.pointerInteraction(
+    state: PointerInteractionStateHolder,
+    hoverSound: UiSound? = null,
+): Modifier {
+    val isWindowFocused = LocalWindowInfo.current.isWindowFocused
+    val windowOpenTimestamp = LocalRiftWindowState.current?.openTimestamp
+    val soundPlayer: SoundPlayer? = remember(hoverSound) {
+        if (hoverSound != null) koinOrNull?.get() else null
+    }
+    var windowLostFocusTimestamp by remember { mutableStateOf(Instant.EPOCH) }
+    LaunchedEffect(isWindowFocused) {
+        if (!isWindowFocused) windowLostFocusTimestamp = Instant.now()
+    }
+    LaunchedEffect(windowOpenTimestamp) {
+        // Window was just opened, clear hover and press
+        state.isHovered = false
+        state.isPressed = false
+    }
+    return this
+        .pointerInput(hoverSound) {
+            awaitPointerEventScope {
+                while (true) {
+                    val event = awaitPointerEvent(PointerEventPass.Initial)
+                    when (event.type) {
+                        PointerEventType.Enter -> {
+                            if (Duration.between(windowLostFocusTimestamp, Instant.now()) > IGNORE_HOVER_ON_LOST_FOCUS_DURATION) {
+                                state.isHovered = true
+                                hoverSound?.let { soundPlayer?.play(it) }
+                            }
+                        }
+                        PointerEventType.Exit -> {
+                            state.isHovered = false
+                        }
+                        PointerEventType.Press -> {
+                            state.isPressed = true
+                        }
+                        PointerEventType.Release -> {
+                            state.isPressed = false
+                        }
+                    }
+                }
+            }
+        }
+}
+
+fun <T> getStandardTransitionSpec(): @Composable Transition.Segment<PointerInteractionState>.() -> FiniteAnimationSpec<T> {
+    return {
+        when {
+            PointerInteractionState.Normal isTransitioningTo PointerInteractionState.Hover || PointerInteractionState.Hover isTransitioningTo PointerInteractionState.Press -> spring(stiffness = Spring.StiffnessMedium)
+            else -> spring(stiffness = Spring.StiffnessLow)
+        }
+    }
+}
+
+/**
+ * Adds an animated hover/press background
+ */
+fun Modifier.hoverBackground(
+    hoverColor: Color? = null,
+    pressColor: Color? = null,
+    normalColor: Color? = null,
+    shape: Shape = RectangleShape,
+    pointerInteractionStateHolder: PointerInteractionStateHolder? = null,
+    isSelected: Boolean = false,
+    hoverSound: UiSound? = UiSound.EntryHover,
+): Modifier = composed {
+    val pointerInteractionStateHolder = pointerInteractionStateHolder ?: remember { PointerInteractionStateHolder() }
+    pointerInteractionStateHolder.isSelected = isSelected
+    val colorTransitionSpec = getStandardTransitionSpec<Color>()
+    val floatTransitionSpec = getStandardTransitionSpec<Float>()
+    val transition = updateTransition(pointerInteractionStateHolder.current)
+    val highlightColor by transition.animateColor(colorTransitionSpec) {
+        when (it) {
+            PointerInteractionState.Normal -> normalColor ?: hoverColor ?: RiftTheme.colors.backgroundHovered
+            PointerInteractionState.Hover -> hoverColor ?: RiftTheme.colors.backgroundHovered
+            PointerInteractionState.Press -> pressColor ?: RiftTheme.colors.backgroundSelected
+        }
+    }
+    val highlightAlpha by transition.animateFloat(floatTransitionSpec) {
+        when (it) {
+            PointerInteractionState.Normal -> normalColor?.alpha ?: 0f
+            PointerInteractionState.Hover -> (hoverColor ?: RiftTheme.colors.backgroundHovered).alpha
+            PointerInteractionState.Press -> (pressColor ?: RiftTheme.colors.backgroundSelected).alpha
+        }
+    }
+    return@composed this
+        .pointerInteraction(
+            state = pointerInteractionStateHolder,
+            hoverSound = hoverSound,
+        )
+        .background(
+            color = highlightColor.copy(alpha = highlightAlpha.coerceIn(0f..1f)),
+            shape = shape,
+        )
+}

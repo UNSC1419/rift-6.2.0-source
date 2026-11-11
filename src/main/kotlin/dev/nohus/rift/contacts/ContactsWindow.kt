@@ -1,0 +1,1059 @@
+package dev.nohus.rift.contacts
+
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.onClick
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.movableContentOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+import dev.nohus.rift.characters.repositories.LocalCharactersRepository.LocalCharacter
+import dev.nohus.rift.compose.AsyncAllianceLogo
+import dev.nohus.rift.compose.AsyncCorporationLogo
+import dev.nohus.rift.compose.AsyncTypeIcon
+import dev.nohus.rift.compose.ButtonType
+import dev.nohus.rift.compose.CharacterTooltip
+import dev.nohus.rift.compose.ClickableAlliance
+import dev.nohus.rift.compose.ClickableCharacter
+import dev.nohus.rift.compose.ClickableCorporation
+import dev.nohus.rift.compose.ClickableLocation
+import dev.nohus.rift.compose.ClickableSystem
+import dev.nohus.rift.compose.ConstellationIllustrationIconSmall
+import dev.nohus.rift.compose.ContextMenuItem
+import dev.nohus.rift.compose.ExpandChevron
+import dev.nohus.rift.compose.FlagIcon
+import dev.nohus.rift.compose.LoadingSpinner
+import dev.nohus.rift.compose.RegionIllustrationIconSmall
+import dev.nohus.rift.compose.RiftButton
+import dev.nohus.rift.compose.RiftContextMenuArea
+import dev.nohus.rift.compose.RiftDropdown
+import dev.nohus.rift.compose.RiftImageButton
+import dev.nohus.rift.compose.RiftSearchField
+import dev.nohus.rift.compose.RiftTabBar
+import dev.nohus.rift.compose.RiftTooltipArea
+import dev.nohus.rift.compose.RiftWindow
+import dev.nohus.rift.compose.ScrollbarColumn
+import dev.nohus.rift.compose.ScrollbarLazyColumn
+import dev.nohus.rift.compose.SystemIllustrationIconSmall
+import dev.nohus.rift.compose.Tab
+import dev.nohus.rift.compose.hoverBackground
+import dev.nohus.rift.compose.modifyIf
+import dev.nohus.rift.compose.rememberPointerInteractionStateHolder
+import dev.nohus.rift.compose.theme.RiftTheme
+import dev.nohus.rift.compose.theme.Spacing
+import dev.nohus.rift.contacts.ContactsRepository.Contact
+import dev.nohus.rift.contacts.ContactsRepository.Entity
+import dev.nohus.rift.contacts.ContactsRepository.EntityType
+import dev.nohus.rift.contacts.ContactsViewModel.ContactsTab
+import dev.nohus.rift.contacts.ContactsViewModel.Filter
+import dev.nohus.rift.contacts.ContactsViewModel.UiState
+import dev.nohus.rift.contacts.SearchRepository.SearchCategory
+import dev.nohus.rift.contacts.SearchRepository.SearchResult
+import dev.nohus.rift.dynamicportraits.DynamicCharacterPortraitParallax
+import dev.nohus.rift.generated.resources.Res
+import dev.nohus.rift.generated.resources.contact_allcontacts
+import dev.nohus.rift.generated.resources.contact_alliance
+import dev.nohus.rift.generated.resources.contact_blocked
+import dev.nohus.rift.generated.resources.contact_character
+import dev.nohus.rift.generated.resources.contact_corporation
+import dev.nohus.rift.generated.resources.contact_faction
+import dev.nohus.rift.generated.resources.contact_standings
+import dev.nohus.rift.generated.resources.contact_tag
+import dev.nohus.rift.generated.resources.contact_watched
+import dev.nohus.rift.generated.resources.contacts_all_filter
+import dev.nohus.rift.generated.resources.contacts_alliance_owner_tooltip
+import dev.nohus.rift.generated.resources.contacts_alliance_type_tooltip
+import dev.nohus.rift.generated.resources.contacts_bad_standing_filter
+import dev.nohus.rift.generated.resources.contacts_blocked_tooltip
+import dev.nohus.rift.generated.resources.contacts_character_owner_tooltip
+import dev.nohus.rift.generated.resources.contacts_character_type_tooltip
+import dev.nohus.rift.generated.resources.contacts_corporation_owner_tooltip
+import dev.nohus.rift.generated.resources.contacts_corporation_type_tooltip
+import dev.nohus.rift.generated.resources.contacts_empty_description
+import dev.nohus.rift.generated.resources.contacts_excellent_standing_filter
+import dev.nohus.rift.generated.resources.contacts_faction_type_tooltip
+import dev.nohus.rift.generated.resources.contacts_filtered_empty_description
+import dev.nohus.rift.generated.resources.contacts_good_standing_filter
+import dev.nohus.rift.generated.resources.contacts_labels_heading
+import dev.nohus.rift.generated.resources.contacts_loading_status
+import dev.nohus.rift.generated.resources.contacts_neutral_standing_filter
+import dev.nohus.rift.generated.resources.contacts_refresh_delay_tooltip
+import dev.nohus.rift.generated.resources.contacts_reload_button
+import dev.nohus.rift.generated.resources.contacts_search_any_category
+import dev.nohus.rift.generated.resources.contacts_search_category_count
+import dev.nohus.rift.generated.resources.contacts_search_character_required_error
+import dev.nohus.rift.generated.resources.contacts_search_character_tooltip
+import dev.nohus.rift.generated.resources.contacts_search_empty_description
+import dev.nohus.rift.generated.resources.contacts_search_failure_error
+import dev.nohus.rift.generated.resources.contacts_search_minimum_length_error
+import dev.nohus.rift.generated.resources.contacts_search_tab
+import dev.nohus.rift.generated.resources.contacts_search_term_required_error
+import dev.nohus.rift.generated.resources.contacts_search_timeout_error
+import dev.nohus.rift.generated.resources.contacts_search_type_heading
+import dev.nohus.rift.generated.resources.contacts_select_character_placeholder
+import dev.nohus.rift.generated.resources.contacts_standings_heading
+import dev.nohus.rift.generated.resources.contacts_terrible_standing_filter
+import dev.nohus.rift.generated.resources.contacts_unlabeled_filter
+import dev.nohus.rift.generated.resources.contacts_watched_tooltip
+import dev.nohus.rift.generated.resources.contacts_window_title
+import dev.nohus.rift.generated.resources.window_contacts
+import dev.nohus.rift.generated.resources.window_titlebar_tune
+import dev.nohus.rift.localization.resolve
+import dev.nohus.rift.network.AsyncResource
+import dev.nohus.rift.standings.Standing
+import dev.nohus.rift.standings.StandingUtils.formatStanding
+import dev.nohus.rift.utils.sound.UiSound
+import dev.nohus.rift.utils.sound.rememberUiSoundPlayer
+import dev.nohus.rift.utils.toggle
+import dev.nohus.rift.utils.withColor
+import dev.nohus.rift.viewModel
+import dev.nohus.rift.windowing.WindowManager.RiftWindowState
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
+
+@Composable
+fun ContactsWindow(
+    windowState: RiftWindowState,
+    onCloseRequest: () -> Unit,
+) {
+    val viewModel: ContactsViewModel = viewModel()
+    val state by viewModel.state.collectAsState()
+
+    RiftWindow(
+        title = stringResource(Res.string.contacts_window_title),
+        icon = Res.drawable.window_contacts,
+        state = windowState,
+        onCloseClick = onCloseRequest,
+        titleBarContent = { height ->
+            ToolbarRow(
+                state = state,
+                fixedHeight = height,
+                onTabSelected = viewModel::onTabSelected,
+            )
+        },
+        withContentPadding = false,
+    ) {
+        ContactsWindowContent(
+            state = state,
+            onFilterClick = viewModel::onFilterClick,
+            onContactSearchChange = viewModel::onContactSearchChange,
+            onEdit = viewModel::onEdit,
+            onReloadClick = viewModel::onReloadClick,
+            onSearchCategoriesChange = viewModel::onSearchCategoriesChange,
+            onSearchChange = viewModel::onSearchChange,
+            onSearchConfirm = viewModel::onSearchConfirm,
+        )
+
+        val editDialog = state.editDialog
+        if (editDialog != null) {
+            EditContactDialog(
+                dialog = editDialog,
+                parentWindowState = windowState,
+                onConfirmClick = viewModel::onEditConfirmClick,
+                onDeleteClick = viewModel::onDeleteClick,
+                onDismiss = viewModel::onEditDismiss,
+            )
+        }
+    }
+}
+
+@Composable
+private fun ContactsWindowContent(
+    state: UiState,
+    onFilterClick: (Filter) -> Unit,
+    onContactSearchChange: (String) -> Unit,
+    onEdit: (entity: Entity, owner: Entity) -> Unit,
+    onReloadClick: () -> Unit,
+    onSearchCategoriesChange: (List<SearchCategory>) -> Unit,
+    onSearchChange: (String) -> Unit,
+    onSearchConfirm: (LocalCharacter?) -> Unit,
+) {
+    Column {
+        val offset = LocalDensity.current.run { 1.dp.toPx() }
+        Box(
+            modifier = Modifier
+                .graphicsLayer(translationY = -offset)
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(RiftTheme.colors.borderGreyLight),
+        )
+        Box(
+            modifier = Modifier.padding(Spacing.large),
+        ) {
+            when (state.selectedTab) {
+                ContactsTab.Contacts -> ContactsTabContent(
+                    state = state,
+                    onFilterClick = onFilterClick,
+                    onSearchChange = onContactSearchChange,
+                    onEdit = onEdit,
+                    onReloadClick = onReloadClick,
+                )
+
+                ContactsTab.Search -> {
+                    SearchTabContent(
+                        state = state,
+                        onSearchChange = onSearchChange,
+                        onSearchConfirm = onSearchConfirm,
+                        onSearchCategoriesChange = onSearchCategoriesChange,
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ContactsTabContent(
+    state: UiState,
+    onFilterClick: (Filter) -> Unit,
+    onSearchChange: (String) -> Unit,
+    onEdit: (entity: Entity, owner: Entity) -> Unit,
+    onReloadClick: () -> Unit,
+) {
+    Row {
+        ContactFilters(state, onFilterClick)
+        Column {
+            Row(
+                modifier = Modifier
+                    .padding(start = Spacing.medium, bottom = Spacing.medium),
+            ) {
+                Spacer(Modifier.weight(1f))
+                RiftSearchField(
+                    search = state.contactSearch,
+                    isCompact = false,
+                    onSearchChange = onSearchChange,
+                )
+            }
+            ContactsList(
+                state = state,
+                onEdit = onEdit,
+                onReloadClick = onReloadClick,
+            )
+        }
+    }
+}
+
+@Composable
+fun ToolbarRow(
+    state: UiState,
+    fixedHeight: Dp,
+    onTabSelected: (ContactsTab) -> Unit,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        RiftTabBar(
+            tabs = listOf(
+                Tab(
+                    id = ContactsTab.Contacts.ordinal,
+                    title = stringResource(Res.string.contacts_window_title),
+                    isCloseable = false,
+                ),
+                Tab(
+                    id = ContactsTab.Search.ordinal,
+                    title = stringResource(Res.string.contacts_search_tab),
+                    isCloseable = false,
+                ),
+            ),
+            selectedTab = state.selectedTab.ordinal,
+            onTabSelected = { tab ->
+                onTabSelected(ContactsTab.entries.firstOrNull { it.ordinal == tab } ?: ContactsTab.Contacts)
+            },
+            onTabClosed = {},
+            withUnderline = false,
+            withWideTabs = true,
+            fixedHeight = fixedHeight,
+        )
+    }
+}
+
+@Composable
+private fun ContactsList(
+    state: UiState,
+    onEdit: (entity: Entity, owner: Entity) -> Unit,
+    onReloadClick: () -> Unit,
+) {
+    ScrollbarLazyColumn {
+        if (state.filteredContacts.isNotEmpty()) {
+            items(state.filteredContacts, key = { "${it.owner.id}-${it.entity.id}" }) {
+                Contact(
+                    contact = it,
+                    onEdit = { onEdit(it.entity, it.owner) },
+                    modifier = Modifier.animateItem(),
+                )
+            }
+        } else {
+            item {
+                EmptyState(state.isContactsLoading, state.contacts)
+            }
+        }
+
+        item {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(Spacing.medium),
+            ) {
+                if (state.contacts.isNotEmpty()) {
+                    Text(stringResource(Res.string.contacts_refresh_delay_tooltip))
+                }
+                AnimatedContent(
+                    state.isContactsLoading,
+                    modifier = Modifier
+                        .height(36.dp)
+                        .padding(start = Spacing.medium),
+                ) {
+                    if (it) {
+                        LoadingSpinner(
+                            modifier = Modifier.size(36.dp),
+                        )
+                    } else {
+                        RiftButton(
+                            text = stringResource(Res.string.contacts_reload_button),
+                            type = ButtonType.Secondary,
+                            onClick = onReloadClick,
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ContactFilters(
+    state: UiState,
+    onFilterClick: (Filter) -> Unit,
+) {
+    ScrollbarColumn(
+        hasScrollbarBackground = true,
+        isFillWidth = false,
+    ) {
+        Column(
+            modifier = Modifier
+                .width(230.dp)
+                .padding(end = Spacing.medium),
+        ) {
+            ContactFilterRow(
+                image = Res.drawable.contact_allcontacts,
+                text = stringResource(Res.string.contacts_all_filter, state.contacts.size),
+                currentFilter = state.filter,
+                filter = Filter.All,
+                onClick = onFilterClick,
+            )
+
+            Spacer(Modifier.height(Spacing.medium))
+            ContactFilterRow(
+                image = Res.drawable.contact_standings,
+                text = stringResource(Res.string.contacts_standings_heading),
+                currentFilter = state.filter,
+                filter = null,
+            )
+            ContactFilterRow(
+                imageContent = { FlagIcon(10f, modifier = Modifier.padding(Spacing.verySmall)) },
+                text = stringResource(Res.string.contacts_excellent_standing_filter, state.contacts.count { it.standingLevel == Standing.Excellent }),
+                currentFilter = state.filter,
+                filter = Filter.Standings(Standing.Excellent),
+                onClick = onFilterClick,
+            )
+            ContactFilterRow(
+                imageContent = { FlagIcon(5f, modifier = Modifier.padding(Spacing.verySmall)) },
+                text = stringResource(Res.string.contacts_good_standing_filter, state.contacts.count { it.standingLevel == Standing.Good }),
+                currentFilter = state.filter,
+                filter = Filter.Standings(Standing.Good),
+                onClick = onFilterClick,
+            )
+            ContactFilterRow(
+                imageContent = { FlagIcon(0f, modifier = Modifier.padding(Spacing.verySmall)) },
+                text = stringResource(Res.string.contacts_neutral_standing_filter, state.contacts.count { it.standingLevel == Standing.Neutral }),
+                currentFilter = state.filter,
+                filter = Filter.Standings(Standing.Neutral),
+                onClick = onFilterClick,
+            )
+            ContactFilterRow(
+                imageContent = { FlagIcon(-5f, modifier = Modifier.padding(Spacing.verySmall)) },
+                text = stringResource(Res.string.contacts_bad_standing_filter, state.contacts.count { it.standingLevel == Standing.Bad }),
+                currentFilter = state.filter,
+                filter = Filter.Standings(Standing.Bad),
+                onClick = onFilterClick,
+            )
+            ContactFilterRow(
+                imageContent = { FlagIcon(-10f, modifier = Modifier.padding(Spacing.verySmall)) },
+                text = stringResource(Res.string.contacts_terrible_standing_filter, state.contacts.count { it.standingLevel == Standing.Terrible }),
+                currentFilter = state.filter,
+                filter = Filter.Standings(Standing.Terrible),
+                onClick = onFilterClick,
+            )
+
+            Spacer(Modifier.height(Spacing.medium))
+            ContactFilterRow(
+                image = Res.drawable.contact_tag,
+                text = stringResource(Res.string.contacts_labels_heading),
+                currentFilter = state.filter,
+                filter = null,
+            )
+
+            for (owner in state.ownerLabels) {
+                val ownerContacts = state.contacts.filter { it.owner == owner.first }
+                ContactOwnerRow(
+                    entity = owner.first,
+                    count = ownerContacts.size,
+                    currentFilter = state.filter,
+                    filter = Filter.Owner(owner.first),
+                    onClick = onFilterClick,
+                )
+                if (owner.second.isNotEmpty()) {
+                    ContactLabelRow(
+                        text = stringResource(Res.string.contacts_unlabeled_filter),
+                        count = ownerContacts.count { it.labels.isEmpty() },
+                        currentFilter = state.filter,
+                        filter = Filter.Unlabeled(owner.first),
+                        onClick = onFilterClick,
+                    )
+                }
+                for (label in owner.second) {
+                    ContactLabelRow(
+                        text = label.name,
+                        count = ownerContacts.count { label in it.labels },
+                        currentFilter = state.filter,
+                        filter = Filter.Label(label),
+                        onClick = onFilterClick,
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ContactOwnerRow(
+    entity: Entity,
+    count: Int,
+    currentFilter: Filter,
+    filter: Filter,
+    onClick: (Filter) -> Unit,
+) {
+    ContactFilterRow(
+        imageContent = { EntityImage(entity, 16) },
+        text = "${entity.name} [$count]",
+        textStyle = RiftTheme.typography.bodyHighlighted,
+        currentFilter = currentFilter,
+        filter = filter,
+        onClick = onClick,
+    )
+}
+
+@Composable
+private fun ContactLabelRow(
+    text: String,
+    count: Int,
+    currentFilter: Filter,
+    filter: Filter,
+    onClick: (Filter) -> Unit,
+) {
+    ContactFilterRow(
+        imageContent = { Spacer(Modifier.width(16.dp)) },
+        text = "$text [$count]",
+        normalColor = null,
+        currentFilter = currentFilter,
+        filter = filter,
+        onClick = onClick,
+    )
+}
+
+@Composable
+private fun ContactFilterRow(
+    image: DrawableResource,
+    text: String,
+    currentFilter: Filter,
+    filter: Filter?,
+    onClick: ((Filter) -> Unit)? = null,
+) {
+    ContactFilterRow(
+        imageContent = {
+            Image(
+                painter = painterResource(image),
+                contentDescription = null,
+                modifier = Modifier.size(16.dp),
+            )
+        },
+        text = text,
+        currentFilter = currentFilter,
+        filter = filter,
+        onClick = onClick,
+    )
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun ContactFilterRow(
+    imageContent: @Composable () -> Unit,
+    text: String,
+    textStyle: TextStyle = RiftTheme.typography.bodyPrimary,
+    normalColor: Color? = RiftTheme.colors.windowBackgroundSecondary,
+    currentFilter: Filter,
+    filter: Filter?,
+    onClick: ((Filter) -> Unit)?,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(Spacing.medium),
+        modifier = Modifier
+            .onClick { if (filter != null) onClick?.invoke(filter) }
+            .modifyIf(filter != null) {
+                hoverBackground(
+                    hoverColor = RiftTheme.colors.backgroundSelected,
+                    pressColor = RiftTheme.colors.backgroundPrimaryLight,
+                    normalColor = if (filter == currentFilter) RiftTheme.colors.backgroundSelected else normalColor,
+                )
+            }
+            .fillMaxWidth()
+            .padding(Spacing.small),
+    ) {
+        imageContent()
+        Text(
+            text = text,
+            style = textStyle,
+        )
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun Contact(
+    contact: Contact,
+    onEdit: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Box(modifier) {
+        ClickableEntity(
+            id = contact.entity.id,
+            type = contact.entity.type,
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = modifier
+                    .padding(horizontal = Spacing.medium)
+                    .onClick { onEdit() }
+                    .hoverBackground()
+                    .padding(vertical = Spacing.verySmall)
+                    .padding(start = Spacing.verySmall)
+                    .padding(end = Spacing.small),
+            ) {
+                ContactOwner(contact.owner)
+                ContactType(contact.entity.type)
+                EntityImage(contact.entity, 32)
+                Column(
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(horizontal = Spacing.medium),
+                ) {
+                    Text(
+                        text = contact.entity.name,
+                        style = RiftTheme.typography.headerPrimary,
+                    )
+                    if (contact.labels.isNotEmpty()) {
+                        Text(
+                            text = contact.labels.joinToString(", ") { it.name },
+                            style = RiftTheme.typography.bodySecondary,
+                        )
+                    }
+                }
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(Spacing.small),
+                ) {
+                    Text(
+                        text = formatStanding(contact.standing),
+                        style = RiftTheme.typography.bodyPrimary,
+                    )
+                    if (contact.isBlocked) BlockIcon()
+                    if (contact.isWatched) WatchIcon()
+                    FlagIcon(contact.standing)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun WatchIcon() {
+    RiftTooltipArea(stringResource(Res.string.contacts_watched_tooltip)) {
+        Box(
+            contentAlignment = Alignment.Center,
+        ) {
+            Image(
+                painter = painterResource(Res.drawable.contact_watched),
+                contentDescription = null,
+                modifier = Modifier.size(12.dp),
+            )
+        }
+    }
+}
+
+@Composable
+private fun BlockIcon() {
+    RiftTooltipArea(stringResource(Res.string.contacts_blocked_tooltip)) {
+        Box(
+            contentAlignment = Alignment.Center,
+        ) {
+            Image(
+                painter = painterResource(Res.drawable.contact_blocked),
+                contentDescription = null,
+                modifier = Modifier.size(12.dp),
+            )
+        }
+    }
+}
+
+@Composable
+private fun ContactOwner(owner: Entity) {
+    val tooltip = buildAnnotatedString {
+        val text = when (owner.type) {
+            EntityType.Character -> stringResource(Res.string.contacts_character_owner_tooltip)
+            EntityType.Corporation -> stringResource(Res.string.contacts_corporation_owner_tooltip)
+            EntityType.Alliance -> stringResource(Res.string.contacts_alliance_owner_tooltip)
+            EntityType.Faction -> ""
+        }
+        appendLine(text)
+        withColor(RiftTheme.colors.textHighlighted) {
+            append(owner.name)
+        }
+    }
+    RiftTooltipArea(tooltip) {
+        EntityImage(owner, 32)
+    }
+}
+
+@Composable
+private fun ContactType(type: EntityType) {
+    val tooltip = when (type) {
+        EntityType.Character -> stringResource(Res.string.contacts_character_type_tooltip)
+        EntityType.Corporation -> stringResource(Res.string.contacts_corporation_type_tooltip)
+        EntityType.Alliance -> stringResource(Res.string.contacts_alliance_type_tooltip)
+        EntityType.Faction -> stringResource(Res.string.contacts_faction_type_tooltip)
+    }
+    RiftTooltipArea(tooltip) {
+        when (type) {
+            EntityType.Character -> Image(
+                painter = painterResource(Res.drawable.contact_character),
+                contentDescription = null,
+                modifier = Modifier.size(32.dp),
+            )
+
+            EntityType.Corporation -> Image(
+                painter = painterResource(Res.drawable.contact_corporation),
+                contentDescription = null,
+                modifier = Modifier.size(32.dp),
+            )
+
+            EntityType.Alliance -> Image(
+                painter = painterResource(Res.drawable.contact_alliance),
+                contentDescription = null,
+                modifier = Modifier.size(32.dp),
+            )
+
+            EntityType.Faction -> Image(
+                painter = painterResource(Res.drawable.contact_faction),
+                contentDescription = null,
+                modifier = Modifier.size(32.dp),
+            )
+        }
+    }
+}
+
+@Composable
+private fun EmptyState(isLoading: Boolean, contacts: List<Contact>) {
+    Text(
+        text = if (isLoading) {
+            stringResource(Res.string.contacts_loading_status)
+        } else if (contacts.isNotEmpty()) {
+            stringResource(Res.string.contacts_filtered_empty_description)
+        } else {
+            stringResource(Res.string.contacts_empty_description)
+        },
+        style = RiftTheme.typography.headerPrimary,
+        textAlign = TextAlign.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(Spacing.large),
+    )
+}
+
+@Composable
+private fun SearchTabContent(
+    state: UiState,
+    onSearchChange: (String) -> Unit,
+    onSearchConfirm: (LocalCharacter?) -> Unit,
+    onSearchCategoriesChange: (List<SearchCategory>) -> Unit,
+) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(Spacing.large),
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(Spacing.mediumLarge),
+        ) {
+            var selectedCharacter: LocalCharacter? by remember { mutableStateOf(state.characters.firstOrNull()) }
+            RiftSearchField(
+                search = state.search,
+                isCompact = false,
+                onSearchChange = onSearchChange,
+                onSearchConfirm = { onSearchConfirm(selectedCharacter) },
+                modifier = Modifier.weight(1f),
+            )
+            val selectCharacterText = stringResource(Res.string.contacts_select_character_placeholder)
+            RiftTooltipArea(stringResource(Res.string.contacts_search_character_tooltip)) {
+                RiftDropdown(
+                    items = state.characters,
+                    selectedItem = selectedCharacter,
+                    onItemSelected = { selectedCharacter = it },
+                    getItemName = { it?.let { it.info?.name ?: "${it.characterId}" } ?: selectCharacterText },
+                )
+            }
+            RiftContextMenuArea(
+                items = buildList {
+                    add(
+                        ContextMenuItem.HeaderItem(
+                            text = stringResource(Res.string.contacts_search_type_heading),
+                        ),
+                    )
+                    add(
+                        ContextMenuItem.RadioItem(
+                            text = stringResource(Res.string.contacts_search_any_category),
+                            isSelected = state.searchCategories.size == SearchCategory.entries.size,
+                            onClick = { onSearchCategoriesChange(SearchCategory.entries) },
+                        ),
+                    )
+                    for (category in SearchCategory.entries) {
+                        add(
+                            ContextMenuItem.RadioItem(
+                                text = category.displayName.resolve(),
+                                isSelected = state.searchCategories.size == 1 && category in state.searchCategories,
+                                onClick = { onSearchCategoriesChange(listOf(category)) },
+                            ),
+                        )
+                    }
+                },
+                acceptsLeftClick = true,
+            ) {
+                RiftImageButton(
+                    resource = Res.drawable.window_titlebar_tune,
+                    size = 16.dp,
+                    onClick = {},
+                )
+            }
+        }
+        when (val results = state.searchResults) {
+            is AsyncResource.Error -> {
+                val message = results.exception?.message ?: ""
+                val text = if ("No results" in message) {
+                    stringResource(Res.string.contacts_search_empty_description)
+                } else if ("does not meet the minimum length of 3" in message) {
+                    stringResource(Res.string.contacts_search_minimum_length_error)
+                } else if ("'search' is required" in message) {
+                    stringResource(Res.string.contacts_search_term_required_error)
+                } else if ("timeout" in message) {
+                    stringResource(Res.string.contacts_search_timeout_error)
+                } else if ("No character selected" in message) {
+                    stringResource(Res.string.contacts_search_character_required_error)
+                } else {
+                    stringResource(Res.string.contacts_search_failure_error)
+                }
+                Text(
+                    text = text,
+                    style = RiftTheme.typography.headlinePrimary,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+            }
+
+            AsyncResource.Loading -> {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    LoadingSpinner(
+                        modifier = Modifier.size(36.dp),
+                    )
+                }
+            }
+
+            is AsyncResource.Ready -> {
+                ScrollbarColumn(
+                    contentPadding = PaddingValues(end = Spacing.medium),
+                    hasScrollbarBackground = false,
+                ) {
+                    var expandedCategories: List<SearchCategory> by remember { mutableStateOf(emptyList()) }
+                    for (category in SearchCategory.entries) {
+                        val items = results.value[category] ?: emptyList()
+                        if (items.isNotEmpty()) {
+                            SearchCategoryHeader(
+                                category = category,
+                                isExpanded = category in expandedCategories,
+                                items = items,
+                                onClick = { expandedCategories = expandedCategories.toggle(category) },
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun SearchCategoryHeader(
+    category: SearchCategory,
+    isExpanded: Boolean,
+    items: List<SearchResult>,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        modifier = modifier,
+    ) {
+        val player = rememberUiSoundPlayer()
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(RiftTheme.colors.windowBackgroundSecondary)
+                .hoverBackground()
+                .padding(vertical = Spacing.small)
+                .onClick {
+                    player.playAccordion(isExpanded)
+                    onClick()
+                },
+        ) {
+            ExpandChevron(isExpanded = isExpanded)
+            Text(
+                text = stringResource(Res.string.contacts_search_category_count, category.displayName.resolve(), items.size),
+                style = RiftTheme.typography.bodyPrimary,
+                maxLines = 1,
+                overflow = TextOverflow.Visible,
+                softWrap = false,
+                modifier = Modifier.clipToBounds(),
+            )
+        }
+        AnimatedVisibility(isExpanded) {
+            Column {
+                for (item in items) {
+                    SearchResultRow(category, item)
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun SearchResultRow(
+    category: SearchCategory,
+    item: SearchResult,
+) {
+    val pointerInteractionStateHolder = rememberPointerInteractionStateHolder()
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .hoverBackground(pointerInteractionStateHolder = pointerInteractionStateHolder)
+            .padding(vertical = Spacing.verySmall)
+            .padding(start = Spacing.verySmall)
+            .padding(end = Spacing.small),
+    ) {
+        when (category) {
+            SearchCategory.Agents -> {
+                DynamicCharacterPortraitParallax(
+                    characterId = item.id.toInt(),
+                    size = 32.dp,
+                    enterTimestamp = null,
+                    pointerInteractionStateHolder = pointerInteractionStateHolder,
+                )
+            }
+            SearchCategory.Alliance -> AsyncAllianceLogo(
+                allianceId = item.id.toInt(),
+                size = 32,
+                modifier = Modifier.size(32.dp),
+            )
+            SearchCategory.Characters -> {
+                ClickableCharacter(item.id.toInt()) {
+                    CharacterTooltip(item.characterDetails) {
+                        DynamicCharacterPortraitParallax(
+                            characterId = item.id.toInt(),
+                            size = 32.dp,
+                            enterTimestamp = null,
+                            pointerInteractionStateHolder = pointerInteractionStateHolder,
+                        )
+                    }
+                }
+            }
+            SearchCategory.Constellation -> {
+                ConstellationIllustrationIconSmall(
+                    constellationId = item.typeId,
+                )
+            }
+            SearchCategory.Corporations -> AsyncCorporationLogo(
+                corporationId = item.id.toInt(),
+                size = 32,
+                modifier = Modifier.size(32.dp),
+            )
+            SearchCategory.Factions -> AsyncCorporationLogo(
+                corporationId = item.id.toInt(),
+                size = 32,
+                modifier = Modifier.size(32.dp),
+            )
+            SearchCategory.InventoryTypes -> AsyncTypeIcon(
+                typeId = item.id.toInt(),
+                nameHint = item.name,
+                modifier = Modifier.size(32.dp),
+            )
+            SearchCategory.Regions -> {
+                RegionIllustrationIconSmall(
+                    regionId = item.id.toInt(),
+                )
+            }
+            SearchCategory.SolarSystems -> {
+                SystemIllustrationIconSmall(
+                    solarSystemId = item.typeId,
+                )
+            }
+            SearchCategory.Stations -> {
+                AsyncTypeIcon(
+                    typeId = item.typeId,
+                    nameHint = item.name,
+                    modifier = Modifier.size(32.dp),
+                )
+            }
+            SearchCategory.Structures -> {
+                AsyncTypeIcon(
+                    typeId = item.typeId,
+                    nameHint = item.name,
+                    modifier = Modifier.size(32.dp),
+                )
+            }
+        }
+
+        if (item.characterDetails != null) {
+            ClickableCorporation(item.characterDetails.corporationId) {
+                RiftTooltipArea(item.characterDetails.corporationName) {
+                    AsyncCorporationLogo(
+                        corporationId = item.characterDetails.corporationId,
+                        size = 32,
+                        modifier = Modifier.size(32.dp),
+                    )
+                }
+            }
+            if (item.characterDetails.allianceId != null) {
+                ClickableAlliance(item.characterDetails.allianceId) {
+                    RiftTooltipArea(item.characterDetails.allianceName ?: "") {
+                        AsyncAllianceLogo(
+                            allianceId = item.characterDetails.allianceId,
+                            size = 32,
+                            modifier = Modifier.size(32.dp),
+                        )
+                    }
+                }
+            } else {
+                Spacer(Modifier.size(32.dp))
+            }
+        }
+
+        Box(Modifier.weight(1f)) {
+            val textContent = movableContentOf {
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = Spacing.medium),
+                ) {
+                    Text(
+                        text = item.name,
+                        style = RiftTheme.typography.headerPrimary,
+                    )
+                    if (item.description != null) {
+                        Text(
+                            text = item.description,
+                            style = RiftTheme.typography.bodySecondary,
+                        )
+                    }
+                }
+            }
+            when (category) {
+                SearchCategory.Characters -> {
+                    ClickableCharacter(item.id.toInt()) {
+                        textContent()
+                    }
+                }
+                SearchCategory.Corporations -> {
+                    ClickableCorporation(item.id.toInt()) {
+                        textContent()
+                    }
+                }
+                SearchCategory.Alliance -> {
+                    ClickableAlliance(item.id.toInt()) {
+                        textContent()
+                    }
+                }
+                SearchCategory.Factions -> {
+                    ClickableCorporation(item.id.toInt()) {
+                        textContent()
+                    }
+                }
+                SearchCategory.SolarSystems -> {
+                    ClickableSystem(item.name) {
+                        textContent()
+                    }
+                }
+                SearchCategory.Stations -> {
+                    ClickableLocation(item.systemId, item.id, item.typeId, item.name) {
+                        textContent()
+                    }
+                }
+                SearchCategory.Structures -> {
+                    ClickableLocation(item.systemId, item.id, item.typeId, item.name) {
+                        textContent()
+                    }
+                }
+                else -> {
+                    textContent()
+                }
+            }
+        }
+
+        if (item.standing != null) {
+            FlagIcon(item.standing, modifier = Modifier.padding(Spacing.verySmall))
+        }
+    }
+}

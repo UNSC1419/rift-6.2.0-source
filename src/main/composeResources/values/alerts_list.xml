@@ -1,0 +1,182 @@
+<resources>
+    <string name="alerts_list_window_title">Alerts</string>
+    <string name="alerts_list_groups_description">Groups allow you to organize your alerts.</string>
+    <string name="alerts_list_default_group">Default</string>
+    <string name="alerts_list_empty">No alerts defined.
+Create some with the button below.</string>
+    <string name="alerts_list_action_create_group">Create group</string>
+    <string name="alerts_list_action_create_alert">Create alert</string>
+    <string name="alerts_list_action_disable_group">Disable all alerts</string>
+    <string name="alerts_list_action_enable_group">Enable all alerts</string>
+    <string name="alerts_list_action_rename_group">Rename group</string>
+    <string name="alerts_list_action_delete_group">Delete group</string>
+    <string name="alerts_list_action_delete_group_keep_alerts">Delete group and move alerts to default</string>
+    <string name="alerts_list_group_empty">No alerts in this group</string>
+    <string name="alerts_list_group_label">Group:</string>
+    <string name="alerts_list_action_test_sound">Test sound</string>
+    <string name="alerts_list_action_edit_action">Edit action</string>
+    <string name="alerts_list_action_delete_alert">Delete</string>
+    <string name="alerts_list_monitored_characters_prefix">Monitored characters: </string>
+    <string name="alerts_list_fleet_commanders_prefix">Fleet commanders: </string>
+    <string name="alerts_list_decloak_exceptions_prefix">Ignore decloaking objects containing: </string>
+    <string name="alerts_list_target_colonies_heading">Target colonies:</string>
+    <string name="alerts_list_character_loading">Loading…</string>
+    <string name="alerts_list_monitored_classes_prefix">Monitored ship classes: </string>
+    <string name="alerts_list_contact_labels_prefix">Contact labels: </string>
+    <string name="alerts_list_label_owner_prefix"> from </string>
+    <plurals name="alerts_list_group_count">
+        <item quantity="one">%1$s alert</item>
+        <item quantity="other">%1$s alerts</item>
+    </plurals>
+    <plurals name="alerts_list_group_enabled_count">
+        <item quantity="one">%1$s enabled</item>
+        <item quantity="other">%1$s enabled</item>
+    </plurals>
+    <!-- %1$s is the total alert count; %2$s is a separately resolved enabled-count caption -->
+    <plurals name="alerts_list_group_enabled_summary">
+        <item quantity="one">%1$s alert - %2$s</item>
+        <item quantity="other">%1$s alerts - %2$s</item>
+    </plurals>
+    <string name="alerts_description_trigger_prefix">When </string>
+    <string name="alerts_description_report_alternatives_prefix">any of </string>
+    <string name="alerts_description_report_characters">characters</string>
+    <string name="alerts_description_report_ships">ships</string>
+    <string name="alerts_description_unknown_label">Unknown</string>
+    <string name="alerts_description_report_bubbles">bubbles</string>
+    <string name="alerts_description_report_gate_camps">gate camps</string>
+    <string name="alerts_description_report_wormholes">wormholes</string>
+    <string name="alerts_description_report_ess">ESS</string>
+    <string name="alerts_description_report_skyhooks">Skyhooks</string>
+    <string name="alerts_description_report_location_prefix"> are reported </string>
+    <string name="alerts_description_condition_separator">, or </string>
+    <string name="alerts_description_game_character_prefix">you are </string>
+    <string name="alerts_description_game_in_combat">in combat</string>
+    <string name="alerts_description_combat_target_prefix"> with </string>
+    <string name="alerts_description_game_under_attack">under attack</string>
+    <string name="alerts_description_sender_prefix"> by </string>
+    <string name="alerts_description_game_attacking">attacking</string>
+    <string name="alerts_description_attack_target_prefix"> target </string>
+    <string name="alerts_description_game_warp_scrambled">being warp scrambled</string>
+    <string name="alerts_description_game_decloaked">decloaked</string>
+    <string name="alerts_description_decloak_exceptions_suffix"> with exceptions</string>
+    <string name="alerts_description_game_combat_stopped">no longer in combat</string>
+    <string name="alerts_description_duration_prefix"> for </string>
+    <string name="alerts_description_module_prefix">a module has run </string>
+    <string name="alerts_description_game_charges_depleted">out of charges</string>
+    <string name="alerts_description_game_conversation">invited to a conversation</string>
+    <string name="alerts_description_asteroid_prefix">an </string>
+    <string name="alerts_description_game_asteroid_depleted">asteroid has been depleted</string>
+    <string name="alerts_description_custom_game_prefix">a game action has happened containing </string>
+    <string name="alerts_description_regex_prefix">regex </string>
+    <string name="alerts_description_colony_prefix">on </string>
+    <string name="alerts_description_any_colony">any colony</string>
+    <string name="alerts_description_specific_colony">a specific colony</string>
+    <string name="alerts_description_pi_extractor">extractors stop</string>
+    <string name="alerts_description_pi_idle">production stops</string>
+    <string name="alerts_description_pi_setup">setup is unfinished</string>
+    <string name="alerts_description_pi_storage">storage becomes full</string>
+    <string name="alerts_description_location_prefix"> in </string>
+    <string name="alerts_description_eve_notification_prefix">an EVE notification is received for </string>
+    <string name="alerts_description_online_suffix"> while online</string>
+    <string name="alerts_description_offline_suffix"> while offline</string>
+    <string name="alerts_description_any_online_character">any online character</string>
+    <string name="alerts_description_any_offline_character">any offline character</string>
+    <string name="alerts_description_any_character">any character</string>
+    <string name="alerts_description_chat_message_prefix">a chat message</string>
+    <string name="alerts_description_message_filter_prefix"> containing </string>
+    <string name="alerts_description_message_sent_suffix"> is sent</string>
+    <string name="alerts_description_exclude_self_suffix"> excluding my messages</string>
+    <string name="alerts_description_any_channel">any channel</string>
+    <string name="alerts_description_message_ping_prefix">a message ping </string>
+    <string name="alerts_description_ping_target_prefix">for </string>
+    <string name="alerts_description_ping_received_suffix">is received</string>
+    <string name="alerts_description_fleet_ping_prefix">a fleet ping </string>
+    <string name="alerts_description_fleet_filter_prefix">, with </string>
+    <string name="alerts_description_fleet_commander_suffix"> as FC</string>
+    <string name="alerts_description_formup_prefix">, forming in </string>
+    <string name="alerts_description_pap_any">any</string>
+    <string name="alerts_description_pap_peacetime">Peacetime</string>
+    <string name="alerts_description_pap_strategic">Strategic</string>
+    <string name="alerts_description_pap_suffix"> PAP</string>
+    <string name="alerts_description_doctrine_prefix">, with doctrine containing </string>
+    <string name="alerts_description_jabber_message_prefix">a Jabber message</string>
+    <string name="alerts_description_any_jabber_chat">any chat</string>
+    <string name="alerts_description_direct_message">a direct message</string>
+    <string name="alerts_description_actions_prefix"> then </string>
+    <string name="alerts_description_action_rift">send a RIFT notification</string>
+    <string name="alerts_description_action_system">send a system notification</string>
+    <string name="alerts_description_action_push">send a push notification</string>
+    <string name="alerts_description_action_ping">show the ping</string>
+    <string name="alerts_description_action_message">show the message</string>
+    <string name="alerts_description_action_colonies">show colonies</string>
+    <string name="alerts_description_cooldown_prefix">, don't repeat for </string>
+    <plurals name="alerts_description_specific_character_count">
+        <item quantity="one">%1$s specific character</item>
+        <item quantity="other">%1$s specific characters</item>
+    </plurals>
+    <!-- %1$s is a ship-class name -->
+    <string name="alerts_description_ship_class">%1$s-class ships</string>
+    <plurals name="alerts_description_ship_class_count">
+        <item quantity="one">%1$s ship class</item>
+        <item quantity="other">%1$s ship classes</item>
+    </plurals>
+    <!-- %1$s is a literal player-defined contact label or localized unavailable-label caption -->
+    <string name="alerts_description_labeled_characters">characters labeled %1$s</string>
+    <plurals name="alerts_description_contact_label_count">
+        <item quantity="one">characters under %1$s label</item>
+        <item quantity="other">characters under %1$s labels</item>
+    </plurals>
+    <plurals name="alerts_description_colony_count">
+        <item quantity="one">%1$s specific colony</item>
+        <item quantity="other">%1$s specific colonies</item>
+    </plurals>
+    <plurals name="alerts_description_fleet_commander_count">
+        <item quantity="one">%1$s specific FC</item>
+        <item quantity="other">%1$s specific FC's</item>
+    </plurals>
+    <!-- %1$s is a localized built-in sound name; keep the quotation marks -->
+    <string name="alerts_description_action_builtin_sound">play sound "%1$s"</string>
+    <!-- %1$s is the player-selected filename without its extension -->
+    <string name="alerts_description_action_custom_sound">play sound %1$s</string>
+    <!-- %1$s is the localized range prefix; %2$s is a system name -->
+    <string name="alerts_description_location_system">%1$s %2$s</string>
+    <!-- %1$s is a localized range prefix, such as in or up to N jumps from -->
+    <string name="alerts_description_location_any_undocked">%1$s any undocked character's location</string>
+    <!-- %1$s is a localized range prefix, such as in or up to N jumps from -->
+    <string name="alerts_description_location_any_online">%1$s any online character's location</string>
+    <!-- %1$s is the localized range prefix; %2$s is a character name or ID -->
+    <string name="alerts_description_location_character_undocked">%1$s %2$s's undocked location</string>
+    <!-- %1$s is the localized range prefix; %2$s is a character name or ID -->
+    <string name="alerts_description_location_character">%1$s %2$s's location</string>
+    <plurals name="alerts_description_minutes">
+        <item quantity="one">%1$s minute</item>
+        <item quantity="other">%1$s minutes</item>
+    </plurals>
+    <!-- Preserve the existing English seconds caption even for one second -->
+    <plurals name="alerts_description_seconds">
+        <item quantity="one">%1$s seconds</item>
+        <item quantity="other">%1$s seconds</item>
+    </plurals>
+    <plurals name="alerts_description_hours">
+        <item quantity="one">%1$s hour</item>
+        <item quantity="other">%1$s hours</item>
+    </plurals>
+    <!-- Preserve the existing English minutes caption even for one minute -->
+    <plurals name="alerts_description_pi_minutes">
+        <item quantity="one">%1$s minutes</item>
+        <item quantity="other">%1$s minutes</item>
+    </plurals>
+    <string name="alerts_description_range_same_system">in</string>
+    <plurals name="alerts_description_range_up_to">
+        <item quantity="one">up to %1$s jump from</item>
+        <item quantity="other">up to %1$s jumps from</item>
+    </plurals>
+    <plurals name="alerts_description_range_exactly">
+        <item quantity="one">exactly %1$s jump from</item>
+        <item quantity="other">exactly %1$s jumps from</item>
+    </plurals>
+    <plurals name="alerts_description_range_between">
+        <item quantity="one">between %1$s–%2$s jump from</item>
+        <item quantity="other">between %1$s–%2$s jumps from</item>
+    </plurals>
+</resources>

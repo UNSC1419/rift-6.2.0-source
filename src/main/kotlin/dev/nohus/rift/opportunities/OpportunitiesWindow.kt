@@ -1,0 +1,1013 @@
+package dev.nohus.rift.opportunities
+
+import androidx.compose.animation.AnimatedContent
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalSharedTransitionApi
+import androidx.compose.animation.core.updateTransition
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyGridState
+import androidx.compose.foundation.lazy.grid.itemsIndexed
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.onClick
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.PointerIcon
+import androidx.compose.ui.input.pointer.pointerHoverIcon
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.positionInParent
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
+import androidx.compose.ui.text.AnnotatedString
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.dp
+import dev.nohus.rift.compose.AsyncCorporationLogo
+import dev.nohus.rift.compose.ButtonType
+import dev.nohus.rift.compose.ClickableCorporation
+import dev.nohus.rift.compose.ContextMenuItem
+import dev.nohus.rift.compose.LinkText
+import dev.nohus.rift.compose.OnVisibilityChange
+import dev.nohus.rift.compose.RiftButton
+import dev.nohus.rift.compose.RiftContextMenuPopup
+import dev.nohus.rift.compose.RiftOpportunityCard
+import dev.nohus.rift.compose.RiftOpportunityCardBottomContent
+import dev.nohus.rift.compose.RiftOpportunityCardButton
+import dev.nohus.rift.compose.RiftOpportunityCardTopRight.RiftOpportunityCardCorporation
+import dev.nohus.rift.compose.RiftOpportunityCardTopRight.RiftOpportunityCardProgressGauge
+import dev.nohus.rift.compose.RiftSearchField
+import dev.nohus.rift.compose.RiftStatsRow
+import dev.nohus.rift.compose.RiftStatsRowItem
+import dev.nohus.rift.compose.RiftTabBar
+import dev.nohus.rift.compose.RiftTooltipArea
+import dev.nohus.rift.compose.RiftWindow
+import dev.nohus.rift.compose.ScrollbarLazyVerticalGrid
+import dev.nohus.rift.compose.SharedTransitionAnimatedContent
+import dev.nohus.rift.compose.Tab
+import dev.nohus.rift.compose.TransparentWindowController
+import dev.nohus.rift.compose.animatedcontentfixed.animateContentSize
+import dev.nohus.rift.compose.getNow
+import dev.nohus.rift.compose.modifyIf
+import dev.nohus.rift.compose.sharedTransitionElement
+import dev.nohus.rift.compose.theme.Cursors
+import dev.nohus.rift.compose.theme.EveColors
+import dev.nohus.rift.compose.theme.RiftTheme
+import dev.nohus.rift.compose.theme.Spacing
+import dev.nohus.rift.di.koin
+import dev.nohus.rift.generated.resources.Res
+import dev.nohus.rift.generated.resources.opportunities_accepted_jobs_label
+import dev.nohus.rift.generated.resources.opportunities_accepted_jobs_limit_tooltip
+import dev.nohus.rift.generated.resources.opportunities_active_projects_label
+import dev.nohus.rift.generated.resources.opportunities_active_projects_limit_tooltip
+import dev.nohus.rift.generated.resources.opportunities_active_tab
+import dev.nohus.rift.generated.resources.opportunities_all_creators_filter_name
+import dev.nohus.rift.generated.resources.opportunities_available_jobs_label
+import dev.nohus.rift.generated.resources.opportunities_closed_status
+import dev.nohus.rift.generated.resources.opportunities_completed_status
+import dev.nohus.rift.generated.resources.opportunities_completed_today_label
+import dev.nohus.rift.generated.resources.opportunities_completed_today_tooltip
+import dev.nohus.rift.generated.resources.opportunities_completed_week_label
+import dev.nohus.rift.generated.resources.opportunities_corporation_project_participated_tooltip
+import dev.nohus.rift.generated.resources.opportunities_corporation_project_participating_tooltip
+import dev.nohus.rift.generated.resources.opportunities_count_label
+import dev.nohus.rift.generated.resources.opportunities_deleted_status
+import dev.nohus.rift.generated.resources.opportunities_empty_title
+import dev.nohus.rift.generated.resources.opportunities_expired_status
+import dev.nohus.rift.generated.resources.opportunities_expiry_prefix
+import dev.nohus.rift.generated.resources.opportunities_filters_action
+import dev.nohus.rift.generated.resources.opportunities_freelance_job_participated_tooltip
+import dev.nohus.rift.generated.resources.opportunities_freelance_job_participating_tooltip
+import dev.nohus.rift.generated.resources.opportunities_in_progress_status
+import dev.nohus.rift.generated.resources.opportunities_job_corporations_label
+import dev.nohus.rift.generated.resources.opportunities_member_corporations_filter_name
+import dev.nohus.rift.generated.resources.opportunities_mercenary_tactical_operation_participated_tooltip
+import dev.nohus.rift.generated.resources.opportunities_mercenary_tactical_operation_participating_tooltip
+import dev.nohus.rift.generated.resources.opportunities_participated_tab
+import dev.nohus.rift.generated.resources.opportunities_ready_status
+import dev.nohus.rift.generated.resources.opportunities_reward_available_in_project_label
+import dev.nohus.rift.generated.resources.opportunities_reward_available_to_members_label
+import dev.nohus.rift.generated.resources.opportunities_reward_available_to_you_label
+import dev.nohus.rift.generated.resources.opportunities_sort_action
+import dev.nohus.rift.generated.resources.opportunities_sort_date_created_label
+import dev.nohus.rift.generated.resources.opportunities_sort_date_created_reversed_label
+import dev.nohus.rift.generated.resources.opportunities_sort_last_updated_label
+import dev.nohus.rift.generated.resources.opportunities_sort_last_updated_reversed_label
+import dev.nohus.rift.generated.resources.opportunities_sort_name_label
+import dev.nohus.rift.generated.resources.opportunities_sort_name_reversed_label
+import dev.nohus.rift.generated.resources.opportunities_sort_number_of_jumps_label
+import dev.nohus.rift.generated.resources.opportunities_sort_number_of_jumps_reversed_label
+import dev.nohus.rift.generated.resources.opportunities_sort_progress_label
+import dev.nohus.rift.generated.resources.opportunities_sort_progress_reversed_label
+import dev.nohus.rift.generated.resources.opportunities_sort_time_remaining_label
+import dev.nohus.rift.generated.resources.opportunities_sort_time_remaining_reversed_label
+import dev.nohus.rift.generated.resources.opportunities_view_in_game_action
+import dev.nohus.rift.generated.resources.opportunities_window_title
+import dev.nohus.rift.generated.resources.allcontent
+import dev.nohus.rift.generated.resources.bars_sort_ascending_16px
+import dev.nohus.rift.generated.resources.contact_corporation
+import dev.nohus.rift.generated.resources.contribution_16px
+import dev.nohus.rift.generated.resources.corporation_project_state_checkmark_16px
+import dev.nohus.rift.generated.resources.corporation_project_state_close_16px
+import dev.nohus.rift.generated.resources.corporation_project_state_time_16px
+import dev.nohus.rift.generated.resources.corporation_projects_banner
+import dev.nohus.rift.generated.resources.expand_less_16px
+import dev.nohus.rift.generated.resources.expand_more_16px
+import dev.nohus.rift.generated.resources.freelance_banner
+import dev.nohus.rift.generated.resources.isk
+import dev.nohus.rift.generated.resources.open_window_16px
+import dev.nohus.rift.generated.resources.window_opportunities
+import dev.nohus.rift.localization.resolve
+import dev.nohus.rift.localization.toUiText
+import dev.nohus.rift.network.esi.models.OpportunityState
+import dev.nohus.rift.opportunities.OpportunitiesUtils.getOpportunityCategory
+import dev.nohus.rift.opportunities.OpportunitiesUtils.getOpportunityType
+import dev.nohus.rift.opportunities.OpportunitiesViewModel.CorporationFilter
+import dev.nohus.rift.opportunities.OpportunitiesViewModel.CorporationProjectsStats
+import dev.nohus.rift.opportunities.OpportunitiesViewModel.FreelanceJobsStats
+import dev.nohus.rift.opportunities.OpportunitiesViewModel.OpportunityLifecycleFilter
+import dev.nohus.rift.opportunities.OpportunitiesViewModel.OpportunitySorting
+import dev.nohus.rift.opportunities.OpportunitiesViewModel.UiState
+import dev.nohus.rift.opportunities.OpportunitiesViewModel.View
+import dev.nohus.rift.opportunities.compose.DetailsView
+import dev.nohus.rift.opportunities.compose.OpportunityCategoryFilterChips
+import dev.nohus.rift.opportunities.compose.SideNavigation
+import dev.nohus.rift.utils.formatDateTime
+import dev.nohus.rift.utils.formatDuration
+import dev.nohus.rift.utils.formatIsk
+import dev.nohus.rift.utils.formatIskCompact
+import dev.nohus.rift.utils.formatIskReadable
+import dev.nohus.rift.utils.formatNumberCompact
+import dev.nohus.rift.utils.withColor
+import dev.nohus.rift.viewModel
+import dev.nohus.rift.windowing.WindowManager.RiftWindowState
+import org.jetbrains.compose.resources.pluralStringResource
+import org.jetbrains.compose.resources.stringResource
+import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.painterResource
+import java.time.Duration
+import java.time.Instant
+
+@Composable
+fun OpportunitiesWindow(
+    inputModel: OpportunitiesInputModel?,
+    windowState: RiftWindowState,
+    onCloseRequest: () -> Unit,
+) {
+    val viewModel: OpportunitiesViewModel = viewModel(inputModel)
+    val state by viewModel.state.collectAsState()
+    RiftWindow(
+        title = stringResource(Res.string.opportunities_window_title),
+        icon = Res.drawable.window_opportunities,
+        state = windowState,
+        onCloseClick = onCloseRequest,
+        titleBarContent = { height ->
+            ToolbarRow(
+                state = state,
+                fixedHeight = height,
+                onParticipatingFilterChange = viewModel::onParticipatingFilterChange,
+            )
+        },
+        withContentPadding = false,
+    ) {
+        OpportunitiesWindowContent(
+            state = state,
+            onLifecycleFilterChange = viewModel::onLifecycleFilterChange,
+            onIsFiltersShownChange = viewModel::onIsFiltersShownChange,
+            onCategoryFilterChange = viewModel::onCategoryFilterChange,
+            onCategoryFilterSet = viewModel::onCategoryFilterSet,
+            onSortingChange = viewModel::onSortingChange,
+            onSearchChange = viewModel::onSearchChange,
+            onCorporationFilterSelect = viewModel::onCorporationFilterSelect,
+            onProjectClick = viewModel::onProjectClick,
+            onViewInGameClick = viewModel::onViewInGameClick,
+            onBackClick = viewModel::onBackClick,
+        )
+        OnVisibilityChange(viewModel::onVisibilityChange)
+    }
+}
+
+@Composable
+private fun OpportunitiesWindowContent(
+    state: UiState,
+    onLifecycleFilterChange: (OpportunityLifecycleFilter) -> Unit = {},
+    onIsFiltersShownChange: (Boolean) -> Unit,
+    onCategoryFilterChange: (OpportunityCategoryFilter) -> Unit,
+    onCategoryFilterSet: (OpportunityCategoryFilter?) -> Unit = {},
+    onSortingChange: (sorting: OpportunitySorting) -> Unit,
+    onSearchChange: (String) -> Unit,
+    onCorporationFilterSelect: (CorporationFilter) -> Unit = {},
+    onProjectClick: (Opportunity) -> Unit,
+    onViewInGameClick: (Opportunity) -> Unit,
+    onBackClick: () -> Unit,
+) {
+    Column {
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(RiftTheme.colors.borderGrey),
+        ) {}
+
+        Row {
+            SideNavigation(
+                state = state,
+                onLifecycleFilterChange = onLifecycleFilterChange,
+                onClick = onCategoryFilterSet,
+            )
+
+            val gridState: LazyGridState = rememberLazyGridState()
+            LaunchedEffect(state.primaryFilter) {
+                // Scroll to top when primary navigation filter is changed
+                gridState.animateScrollToItem(0)
+            }
+            SharedTransitionAnimatedContent(
+                targetState = state.view,
+                contentKey = { it::class },
+            ) { view ->
+                when (view) {
+                    View.ProjectsView -> ProjectsView(
+                        state = state,
+                        gridState = gridState,
+                        onIsFiltersShownChange = onIsFiltersShownChange,
+                        onCategoryFilterChange = onCategoryFilterChange,
+                        onSortingChange = onSortingChange,
+                        onSearchChange = onSearchChange,
+                        onCorporationFilterSelect = onCorporationFilterSelect,
+                        onProjectClick = onProjectClick,
+                        onViewInGameClick = onViewInGameClick,
+                    )
+                    is View.DetailsView -> DetailsView(
+                        opportunity = view.opportunity,
+                        onBackClick = onBackClick,
+                        onCategoryFilterClick = onCategoryFilterChange,
+                        onViewInGameClick = { onViewInGameClick(view.opportunity) },
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun ToolbarRow(
+    state: UiState,
+    fixedHeight: Dp,
+    onParticipatingFilterChange: (Boolean) -> Unit,
+) {
+    val participatingText = if (state.lifecycleFilter == OpportunityLifecycleFilter.Active) {
+        stringResource(Res.string.opportunities_active_tab)
+    } else {
+        stringResource(Res.string.opportunities_participated_tab)
+    }
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        RiftTabBar(
+            tabs = listOf(
+                Tab(
+                    id = 0,
+                    title = stringResource(Res.string.opportunities_window_title),
+                    isCloseable = false,
+                ),
+                Tab(
+                    id = 1,
+                    title = participatingText,
+                    isCloseable = false,
+                    badge = state.participatingCount.takeIf { it > 0 }?.toString(),
+                ),
+            ),
+            selectedTab = if (state.participatingFilter) 1 else 0,
+            onTabSelected = { tab ->
+                onParticipatingFilterChange(tab == 1)
+            },
+            onTabClosed = {},
+            withUnderline = false,
+            withWideTabs = true,
+            fixedHeight = fixedHeight,
+        )
+    }
+}
+
+@Composable
+private fun ProjectsView(
+    state: UiState,
+    gridState: LazyGridState,
+    onIsFiltersShownChange: (Boolean) -> Unit,
+    onCategoryFilterChange: (OpportunityCategoryFilter) -> Unit,
+    onSortingChange: (OpportunitySorting) -> Unit,
+    onSearchChange: (String) -> Unit,
+    onCorporationFilterSelect: (CorporationFilter) -> Unit,
+    onProjectClick: (Opportunity) -> Unit,
+    onViewInGameClick: (Opportunity) -> Unit,
+) {
+    Box {
+        val cardOffset = 7.dp
+        var currentMaxLineSpan by remember { mutableStateOf(1) }
+        ScrollbarLazyVerticalGrid(
+            gridState = gridState,
+            columns = GridCells.Adaptive(minSize = 300.dp),
+            contentPadding = PaddingValues(start = Spacing.medium),
+            horizontalArrangement = Arrangement.spacedBy(Spacing.large - cardOffset),
+            scrollbarModifier = Modifier.padding(horizontal = Spacing.small),
+            modifier = Modifier
+                .clipToBounds()
+                .fillMaxSize()
+                .padding(bottom = Spacing.large),
+        ) {
+            item(span = { GridItemSpan(maxLineSpan) }, key = "header") {
+                Box {
+                    Box(Modifier.matchParentSize()) {
+                        if (state.primaryFilter == OpportunityCategoryFilter.FreelanceJobs) {
+                            Image(
+                                painter = painterResource(Res.drawable.freelance_banner),
+                                contentDescription = null,
+                                alignment = Alignment.TopStart,
+                                contentScale = ContentScale.None,
+                                modifier = Modifier.height(239.dp),
+                            )
+                        } else if (state.primaryFilter == OpportunityCategoryFilter.CorporationProjects) {
+                            Image(
+                                painter = painterResource(Res.drawable.corporation_projects_banner),
+                                contentDescription = null,
+                                alignment = Alignment.TopStart,
+                                contentScale = ContentScale.FillHeight,
+                                modifier = Modifier.height(230.dp),
+                            )
+                        }
+                    }
+                    Column {
+                        state.primaryFilter?.let {
+                            PrimaryFilterHeader(it)
+                        }
+                        if (state.corporationProjectsStats != null) {
+                            CorporationProjectsStatsRow(state.corporationProjectsStats)
+                        }
+                        if (state.freelanceJobsStats != null) {
+                            FreelanceJobsStatsRow(state.freelanceJobsStats)
+                        }
+                    }
+                }
+            }
+
+            stickyHeader(key = "filters-header") {
+                FiltersRow(state, onIsFiltersShownChange, onCategoryFilterChange, onSortingChange, onSearchChange, onCorporationFilterSelect)
+            }
+
+            if (state.opportunities != null) {
+                if (state.opportunities.isEmpty()) {
+                    item(span = { GridItemSpan(maxLineSpan) }, key = "empty-state") {
+                        EmptyState()
+                    }
+                }
+
+                itemsIndexed(
+                    items = state.opportunities,
+                    key = { _, it -> it.id },
+                    span = { _, _ ->
+                        currentMaxLineSpan = maxLineSpan
+                        GridItemSpan(1)
+                    },
+                ) { index, it ->
+                    ProjectCard(
+                        opportunity = it,
+                        onProjectClick = { onProjectClick(it) },
+                        onViewInGameClick = { onViewInGameClick(it) },
+                        modifier = Modifier
+                            .sharedTransitionElement("card-${it.id}")
+                            .animateItem()
+                            .padding(top = if (index >= currentMaxLineSpan) Spacing.large else 0.dp),
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun PrimaryFilterHeader(primary: OpportunityCategoryFilter) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(Spacing.medium),
+        modifier = Modifier.padding(top = 32.dp, bottom = 16.dp, start = Spacing.large),
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            primary.icon?.let {
+                Image(
+                    painter = painterResource(it),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(end = Spacing.medium)
+                        .size(16.dp),
+                )
+            }
+            Text(
+                text = primary.name.resolve(),
+                style = RiftTheme.typography.displayHighlighted.copy(fontWeight = FontWeight.Bold),
+            )
+        }
+        Text(
+            text = primary.description.resolve(),
+            style = RiftTheme.typography.bodyPrimary,
+        )
+    }
+}
+
+@Composable
+private fun CorporationProjectsStatsRow(
+    stats: CorporationProjectsStats,
+) {
+    RiftStatsRow(
+        modifier = Modifier.padding(start = Spacing.large - 7.dp, end = Spacing.large, top = 40.dp, bottom = 32.dp),
+    ) {
+        RiftStatsRowItem(
+            value = formatIskCompact(stats.availableToYou),
+            text = stringResource(Res.string.opportunities_reward_available_to_you_label),
+            color = if (stats.availableToYou > 0) EveColors.successGreen else RiftTheme.colors.textPrimary,
+            tooltip = buildAnnotatedString {
+                withStyle(RiftTheme.typography.headlinePrimary.toSpanStyle()) {
+                    appendLine(formatIsk(stats.availableToYou, withCents = false))
+                }
+                withStyle(RiftTheme.typography.bodySecondary.toSpanStyle()) {
+                    append(formatIskReadable(stats.availableToYou))
+                }
+            },
+        )
+        RiftStatsRowItem(
+            value = formatIskCompact(stats.availableTotal),
+            text = stringResource(Res.string.opportunities_reward_available_to_members_label),
+            color = if (stats.availableTotal > 0) EveColors.successGreen else RiftTheme.colors.textPrimary,
+            tooltip = buildAnnotatedString {
+                withStyle(RiftTheme.typography.headlinePrimary.toSpanStyle()) {
+                    appendLine(formatIsk(stats.availableTotal, withCents = false))
+                }
+                withStyle(RiftTheme.typography.bodySecondary.toSpanStyle()) {
+                    append(formatIskReadable(stats.availableTotal))
+                }
+            },
+        )
+        RiftStatsRowItem(
+            value = stats.active.toString(),
+            text = pluralStringResource(Res.plurals.opportunities_active_projects_label, stats.active),
+            color = EveColors.airTurquoise,
+            tooltip = buildAnnotatedString {
+                append(stringResource(Res.string.opportunities_active_projects_limit_tooltip))
+            },
+        )
+        RiftStatsRowItem(
+            value = stats.completedToday.toString(),
+            text = stringResource(Res.string.opportunities_completed_today_label),
+            color = if (stats.completedToday > 0) EveColors.successGreen else RiftTheme.colors.textPrimary,
+            tooltip = buildAnnotatedString {
+                append(stringResource(Res.string.opportunities_completed_today_tooltip))
+            },
+        )
+        RiftStatsRowItem(
+            value = stats.completedThisWeek.toString(),
+            text = stringResource(Res.string.opportunities_completed_week_label),
+            color = if (stats.completedThisWeek > 0) EveColors.successGreen else RiftTheme.colors.textPrimary,
+        )
+    }
+}
+
+@Composable
+private fun FreelanceJobsStatsRow(
+    stats: FreelanceJobsStats,
+) {
+    RiftStatsRow(
+        modifier = Modifier.padding(start = Spacing.large - 7.dp, end = Spacing.large, top = 40.dp, bottom = 32.dp),
+    ) {
+        RiftStatsRowItem(
+            value = stats.available.toString(),
+            text = pluralStringResource(Res.plurals.opportunities_available_jobs_label, stats.available),
+            color = if (stats.available > 0) EveColors.airTurquoise else RiftTheme.colors.textPrimary,
+        )
+        RiftStatsRowItem(
+            value = stats.corporations.toString(),
+            text = pluralStringResource(Res.plurals.opportunities_job_corporations_label, stats.corporations),
+            color = if (stats.corporations > 0) EveColors.airTurquoise else RiftTheme.colors.textPrimary,
+        )
+        RiftStatsRowItem(
+            value = stats.accepted.toString(),
+            text = pluralStringResource(Res.plurals.opportunities_accepted_jobs_label, stats.accepted),
+            color = if (stats.accepted > 0) EveColors.airTurquoise else RiftTheme.colors.textPrimary,
+            tooltip = buildAnnotatedString {
+                append(stringResource(Res.string.opportunities_accepted_jobs_limit_tooltip))
+            },
+        )
+    }
+}
+
+@OptIn(ExperimentalFoundationApi::class)
+@Composable
+private fun FiltersRow(
+    state: UiState,
+    onIsFiltersShownChange: (Boolean) -> Unit,
+    onCategoryFilterChange: (OpportunityCategoryFilter) -> Unit,
+    onSortingChange: (sorting: OpportunitySorting) -> Unit,
+    onSearchChange: (String) -> Unit,
+    onCorporationFilterSelect: (CorporationFilter) -> Unit,
+) {
+    val visibleApplicable = state.categoryFilters.applicable.filter {
+        it != state.primaryFilter
+    }.toSet()
+    val visibleEnabled = state.categoryFilters.enabled.filter { it in visibleApplicable }.toSet()
+
+    val isFiltersVisible = state.isFiltersShown || visibleEnabled.isNotEmpty()
+
+    var isOnTop by remember { mutableStateOf(false) }
+    val activeTransition = updateTransition(LocalWindowInfo.current.isWindowFocused)
+    val transparentWindowController: TransparentWindowController = remember { koin.get() }
+
+    Column(
+        modifier = Modifier
+            .pointerInput(Unit) {
+                detectTapGestures { }
+            }
+            .modifyIf(isOnTop) {
+                background(transparentWindowController.getWindowBackgroundColor(activeTransition, isTransparent = false))
+            }
+            .fillMaxWidth()
+            .onGloballyPositioned {
+                @Suppress("AssignedValueIsNeverRead")
+                isOnTop = it.positionInParent().y == 0f
+            }
+            .padding(start = Spacing.large, end = Spacing.large, bottom = Spacing.large, top = Spacing.large),
+    ) {
+        Row(
+            horizontalArrangement = Arrangement.spacedBy(Spacing.medium),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(Spacing.small),
+            ) {
+                val count = state.opportunities?.size ?: 0
+                Text(
+                    text = pluralStringResource(Res.plurals.opportunities_count_label, count, count),
+                    style = RiftTheme.typography.headlinePrimary,
+                )
+            }
+            Spacer(Modifier.weight(1f))
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(Spacing.medium),
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                RiftSearchField(
+                    search = state.search,
+                    isCompact = false,
+                    onSearchChange = onSearchChange,
+                )
+
+                RiftButton(
+                    text = stringResource(Res.string.opportunities_filters_action),
+                    icon = if (state.isFiltersShown) Res.drawable.expand_less_16px else Res.drawable.expand_more_16px,
+                    type = ButtonType.Secondary,
+                    onClick = { onIsFiltersShownChange(!state.isFiltersShown) },
+                )
+
+                fun OpportunitySorting.getName() = when (this) {
+                    OpportunitySorting.Name -> Res.string.opportunities_sort_name_label.toUiText()
+                    OpportunitySorting.NameReversed -> Res.string.opportunities_sort_name_reversed_label.toUiText()
+                    OpportunitySorting.DateCreated -> Res.string.opportunities_sort_date_created_label.toUiText()
+                    OpportunitySorting.DateCreatedReversed -> Res.string.opportunities_sort_date_created_reversed_label.toUiText()
+                    OpportunitySorting.TimeRemaining -> Res.string.opportunities_sort_time_remaining_label.toUiText()
+                    OpportunitySorting.TimeRemainingReversed -> Res.string.opportunities_sort_time_remaining_reversed_label.toUiText()
+                    OpportunitySorting.Progress -> Res.string.opportunities_sort_progress_label.toUiText()
+                    OpportunitySorting.ProgressReversed -> Res.string.opportunities_sort_progress_reversed_label.toUiText()
+                    OpportunitySorting.NumberOfJumps -> Res.string.opportunities_sort_number_of_jumps_label.toUiText()
+                    OpportunitySorting.NumberOfJumpsReversed -> Res.string.opportunities_sort_number_of_jumps_reversed_label.toUiText()
+                    OpportunitySorting.LastUpdated -> Res.string.opportunities_sort_last_updated_label.toUiText()
+                    OpportunitySorting.LastUpdatedReversed -> Res.string.opportunities_sort_last_updated_reversed_label.toUiText()
+                }
+
+                val sortingFilterItems: List<ContextMenuItem> = OpportunitySorting.entries.map { sorting ->
+                    ContextMenuItem.RadioItem(
+                        text = sorting.getName().resolve(),
+                        onClick = { onSortingChange(sorting) },
+                        isSelected = sorting == state.sorting,
+                    )
+                }.chunked(2).flatMap { [a, b] ->
+                    listOf(a, b, ContextMenuItem.DividerItem)
+                }.dropLast(1).let {
+                    listOf(ContextMenuItem.HeaderItem(stringResource(Res.string.opportunities_sort_action))) + it
+                }
+                Box(contentAlignment = Alignment.BottomStart) {
+                    var isShown by remember { mutableStateOf(false) }
+                    RiftButton(
+                        text = stringResource(Res.string.opportunities_sort_action),
+                        icon = Res.drawable.bars_sort_ascending_16px,
+                        type = ButtonType.Secondary,
+                        onClick = { isShown = true },
+                    )
+                    if (isShown) {
+                        val offset = with(LocalDensity.current) {
+                            32.dp.toPx().toInt()
+                        }
+                        RiftContextMenuPopup(
+                            items = sortingFilterItems,
+                            offset = IntOffset(0, offset),
+                            onDismissRequest = { isShown = false },
+                        )
+                    }
+                }
+            }
+        }
+
+        AnimatedVisibility(isFiltersVisible) {
+            if (visibleApplicable.isNotEmpty()) {
+                val (enabled, disabled) = visibleApplicable.partition { it in visibleEnabled }
+                val filters = if (state.isFiltersShown) enabled + disabled else enabled
+                OpportunityCategoryFilterChips(
+                    filters = filters,
+                    enabledFilters = visibleEnabled,
+                    onCategoryFilterChange = onCategoryFilterChange,
+                    modifier = Modifier.padding(top = Spacing.mediumLarge),
+                )
+            }
+        }
+
+        val isInCorporationProjects = state.primaryFilter == OpportunityCategoryFilter.CorporationProjects
+        val isInMercenaryTacticalOperations = state.primaryFilter == OpportunityCategoryFilter.MercenaryTacticalOperations
+        val corporationFilters = buildList {
+            if (isInMercenaryTacticalOperations) return@buildList
+            if (state.corporations.isNotEmpty()) {
+                if (!isInCorporationProjects) add(CorporationFilter.All)
+                if (state.corporations.size > 1) add(CorporationFilter.MemberCorporations)
+                addAll(state.corporations.map { CorporationFilter.SpecificCorporation(it) })
+            }
+        }
+        val selectedFilter = state.corporationFilter
+            .takeIf { !isInCorporationProjects || it != CorporationFilter.All }
+            ?: CorporationFilter.MemberCorporations.takeIf { it in corporationFilters }
+            ?: corporationFilters.firstOrNull()
+            ?: state.corporationFilter
+        if (corporationFilters.isNotEmpty()) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(top = Spacing.mediumLarge),
+            ) {
+                LazyRow(Modifier.animateContentSize()) {
+                    items(corporationFilters.sortedBy { it == selectedFilter }, key = { it }) { filter ->
+                        val name = when (filter) {
+                            CorporationFilter.All -> stringResource(Res.string.opportunities_all_creators_filter_name)
+                            CorporationFilter.MemberCorporations -> stringResource(Res.string.opportunities_member_corporations_filter_name)
+                            is CorporationFilter.SpecificCorporation -> filter.corporation.name
+                        }
+                        RiftTooltipArea(name, modifier = Modifier.animateItem()) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(Spacing.mediumLarge),
+                                modifier = Modifier
+                                    .pointerHoverIcon(PointerIcon(Cursors.pointerInteractive))
+                                    .onClick { onCorporationFilterSelect(filter) },
+                            ) {
+                                when (filter) {
+                                    CorporationFilter.All -> {
+                                        Image(
+                                            painter = painterResource(Res.drawable.allcontent),
+                                            contentDescription = null,
+                                            modifier = Modifier.size(48.dp),
+                                        )
+                                    }
+                                    CorporationFilter.MemberCorporations -> {
+                                        Image(
+                                            painter = painterResource(Res.drawable.contact_corporation),
+                                            contentDescription = null,
+                                            modifier = Modifier.size(48.dp),
+                                        )
+                                    }
+                                    is CorporationFilter.SpecificCorporation -> {
+                                        AsyncCorporationLogo(
+                                            corporationId = filter.corporation.id,
+                                            size = 64,
+                                            modifier = Modifier.size(48.dp),
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                Spacer(Modifier.width(Spacing.mediumLarge))
+                AnimatedContent(selectedFilter) { filter ->
+                    when (filter) {
+                        CorporationFilter.All -> {
+                            Text(
+                                text = stringResource(Res.string.opportunities_all_creators_filter_name),
+                                style = RiftTheme.typography.headlinePrimary.copy(
+                                    fontWeight = FontWeight.Bold,
+                                ),
+                            )
+                        }
+                        CorporationFilter.MemberCorporations -> {
+                            Text(
+                                text = stringResource(Res.string.opportunities_member_corporations_filter_name),
+                                style = RiftTheme.typography.headlinePrimary.copy(
+                                    fontWeight = FontWeight.Bold,
+                                ),
+                            )
+                        }
+                        is CorporationFilter.SpecificCorporation -> {
+                            ClickableCorporation(filter.corporation.id) {
+                                LinkText(
+                                    text = filter.corporation.name,
+                                    normalStyle = RiftTheme.typography.headlinePrimary.copy(
+                                        fontWeight = FontWeight.Bold,
+                                    ),
+                                    hoveredStyle = RiftTheme.typography.headlinePrimary.copy(
+                                        color = RiftTheme.colors.textLink,
+                                        fontWeight = FontWeight.Bold,
+                                    ),
+                                    hasHoverCursor = false,
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+private fun ProjectCard(
+    opportunity: Opportunity,
+    onProjectClick: () -> Unit,
+    onViewInGameClick: () -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val category = getOpportunityCategory(opportunity)
+    val type = getOpportunityType(opportunity)
+
+    val bottomContent = getProjectBottomContent(opportunity)
+
+    val progressGauge = RiftOpportunityCardProgressGauge(
+        currentProgress = opportunity.currentProgress,
+        desiredProgress = opportunity.desiredProgress,
+        ownProgress = opportunity.contributions.sumOf { it.contribution.success ?: 0 },
+        participationLimit = opportunity.details.participationLimit,
+        state = opportunity.state,
+    )
+    val topRight = when (opportunity.type) {
+        OpportunityType.CorporationProject -> progressGauge
+        OpportunityType.FreelanceJob -> RiftOpportunityCardCorporation(
+            name = opportunity.creator.corporation?.name ?: "",
+            id = opportunity.creator.corporation?.id ?: -1,
+            progressGauge = progressGauge,
+            palette = opportunity.creator.corporation?.palette,
+        )
+        OpportunityType.MercenaryTacticalOperation -> null
+    }
+    val buttons = buildList {
+        add(
+            RiftOpportunityCardButton(
+                resource = Res.drawable.open_window_16px,
+                isAlwaysVisible = false,
+                tooltip = stringResource(Res.string.opportunities_view_in_game_action),
+                action = onViewInGameClick,
+            ),
+        )
+        if (opportunity.contributions.isNotEmpty()) {
+            val participationText = when (opportunity.type) {
+                OpportunityType.CorporationProject -> if (opportunity.state == OpportunityState.Active) stringResource(Res.string.opportunities_corporation_project_participating_tooltip) else stringResource(Res.string.opportunities_corporation_project_participated_tooltip)
+                OpportunityType.FreelanceJob -> if (opportunity.state == OpportunityState.Active) stringResource(Res.string.opportunities_freelance_job_participating_tooltip) else stringResource(Res.string.opportunities_freelance_job_participated_tooltip)
+                OpportunityType.MercenaryTacticalOperation -> if (opportunity.state == OpportunityState.Active) stringResource(Res.string.opportunities_mercenary_tactical_operation_participating_tooltip) else stringResource(Res.string.opportunities_mercenary_tactical_operation_participated_tooltip)
+            }
+            add(
+                RiftOpportunityCardButton(
+                    resource = Res.drawable.contribution_16px,
+                    isAlwaysVisible = true,
+                    colorTint = Color(0xFFA9DBE9),
+                    tooltip = participationText,
+                    action = null,
+                ),
+            )
+        }
+        if (opportunity.details.expires != null && opportunity.state == OpportunityState.Active) {
+            val expiresIn = Duration.between(getNow(), opportunity.details.expires).coerceAtLeast(Duration.ZERO)
+            val color = when {
+                expiresIn < Duration.ofHours(6) -> EveColors.dangerRed
+                expiresIn < Duration.ofDays(1) -> EveColors.warningOrange
+                else -> null
+            }
+            add(
+                RiftOpportunityCardButton(
+                    resource = Res.drawable.corporation_project_state_time_16px,
+                    colorTint = color,
+                    tooltipContent = {
+                        val durationText = formatDuration(expiresIn).resolve()
+                        val expiredText = stringResource(Res.string.opportunities_expired_status)
+                        Text(
+                            text = buildAnnotatedString {
+                                if (expiresIn.isPositive) {
+                                    append(stringResource(Res.string.opportunities_expiry_prefix))
+                                    withColor(RiftTheme.colors.textPrimary) {
+                                        append(durationText)
+                                    }
+                                } else {
+                                    withColor(EveColors.dangerRed) {
+                                        append(expiredText)
+                                    }
+                                }
+                            },
+                            style = RiftTheme.typography.bodySecondary,
+                            modifier = Modifier.padding(Spacing.large),
+                        )
+                    },
+                    action = null,
+                ),
+            )
+        }
+    }
+
+    RiftOpportunityCard(
+        category = category,
+        type = type,
+        solarSystemChipState = opportunity.details.solarSystemChipState,
+        topRight = topRight,
+        bottomContent = bottomContent,
+        buttons = buttons,
+        isEnforcingHeight = true,
+        onClick = onProjectClick,
+        modifier = modifier,
+    ) {
+        Text(
+            text = opportunity.name,
+            style = RiftTheme.typography.headlinePrimary.copy(fontWeight = FontWeight.Bold),
+            modifier = Modifier.padding(top = Spacing.mediumLarge),
+        )
+    }
+}
+
+@Composable
+private fun getProjectBottomContent(opportunity: Opportunity): RiftOpportunityCardBottomContent = when (opportunity.state) {
+    OpportunityState.Active, OpportunityState.Unspecified -> {
+        if (opportunity.reward != null) {
+            val totalRemainingRewardForCharacters = if (opportunity.details.rewardPerContribution != null && opportunity.details.participationLimit != null) {
+                val remainingRewardPerCharacter = opportunity.eligibleCharacters.map { character ->
+                    val characterContribution = opportunity.contributions.find { it.characterId == character.characterId }
+                    val characterProgress = (characterContribution?.contribution?.success ?: 0).coerceAtMost(opportunity.details.participationLimit)
+                    val characterRemainingProgress = (opportunity.details.participationLimit - characterProgress).coerceIn(0, opportunity.details.participationLimit)
+                    val characterRemainingReward = opportunity.details.rewardPerContribution * characterRemainingProgress
+                    character to characterRemainingReward
+                }
+                remainingRewardPerCharacter.sumOf { it.second }.coerceAtMost(opportunity.reward.remaining)
+            } else {
+                null
+            }
+
+            val bottomText = buildAnnotatedString {
+                if (totalRemainingRewardForCharacters != null) {
+                    append(formatIsk(totalRemainingRewardForCharacters, withCents = false))
+                    append(" ")
+                    withColor(RiftTheme.colors.textSecondary) {
+                        append("(${formatNumberCompact(opportunity.reward.remaining)})")
+                    }
+                } else {
+                    append(formatIsk(opportunity.reward.remaining, withCents = false))
+                }
+            }
+            val availableToYouText = stringResource(Res.string.opportunities_reward_available_to_you_label)
+            val availableInProjectText = stringResource(Res.string.opportunities_reward_available_in_project_label)
+            val bottomTextTooltip = buildAnnotatedString {
+                if (totalRemainingRewardForCharacters != null) {
+                    withStyle(RiftTheme.typography.bodySecondary.toSpanStyle()) {
+                        appendLine(availableToYouText)
+                    }
+                    withStyle(RiftTheme.typography.headerPrimary.toSpanStyle()) {
+                        appendLine(formatIsk(totalRemainingRewardForCharacters, withCents = false))
+                    }
+                    withStyle(RiftTheme.typography.detailDisabled.toSpanStyle()) {
+                        appendLine(formatIskReadable(totalRemainingRewardForCharacters))
+                    }
+                    appendLine()
+                }
+
+                withStyle(RiftTheme.typography.bodySecondary.toSpanStyle()) {
+                    appendLine(availableInProjectText)
+                }
+                withStyle(RiftTheme.typography.headerPrimary.toSpanStyle()) {
+                    appendLine(formatIsk(opportunity.reward.remaining, withCents = false))
+                }
+                withStyle(RiftTheme.typography.detailDisabled.toSpanStyle()) {
+                    append(formatIskReadable(opportunity.reward.remaining))
+                }
+            }
+            RiftOpportunityCardBottomContent.Text(Res.drawable.isk, bottomText, bottomTextTooltip)
+        } else {
+            when (opportunity.type) {
+                OpportunityType.CorporationProject, OpportunityType.FreelanceJob -> {
+                    RiftOpportunityCardBottomContent.None
+                }
+                OpportunityType.MercenaryTacticalOperation -> {
+                    RiftOpportunityCardBottomContent.Text(null, AnnotatedString(stringResource(Res.string.opportunities_in_progress_status)))
+                }
+            }
+        }
+    }
+
+    OpportunityState.Closed -> {
+        getProjectBottomText(
+            text = stringResource(Res.string.opportunities_closed_status),
+            color = EveColors.hotRed,
+            icon = Res.drawable.corporation_project_state_close_16px,
+            timestamp = opportunity.details.finished ?: opportunity.lastModified,
+        )
+    }
+
+    OpportunityState.Completed -> {
+        getProjectBottomText(
+            text = stringResource(Res.string.opportunities_completed_status),
+            color = EveColors.successGreen,
+            icon = Res.drawable.corporation_project_state_checkmark_16px,
+            timestamp = opportunity.details.finished ?: opportunity.lastModified,
+        )
+    }
+
+    OpportunityState.Expired -> {
+        getProjectBottomText(
+            text = stringResource(Res.string.opportunities_expired_status),
+            color = EveColors.hotRed,
+            icon = Res.drawable.corporation_project_state_time_16px,
+            timestamp = opportunity.details.finished ?: opportunity.lastModified,
+        )
+    }
+
+    OpportunityState.Deleted -> {
+        getProjectBottomText(
+            text = stringResource(Res.string.opportunities_deleted_status),
+            color = EveColors.hotRed,
+            icon = Res.drawable.corporation_project_state_close_16px,
+            timestamp = opportunity.details.finished ?: opportunity.lastModified,
+        )
+    }
+
+    OpportunityState.Available -> {
+        RiftOpportunityCardBottomContent.Text(null, AnnotatedString(stringResource(Res.string.opportunities_ready_status)))
+    }
+}
+
+@Composable
+private fun getProjectBottomText(
+    text: String,
+    color: Color,
+    icon: DrawableResource,
+    timestamp: Instant?,
+): RiftOpportunityCardBottomContent.Text {
+    val bottomText = buildAnnotatedString {
+        withColor(color) {
+            append(text)
+        }
+        timestamp?.let {
+            withColor(RiftTheme.colors.textSecondary) {
+                append(" ")
+                append(formatDateTime(it))
+            }
+        }
+    }
+    return RiftOpportunityCardBottomContent.Text(icon, bottomText)
+}
+
+@Composable
+private fun EmptyState() {
+    Text(
+        text = stringResource(Res.string.opportunities_empty_title),
+        style = RiftTheme.typography.headlineSecondary,
+        textAlign = TextAlign.Center,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(Spacing.large),
+    )
+}

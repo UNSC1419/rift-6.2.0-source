@@ -1,0 +1,52 @@
+<resources>
+    <string name="characters_characters_window_characters_title">Characters</string>
+    <string name="characters_characters_window_show_clones_text">Show clones</string>
+    <string name="characters_delete_character_dialog_content_settings_files_character_will_deleted_text">The settings files for this character will be deleted from your installation of EVE Online, and RIFT's connection with ESI for this character will be removed.</string>
+    <string name="characters_delete_character_dialog_content_delete_text">Delete</string>
+    <string name="characters_characters_window_content_no_characters_found_make_sure_text">No characters found.
+
+Make sure the game directory is selected in settings, and that you have logged in to at least one character on this computer before.</string>
+    <string name="characters_characters_list_disabled_characters_will_not_used_text">Disabled characters will not be used in RIFT.</string>
+    <string name="characters_characters_list_disabled_characters_text">Disabled characters</string>
+    <string name="characters_characters_list_no_disabled_characters_text">No disabled characters</string>
+    <string name="characters_top_row_enable_or_disable_characters_don_text">Enable or disable characters you don't want to use.</string>
+    <string name="characters_top_row_copy_eve_settings_window_positions_text">Copy Eve settings
+(window positions, overview, etc.)
+between selected characters.</string>
+    <string name="characters_top_row_manage_eve_settings_text">Manage EVE settings</string>
+    <string name="characters_character_row_could_not_load_text">Could not load</string>
+    <string name="characters_character_row_disable_character_text">Disable this character</string>
+    <string name="characters_location_text_space_text">In space</string>
+    <string name="characters_authentication_status_icon_missing_esi_scopes_text">Missing ESI scopes:</string>
+    <string name="characters_authentication_status_icon_some_features_won_t_work_text">Some features won't work.</string>
+    <string name="characters_authentication_status_icon_not_authenticated_esi_click_log_text">Not authenticated with ESI.
+Click the log in button above.</string>
+    <string name="characters_clone_no_implants_text">No implants</string>
+    <string name="characters_clone_active_clone_text">Active clone</string>
+    <string name="characters_hidden_character_row_delete_character_text">Delete this character</string>
+    <string name="characters_hidden_character_row_enable_character_text">Enable this character</string>
+    <!-- %1$s is a character ID; preserve the ID exactly -->
+    <string name="characters_character_id">character ID %1$s</string>
+    <string name="characters_delete_title">Delete %1$s?</string>
+    <string name="characters_ship_docked_station">%1$s docked in a Station</string>
+    <string name="characters_docked_station">Docked in a Station</string>
+    <string name="characters_structure">Structure</string>
+    <string name="characters_ship_in_space">%1$s in space</string>
+    <!-- %1$s is a ship type; %2$s is a structure type -->
+    <string name="characters_ship_docked_structure">%1$s docked in %2$s</string>
+    <!-- %1$s is a structure type -->
+    <string name="characters_docked_structure">Docked in %1$s</string>
+    <!-- Label before the styled external corporation title; preserve the trailing space -->
+    <string name="characters_tooltip_title_prefix">Title: </string>
+    <!-- Label before the styled security-status number; preserve the trailing space -->
+    <string name="characters_tooltip_security_status_prefix">Security Status: </string>
+    <!-- Label before the styled EVE-style birth date; preserve the trailing space -->
+    <string name="characters_tooltip_created_prefix">Created: </string>
+    <!-- Label before the danger percentage or loading indicator; preserve the trailing space -->
+    <string name="characters_tooltip_danger_prefix">Danger: </string>
+    <string name="characters_tooltip_unknown_danger">Unknown</string>
+    <plurals name="characters_tooltip_age_days">
+        <item quantity="one">%1$s day old</item>
+        <item quantity="other">%1$s days old</item>
+    </plurals>
+</resources>

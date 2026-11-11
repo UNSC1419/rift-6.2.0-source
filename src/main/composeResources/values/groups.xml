@@ -1,0 +1,7 @@
+<resources>
+    <string name="groups_create_title">Create group</string>
+    <string name="groups_rename_title">Rename group</string>
+    <string name="groups_name_placeholder">Group name</string>
+    <string name="groups_action_create">Create</string>
+    <string name="groups_action_rename">Rename</string>
+</resources>

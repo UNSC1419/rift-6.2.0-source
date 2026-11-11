@@ -1,0 +1,61 @@
+<resources>
+    <string name="pings_window_title">Pings</string>
+    <string name="pings_show_paps_action">Show PAPs</string>
+    <string name="pings_paps_dialog_title">View your PAPs</string>
+    <string name="pings_paps_keep_disabled_action">Keep disabled</string>
+    <string name="pings_paps_enable_action">Enable</string>
+    <string name="pings_paps_check_action">Check now</string>
+    <string name="pings_paps_prompt">Would you like to see your PAPs here?</string>
+    <string name="pings_paps_choose_action">Choose</string>
+    <string name="pings_empty">No pings received yet.
+Clear skies.</string>
+    <string name="pings_jabber_required">You need to be connected to Jabber to receive pings.</string>
+    <string name="pings_jabber_check_action">Check Jabber</string>
+    <string name="pings_paps_month_caption">PAPs this month</string>
+    <string name="pings_paps_unavailable">N/A</string>
+    <string name="pings_paps_last_strategic_caption">Last Strategic PAP</string>
+    <string name="pings_paps_character_prefix">Character: </string>
+    <string name="pings_paps_no_strategic_caption">No Strategic PAPs yet</string>
+    <string name="pings_copy_action">Copy ping</string>
+    <string name="pings_doctrine_forum_action">Doctrine forum thread</string>
+    <string name="pings_peacetime_pap_caption">Peacetime PAP</string>
+    <string name="pings_strategic_pap_caption">Strategic PAP</string>
+    <string name="pings_no_pap_caption">No PAP</string>
+    <string name="pings_comms_label">Comms:</string>
+    <string name="pings_doctrine_label">Doctrine:</string>
+    <string name="pings_paps_dialog_message">Your PAPs (fleet participation statistics) can be shown in the Pings window.
+
+It's recommended to only turn this on if you only use Jabber in RIFT, as it may result in extra message notifications in your other Jabber apps while you have the Pings window open.</string>
+    <!-- %1$s is the complete localized relative time; refresh thresholds and timezone are unchanged -->
+    <string name="pings_paps_checked_caption">Checked PAPs %1$s</string>
+    <!-- %1$s is the existing formatted count or the unavailable marker; styling and the following newline are applied by the caller -->
+    <string name="pings_paps_month_summary">This month: %1$s</string>
+    <!-- %1$s is the existing formatted count or the unavailable marker; styling and the following newline are applied by the caller -->
+    <string name="pings_paps_30_days_summary">Last 30 days: %1$s</string>
+    <!-- %1$s is the existing formatted count or the unavailable marker; styling and the following newline are applied by the caller -->
+    <string name="pings_paps_90_days_summary">Last 90 days: %1$s</string>
+    <!-- %1$s is the existing formatted count or unavailable marker; STR is the strategic participation abbreviation -->
+    <string name="pings_paps_strategic_value">%1$s STR</string>
+    <!-- %1$s is the existing formatted count or unavailable marker; PCT is the peacetime participation abbreviation -->
+    <string name="pings_paps_peacetime_value">%1$s PCT</string>
+    <!-- %1$s is the literal Mumble channel name -->
+    <string name="pings_mumble_join_action">Join %1$s on Mumble</string>
+    <!-- %1$s is the external participation type with its existing capitalization -->
+    <string name="pings_custom_pap_caption">%1$s PAP</string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_announcement_type">Announcement</string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_announcement_sender_type"><![CDATA[Announcement from <font color="textPrimary">%1$s</font>]]></string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_target_message_type"><![CDATA[<font color="textPrimary">%1$s</font> message]]></string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_target_message_sender_type"><![CDATA[<font color="textPrimary">%1$s</font> message from <font color="textPrimary">%2$s</font>]]></string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_fleet_type"><![CDATA[Fleet under <font color="textPrimary">%1$s</font>]]></string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_named_fleet_type"><![CDATA[Fleet <font color="textPrimary">%1$s</font> under <font color="textPrimary">%2$s</font>]]></string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_target_fleet_type"><![CDATA[<font color="textPrimary">%1$s</font> fleet under <font color="textPrimary">%2$s</font>]]></string>
+    <!-- Arguments are escaped literal target/fleet/sender/commander names; keep font tags and textPrimary color; whole tagged arguments may move -->
+    <string name="pings_target_named_fleet_type"><![CDATA[<font color="textPrimary">%1$s</font> fleet <font color="textPrimary">%2$s</font> under <font color="textPrimary">%3$s</font>]]></string>
+</resources>

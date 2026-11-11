@@ -1,0 +1,29 @@
+<resources>
+    <string name="jukebox_window_title">Jukebox</string>
+    <string name="jukebox_playlist_dialog_title">Enter Playlist Name</string>
+    <string name="jukebox_playlist_name_label">Playlist Name</string>
+    <string name="jukebox_previous_track_action">Play Previous Track</string>
+    <string name="jukebox_pause_action">Pause</string>
+    <string name="jukebox_play_action">Play</string>
+    <string name="jukebox_next_track_action">Play Next Track</string>
+    <string name="jukebox_shuffle_disable_action">Turn Shuffle Off</string>
+    <string name="jukebox_shuffle_enable_action">Turn Shuffle On</string>
+    <string name="jukebox_volume_down_action">Volume Down</string>
+    <string name="jukebox_volume_up_action">Volume Up</string>
+    <string name="jukebox_playlist_delete_action">Delete</string>
+    <string name="jukebox_playlist_rename_action">Rename</string>
+    <string name="jukebox_playlist_new_action">New</string>
+    <string name="jukebox_track_number_column">Number</string>
+    <string name="jukebox_track_title_column">Title</string>
+    <string name="jukebox_track_duration_column">Duration</string>
+    <string name="jukebox_track_remove_action">Remove From Playlist</string>
+    <string name="jukebox_playlist_empty">No Tracks on Playlist</string>
+    <string name="jukebox_tracks_add_action">Add Tracks</string>
+    <string name="jukebox_mp3_file_filter">MP3 files</string>
+    <string name="jukebox_reveal_first_caption">Some things are gone forever...</string>
+    <string name="jukebox_reveal_second_caption">...but some find their way back</string>
+    <!-- Built-in playlist caption only; the playlist name, ID and ordering remain unchanged -->
+    <string name="jukebox_soundtrack_playlist">EVE Soundtrack</string>
+    <!-- Built-in playlist caption only; the playlist name, ID and ordering remain unchanged -->
+    <string name="jukebox_trailer_playlist">EVE Trailer Music</string>
+</resources>

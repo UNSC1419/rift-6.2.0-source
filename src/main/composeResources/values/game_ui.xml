@@ -1,0 +1,32 @@
+<resources>
+    <!-- Native EVE window subjects and plain-text instructions; RIFT Intel Fusion Tool is product branding -->
+    <string name="game_ui_link_ship_subject">Ship link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_ship_instruction">Click the link to view the ship</string>
+    <string name="game_ui_link_type_subject">Type link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_type_instruction">Click the link to view the type</string>
+    <string name="game_ui_link_system_subject">Solar system link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_system_instruction">Click the link to view the solar system</string>
+    <string name="game_ui_link_location_subject">Location link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_location_instruction">Click the link to view the location</string>
+    <string name="game_ui_link_corporation_project_subject">Corporation project link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_corporation_project_instruction">Click the link to view the corporation project</string>
+    <string name="game_ui_link_freelance_project_subject">Freelance project link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_freelance_project_instruction">Click the link to view the freelance project</string>
+    <string name="game_ui_link_mercenary_tactical_operation_subject">Mercenary tactical operation link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_mercenary_tactical_operation_instruction">Click the link to view the mercenary tactical operation</string>
+    <string name="game_ui_link_subject">Link from RIFT Intel Fusion Tool</string>
+    <string name="game_ui_link_instruction">Click the link to view</string>
+    <string name="game_ui_link_close_hint">You can close this window. It's only here to let you click your link.</string>
+    <string name="game_ui_no_character_title">No Character Online</string>
+    <string name="game_ui_permission_title">Insufficient Permissions</string>
+    <string name="game_ui_request_failed_title">Could Not Open Window</string>
+    <string name="game_ui_no_character_message">Cannot open a window in-game because you are not in-game</string>
+    <string name="game_ui_permission_message">Cannot open a window in-game because you haven't allowed RIFT to do so.</string>
+    <!-- Fixed styled order: prefix, highlighted character name, suffix; preserve the trailing and leading spaces -->
+    <string name="game_ui_reauthenticate_prefix">You need to reauthenticate character </string>
+    <string name="game_ui_reauthenticate_suffix"> in the Characters window.</string>
+    <string name="game_ui_request_failed_message">The ESI request has failed.</string>
+    <!-- Followed by a separately styled external error message; preserve the trailing space -->
+    <string name="game_ui_request_reason_prefix">Reason: </string>
+    <string name="game_ui_unknown_error">Unknown</string>
+</resources>

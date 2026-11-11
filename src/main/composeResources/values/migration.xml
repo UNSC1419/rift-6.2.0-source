@@ -1,0 +1,23 @@
+<resources>
+    <string name="migration_title">Moving RIFT data</string>
+    <string name="migration_description">RIFT is moving your settings and data to your Documents folder. RIFT will start when the move is complete. Please keep this window open.</string>
+    <string name="migration_preparing">Preparing to move files…</string>
+    <!-- %1$d is the completed file count; %2$d is the total file count -->
+    <string name="migration_progress">Copied and verified %1$d of %2$d files</string>
+    <string name="migration_cleaning_up">Removing old copies…</string>
+    <string name="migration_failure">The move could not finish. Your data is preserved. Fix the problem below and retry, or close RIFT and try again later.</string>
+    <string name="migration_retry">Retry</string>
+    <string name="migration_close">Close RIFT</string>
+    <!-- %1$s is the source directory path -->
+    <string name="migration_from">From: %1$s</string>
+    <!-- %1$s is the destination directory path -->
+    <string name="migration_to">To: %1$s</string>
+    <string name="migration_error_close_instances">Close other RIFT instances before retrying</string>
+    <string name="migration_error_nested_folders">The old and new data folders must not contain each other</string>
+    <!-- %1$s is the destination path -->
+    <string name="migration_error_symbolic_link">Destination is a symbolic link: %1$s</string>
+    <!-- %1$s is the source file path -->
+    <string name="migration_error_unsupported_file">Cannot migrate unsupported file: %1$s</string>
+    <!-- %1$s is the destination file path -->
+    <string name="migration_error_conflicting_data">Different data already exists at %1$s. Resolve the conflict before retrying</string>
+</resources>

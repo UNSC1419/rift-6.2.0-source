@@ -1,0 +1,13 @@
+<resources>
+    <string name="killmail_delay_no_delay">No delay</string>
+    <string name="killmail_delay_one_hour">1 hour</string>
+    <string name="killmail_delay_three_hours">3 hours</string>
+    <string name="killmail_delay_eight_hours">8 hours</string>
+    <string name="killmail_delay_one_day">24 hours</string>
+    <string name="killmail_delay_three_days">72 hours</string>
+    <string name="killmail_post_title">Post killmail</string>
+    <string name="killmail_post_confirmation">Post the kill you copied to zKillboard?</string>
+    <string name="killmail_settings_description">You can control this feature in settings.</string>
+    <string name="killmail_delay_label">Delay:</string>
+    <string name="killmail_posting_status">Posting…</string>
+</resources>

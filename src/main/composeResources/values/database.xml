@@ -1,0 +1,6 @@
+<resources>
+    <string name="database_write_failure_title">Could not save local data</string>
+    <string name="database_write_failure_message">RIFT could not save character lookup data to its local database. Your disk may be full, a storage quota may have been reached, or the database may not be writable.\n\nCheck available space on the drive containing the database and on your system temporary drive, and make sure RIFT can write to the database:\n%1$s\n\nChat intel parsing will continue, but character lookups cannot be cached while this issue persists. Other local data, such as wallet history, may also fail to save.\n\nAfter resolving the storage issue, restart RIFT. This warning will appear only once until RIFT is restarted.</string>
+    <string name="database_load_failure_title">Could not load required files</string>
+    <string name="database_load_failure_message">RIFT could not load required files into temporary storage. Your disk may be full, a storage quota may have been reached, or the temporary directory may not be writable.\n\nFree up space on the drive containing the temporary directory and make sure RIFT can write to it:\n%1$s\n\nAfter resolving the storage issue, restart RIFT.</string>
+</resources>

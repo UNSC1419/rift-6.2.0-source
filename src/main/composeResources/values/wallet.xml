@@ -1,0 +1,219 @@
+<resources>
+    <string name="wallet_window_title">Wallets</string>
+    <string name="wallet_tab_overview">Overview</string>
+    <string name="wallet_tab_transactions">Transactions</string>
+    <string name="wallet_tab_insights">Insights</string>
+    <string name="wallet_tab_loyalty_points">Loyalty Points</string>
+    <string name="wallet_load_error">Could not load wallets</string>
+    <string name="wallet_retry_action">Try again</string>
+    <string name="wallet_selection_description">Choose wallets to filter transactions and insights</string>
+    <string name="wallet_all_character_wallets">All character wallets</string>
+    <string name="wallet_transactions_filtered_empty">All transactions filtered out</string>
+    <string name="wallet_transactions_empty">No transactions</string>
+    <string name="wallet_division_name_placeholder">Division name</string>
+    <string name="wallet_loyalty_points_total_description">Loyalty points totals from all your characters</string>
+    <string name="wallet_loyalty_points_character_description">Loyalty points and the closest loyalty point store for each character</string>
+    <string name="wallet_loyalty_points_by_character_action">By character</string>
+    <string name="wallet_loyalty_points_total_action">Total</string>
+    <string name="wallet_loyalty_points_empty">No loyalty points</string>
+    <string name="wallet_loyalty_points_search_empty">No loyalty points matching your search</string>
+    <string name="wallet_loyalty_points_characters_empty">No characters with loyalty points</string>
+    <string name="wallet_overview_income">Income</string>
+    <string name="wallet_overview_expenses">Expenses</string>
+    <string name="wallet_overview_balance">Balance</string>
+    <string name="wallet_loading_transactions">Loading transactions…</string>
+    <string name="wallet_processing_transactions">Processing transactions…</string>
+    <string name="wallet_loading_transaction_details">Loading transaction details…</string>
+    <string name="wallet_loading_division_names">Loading corporation division names…</string>
+    <string name="wallet_loading_balances">Loading balances…</string>
+    <string name="wallet_history_description">ESI only provides wallet transactions from the last 30 days,
+but RIFT will remember them indefinitely.
+
+This means if you use RIFT for a year,
+you will have complete wallet history for the last year.</string>
+    <string name="wallet_division_default_name">Division %1$s</string>
+    <string name="wallet_loading_corporation_division_name">%1$s, Division %2$s</string>
+    <string name="wallet_filter_showing_description">Showing %1$s from %2$s</string>
+    <string name="wallet_filter_based_on_description">Based on %1$s from %2$s</string>
+    <string name="wallet_filter_showing_types_description">Showing %1$s from %2$s matching %3$s</string>
+    <!-- English loading/timespan captions preserve the existing plural wording at all counts; translators may use natural forms -->
+    <plurals name="wallet_timespan_hours">
+        <item quantity="one">Last %1$s hours</item>
+        <item quantity="other">Last %1$s hours</item>
+    </plurals>
+    <plurals name="wallet_timespan_days">
+        <item quantity="one">Last %1$s days</item>
+        <item quantity="other">Last %1$s days</item>
+    </plurals>
+    <plurals name="wallet_loading_journal_loaded">
+        <item quantity="one">%1$s wallet transactions loaded</item>
+        <item quantity="other">%1$s wallet transactions loaded</item>
+    </plurals>
+    <plurals name="wallet_loading_market_loaded">
+        <item quantity="one">%1$s market transactions loaded</item>
+        <item quantity="other">%1$s market transactions loaded</item>
+    </plurals>
+    <plurals name="wallet_loading_journal_progress">
+        <item quantity="one">%1$s wallet transactions, loading…</item>
+        <item quantity="other">%1$s wallet transactions, loading…</item>
+    </plurals>
+    <plurals name="wallet_loading_market_progress">
+        <item quantity="one">%1$s market transactions, loading…</item>
+        <item quantity="other">%1$s market transactions, loading…</item>
+    </plurals>
+    <plurals name="wallet_loading_references">
+        <item quantity="one">%1$s transactions referencing</item>
+        <item quantity="other">%1$s transactions referencing</item>
+    </plurals>
+    <plurals name="wallet_loading_structures_loaded">
+        <item quantity="one">%1$s structures and stations, done!</item>
+        <item quantity="other">%1$s structures and stations, done!</item>
+    </plurals>
+    <plurals name="wallet_loading_structures_progress">
+        <item quantity="one">%1$s structures and stations…</item>
+        <item quantity="other">%1$s structures and stations…</item>
+    </plurals>
+    <plurals name="wallet_loading_characters_loaded">
+        <item quantity="one">%1$s characters, done!</item>
+        <item quantity="other">%1$s characters, done!</item>
+    </plurals>
+    <plurals name="wallet_loading_characters_progress">
+        <item quantity="one">%1$s characters…</item>
+        <item quantity="other">%1$s characters…</item>
+    </plurals>
+    <plurals name="wallet_loading_groups_loaded">
+        <item quantity="one">%1$s corporations and alliances, done!</item>
+        <item quantity="other">%1$s corporations and alliances, done!</item>
+    </plurals>
+    <plurals name="wallet_loading_groups_progress">
+        <item quantity="one">%1$s corporations and alliances…</item>
+        <item quantity="other">%1$s corporations and alliances…</item>
+    </plurals>
+    <plurals name="wallet_loading_systems_progress">
+        <item quantity="one">%1$s systems…</item>
+        <item quantity="other">%1$s systems…</item>
+    </plurals>
+    <plurals name="wallet_loading_types_progress">
+        <item quantity="one">%1$s types…</item>
+        <item quantity="other">%1$s types…</item>
+    </plurals>
+    <!-- Filter count phrases are inserted into complete summaries; preserve the bold primary-colored number tags -->
+    <plurals name="wallet_filter_transactions">
+        <item quantity="one"><![CDATA[<b><font color="textPrimary">%1$s</font></b> transaction]]></item>
+        <item quantity="other"><![CDATA[<b><font color="textPrimary">%1$s</font></b> transactions]]></item>
+    </plurals>
+    <plurals name="wallet_filter_deposits">
+        <item quantity="one"><![CDATA[<b><font color="textPrimary">%1$s</font></b> deposit]]></item>
+        <item quantity="other"><![CDATA[<b><font color="textPrimary">%1$s</font></b> deposits]]></item>
+    </plurals>
+    <plurals name="wallet_filter_withdrawals">
+        <item quantity="one"><![CDATA[<b><font color="textPrimary">%1$s</font></b> withdrawal]]></item>
+        <item quantity="other"><![CDATA[<b><font color="textPrimary">%1$s</font></b> withdrawals]]></item>
+    </plurals>
+    <plurals name="wallet_filter_wallets">
+        <item quantity="one"><![CDATA[<b><font color="textPrimary">%1$s</font></b> wallet]]></item>
+        <item quantity="other"><![CDATA[<b><font color="textPrimary">%1$s</font></b> wallets]]></item>
+    </plurals>
+    <plurals name="wallet_filter_types">
+        <item quantity="one"><![CDATA[<b><font color="textPrimary">%1$s</font></b> type]]></item>
+        <item quantity="other"><![CDATA[<b><font color="textPrimary">%1$s</font></b> types]]></item>
+    </plurals>
+    <string name="wallet_transaction_character_unknown">Unknown character</string>
+    <string name="wallet_transaction_corporation_unknown">Unknown corporation</string>
+    <!-- Action shown between separate payer and recipient entity tokens -->
+    <string name="wallet_transaction_paid">paid</string>
+    <string name="wallet_transaction_withdrawal_performed">performed the withdrawal</string>
+    <string name="wallet_filter_all_types">All types</string>
+    <string name="wallet_filter_market_transactions">Market Transactions</string>
+    <string name="wallet_filter_other_types">Other Types</string>
+    <string name="wallet_filter_types_action">Types</string>
+    <string name="wallet_filter_party_description">Showing only transactions involving:</string>
+    <string name="wallet_filter_remove_party_action">Remove filter</string>
+    <string name="wallet_filter_direction_all">All</string>
+    <string name="wallet_filter_direction_income">Income</string>
+    <string name="wallet_filter_direction_expenses">Expenses</string>
+    <string name="wallet_transaction_corporation_wallet">%1$s %2$s</string>
+    <!-- Preserve the primary-colored reason argument; the external reason is escaped and remains literal -->
+    <string name="wallet_transaction_reason"><![CDATA[Reason: "<font color="textPrimary">%1$s</font>"]]></string>
+    <string name="wallet_transaction_tax_received">received tax: %1$s</string>
+    <string name="wallet_type_corporation_project">Corporation Project</string>
+    <string name="wallet_type_freelance_project">Freelance Project</string>
+    <string name="wallet_type_daily_goal">Daily Goal</string>
+    <string name="wallet_type_quantity">%1$sx %2$s</string>
+    <string name="wallet_transaction_bought_unit_price">Bought at %1$s per unit</string>
+    <string name="wallet_transaction_sold_unit_price">Sold at %1$s per unit</string>
+    <string name="wallet_type_unsupported">Not implemented %1$s</string>
+    <string name="wallet_segment_no_transaction">No transaction</string>
+    <string name="wallet_segment_no_category">No category</string>
+    <string name="wallet_segment_purchase">Purchase: %1$s</string>
+    <string name="wallet_segment_sale">Sale: %1$s</string>
+    <string name="wallet_chart_segment_percentage">%1$s %2$s</string>
+    <string name="wallet_chart_back_action">Back</string>
+    <string name="wallet_insights_reference_amount">%1$s: %2$s</string>
+    <string name="wallet_insights_reference_count">%1$sx %2$s</string>
+    <plurals name="wallet_chart_income_days">
+        <item quantity="one">%1$s Day Income</item>
+        <item quantity="other">%1$s Days Income</item>
+    </plurals>
+    <plurals name="wallet_chart_expense_days">
+        <item quantity="one">%1$s Day Expenses</item>
+        <item quantity="other">%1$s Days Expenses</item>
+    </plurals>
+    <string name="wallet_insights_ship_group_drone">Drone</string>
+    <string name="wallet_insights_ship_group_triglavian_rogue_drone">Triglavian Rogue Drone</string>
+    <string name="wallet_insights_ship_group_fighter_drone">Fighter Drone</string>
+    <string name="wallet_insights_ship_group_fighter_bomber">Fighter Bomber</string>
+    <string name="wallet_insights_ship_group_shuttle">Shuttle</string>
+    <string name="wallet_insights_ship_group_frigate">Frigate</string>
+    <string name="wallet_insights_ship_group_destroyer">Destroyer</string>
+    <string name="wallet_insights_ship_group_cruiser">Cruiser</string>
+    <string name="wallet_insights_ship_group_battlecruiser">Battlecruiser</string>
+    <string name="wallet_insights_ship_group_industrial">Industrial</string>
+    <string name="wallet_insights_ship_group_structure">Structure</string>
+    <string name="wallet_insights_ship_group_hauler">Hauler</string>
+    <string name="wallet_insights_ship_group_battleship">Battleship</string>
+    <string name="wallet_insights_ship_group_carrier">Carrier</string>
+    <string name="wallet_insights_ship_group_freighter">Freighter</string>
+    <string name="wallet_insights_ship_group_force_auxiliary">Force Auxiliary</string>
+    <string name="wallet_insights_ship_group_dreadnought">Dreadnought</string>
+    <string name="wallet_insights_ship_group_capital_industrial_ship">Capital Industrial Ship</string>
+    <string name="wallet_insights_ship_group_supercarrier">Supercarrier</string>
+    <string name="wallet_insights_ship_group_titan">Titan</string>
+    <string name="wallet_insights_tab_income_by_party">Income by party</string>
+    <string name="wallet_insights_tab_expense_by_party">Expense by party</string>
+    <string name="wallet_insights_tab_balance_by_party">Balance by party</string>
+    <string name="wallet_insights_tab_destroyed_ships">Wanted ships destroyed</string>
+    <string name="wallet_insights_tab_daily_goals">Daily goals</string>
+    <string name="wallet_insights_tab_activity">Activity</string>
+    <string name="wallet_insights_view_all_action">View all</string>
+    <string name="wallet_insights_destroyed_ships_by_system">Destroyed ships by system</string>
+    <string name="wallet_insights_other_ship_group">Other</string>
+    <string name="wallet_insights_destroyed_ship_group">Destroyed %1$sx %2$s</string>
+    <string name="wallet_insights_daily_goals_empty">No daily goals completed</string>
+    <string name="wallet_insights_wallet_transactions_empty">No wallet transactions</string>
+    <string name="wallet_insights_daily_goal_quantity">%1$sx %2$s</string>
+    <plurals name="wallet_insights_destroyed_ships">
+        <item quantity="one">%1$s ship destroyed</item>
+        <item quantity="other">%1$s ships destroyed</item>
+    </plurals>
+    <plurals name="wallet_insights_ship_count_label">
+        <item quantity="one">ship</item>
+        <item quantity="other">ships</item>
+    </plurals>
+    <!-- Preserve existing English plural wording at all counts; the nested day phrase has its own quantity -->
+    <plurals name="wallet_insights_daily_goals_summary">
+        <item quantity="one">%1$s daily goals completed on %2$s</item>
+        <item quantity="other">%1$s daily goals completed on %2$s</item>
+    </plurals>
+    <plurals name="wallet_insights_daily_goal_days">
+        <item quantity="one">%1$s days</item>
+        <item quantity="other">%1$s days</item>
+    </plurals>
+    <!-- Retain the final newline; the tooltip adds another newline before listing goal names -->
+    <plurals name="wallet_insights_daily_goals_completed">
+        <item quantity="one">Completed %1$s daily goal:
+</item>
+        <item quantity="other">Completed %1$s daily goals:
+</item>
+    </plurals>
+</resources>

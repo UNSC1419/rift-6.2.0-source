@@ -1,0 +1,73 @@
+<resources>
+    <string name="wizard_welcome_step_welcome_capsuleer_text">Welcome, capsuleer!</string>
+    <string name="wizard_welcome_step_are_now_possession_rift_prototype_text">
+
+You are now in possession of RIFT, a prototype military system that will aid your situational awareness with additional intel.
+
+I will get you started.</string>
+    <string name="wizard_eve_installation_step_eve_online_not_detected_text">EVE Online not detected</string>
+    <string name="wizard_eve_installation_step_set_up_rift_properly_i_text">
+
+To set up RIFT properly, I need to know the location of your EVE installation.</string>
+    <string name="wizard_eve_installation_step_eve_online_detected_text">EVE Online detected</string>
+    <string name="wizard_eve_installation_step_i_have_located_installation_eve_text">
+
+I have located your installation of EVE.</string>
+    <string name="wizard_eve_installation_step_eve_online_located_text">EVE Online located</string>
+    <string name="wizard_eve_installation_step_installation_eve_now_set_up_text">
+
+Your installation of EVE is now set up correctly.</string>
+    <string name="wizard_eve_installation_step_select_installation_text">Select installation</string>
+    <string name="wizard_eve_installation_step_check_installation_text">Check installation</string>
+    <string name="wizard_eve_installation_step_change_installation_text">Change installation</string>
+    <string name="wizard_characters_step_no_characters_detected_text">No characters detected</string>
+    <string name="wizard_characters_step_i_did_not_detect_any_text">
+
+I did not detect any characters that were used on this device.</string>
+    <string name="wizard_characters_step_characters_detected_text">Characters detected</string>
+    <string name="wizard_characters_step_characters_partially_set_up_text">Characters partially set up</string>
+    <string name="wizard_characters_step_characters_set_up_text">Characters set up</string>
+    <string name="wizard_characters_step_all_characters_are_authenticated_ready_text">
+
+All of your characters are authenticated and ready to use with RIFT.</string>
+    <string name="wizard_characters_step_authenticate_characters_text">Authenticate characters</string>
+    <string name="wizard_characters_step_check_characters_text">Check characters</string>
+    <string name="wizard_configuration_packs_step_alliance_features_text">Alliance features</string>
+    <string name="wizard_configuration_packs_step_selected_default_settings_text">
+
+You selected default settings.</string>
+    <string name="wizard_configuration_packs_step_configuration_pack_label">Configuration pack:</string>
+    <string name="wizard_intel_channels_step_skip_text">Skip</string>
+    <string name="wizard_intel_channels_step_intel_channels_set_up_text">Intel channels set up</string>
+    <string name="wizard_intel_channels_step_have_configured_intel_channels_text">
+
+You have configured your intel channels.</string>
+    <string name="wizard_intel_channels_step_intel_channels_text">Intel channels</string>
+    <string name="wizard_intel_channels_step_if_are_alliance_intel_channels_text">
+
+If you are in an alliance with intel channels, you can have RIFT monitor them for intel reports.</string>
+    <string name="wizard_intel_channels_step_add_intel_channels_text">Add intel channels</string>
+    <string name="wizard_intel_channels_step_change_intel_channels_text">Change intel channels</string>
+    <string name="wizard_finish_step_all_done_text">All done!</string>
+    <string name="wizard_finish_step_rift_now_ready_enhance_capabilities_text">
+
+RIFT is now ready to enhance your capabilities. Look for this tray icon to access all features:</string>
+    <string name="wizard_step_content_continue_anyway_text">Continue anyway</string>
+    <string name="wizard_step_content_continue_text">Continue</string>
+    <string name="wizard_characters_detected_body">
+
+I have detected %1$s of your characters.
+
+Let's authenticate them in order to use them with RIFT.</string>
+    <string name="wizard_characters_partial_body">
+
+I have detected %1$s of your characters, but you have only authenticated %2$s of them.</string>
+    <!-- %1$s is a player coalition name -->
+    <string name="wizard_pack_features_body">
+
+Do you want to enable features specific to %1$s?</string>
+    <string name="wizard_settings_error_title">Can't read settings</string>
+    <!-- %1$s is a literal filesystem path -->
+    <string name="wizard_settings_error_body">Your settings couldn't be read and were reset. Your original settings file was backed up, and you can find it under:
+%1$s</string>
+</resources>

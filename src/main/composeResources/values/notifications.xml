@@ -1,0 +1,27 @@
+<resources>
+    <string name="notifications_window_title">Notification</string>
+    <string name="notifications_your_character_caption">Your character</string>
+    <string name="notifications_reference_system_caption">Reference system</string>
+    <string name="notifications_sovereignty_hub_caption">Sovereignty Hub</string>
+    <!-- Styled prefixes precede a highlighted external channel name; retain trailing spaces and segment order -->
+    <string name="notifications_chat_title_prefix">Chat message in </string>
+    <string name="notifications_jabber_title_prefix">Jabber message </string>
+    <string name="notifications_jabber_sender_prefix">from </string>
+    <string name="notifications_jabber_channel_prefix">in </string>
+    <string name="notifications_sovereignty_saved_title">Sovereignty upgrades saved</string>
+    <string name="notifications_character_unavailable">Character</string>
+    <string name="notifications_same_system_caption">In the system</string>
+    <string name="notifications_same_character_system_caption">In your system</string>
+    <plurals name="notifications_jump_distance">
+        <item quantity="one">%1$s jump away</item>
+        <item quantity="other">%1$s jumps away</item>
+    </plurals>
+    <string name="notifications_placement_title">Edit notification placement</string>
+    <string name="notifications_placement_drag_instruction">Drag to choose position</string>
+    <string name="notifications_placement_confirm_instruction">Click here when done</string>
+    <!-- Highlighted sample title precedes the body; retain the trailing newline -->
+    <string name="notifications_placement_sample_title">Sample notification title
+</string>
+    <string name="notifications_placement_sample_body">Sample notification contents</string>
+    <string name="notifications_windows_tray_tooltip">RIFT Notification</string>
+</resources>

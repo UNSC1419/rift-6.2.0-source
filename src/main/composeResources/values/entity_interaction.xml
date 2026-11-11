@@ -1,0 +1,15 @@
+<resources>
+    <string name="entity_interaction_show_info">Show Info</string>
+    <string name="entity_interaction_set_destination">Set Destination</string>
+    <string name="entity_interaction_add_waypoint">Add Waypoint</string>
+    <string name="entity_interaction_clear_autopilot">Clear Autopilot</string>
+    <string name="entity_interaction_autopilot_all_characters">All Characters</string>
+    <string name="entity_interaction_copy_name">Copy Name</string>
+    <string name="entity_interaction_add_marker">Add Marker</string>
+    <string name="entity_interaction_show_assets">Show Assets</string>
+    <string name="entity_interaction_show_on_map">Show on Map</string>
+    <string name="entity_interaction_show_on_cluster_map">Show in New Eden</string>
+    <string name="entity_interaction_show_on_region_map">Show in Region</string>
+    <string name="entity_interaction_edit_contact">Edit Contact</string>
+    <string name="entity_interaction_add_contact">Add Contact</string>
+</resources>

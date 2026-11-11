@@ -1,0 +1,13 @@
+<resources>
+    <string name="crash_window_title">Fatal Error</string>
+    <string name="crash_problem_description">RIFT has encountered a problem and has to close.</string>
+    <string name="crash_outdated_version_warning">You are using an older version of RIFT.</string>
+    <string name="crash_latest_version_guidance">The problem may already be fixed in the latest version.</string>
+    <!-- %1$s is the literal support error code, highlighted in the UI -->
+    <string name="crash_error_code_caption">Error code: %1$s</string>
+    <string name="crash_report_guidance">Please report this issue and copy the code into a Discord ticket.</string>
+    <string name="crash_copy_code_guidance">Don't send a screenshot of the code.</string>
+    <string name="crash_hide_details_action">Hide details</string>
+    <string name="crash_show_details_action">Show details</string>
+    <string name="crash_report_action">Report error</string>
+</resources>

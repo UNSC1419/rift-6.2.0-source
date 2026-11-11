@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="opportunities_category_type_feature">Feature</string>
+    <string name="opportunities_category_type_career_path">Career Path</string>
+    <string name="opportunities_category_type_activity">Activity</string>
+    <string name="opportunities_category_corporation_projects_name">Corporation Projects</string>
+    <string name="opportunities_category_corporation_projects_description">Projects being run on behalf of your
+corporation.</string>
+    <string name="opportunities_category_factional_warfare_name">Factional Warfare</string>
+    <string name="opportunities_category_factional_warfare_description">Factional Warfare sites where you can support
+the war effort on behalf of a faction you are
+enlisted with.</string>
+    <string name="opportunities_category_freelance_jobs_name">Freelance Jobs</string>
+    <string name="opportunities_category_freelance_jobs_description">Earn ISK, gain experience, and connect with
+others through capsuleer-made jobs.</string>
+    <string name="opportunities_category_mercenary_tactical_operations_name">Mercenary Tactical Operations</string>
+    <string name="opportunities_category_mercenary_tactical_operations_description">Mercenary Tactical Operations are available when at least one
+Mercenary Den is deployed. While only the Den's owner can
+track these operations, they can still be completed by other
+capsuleers.</string>
+    <string name="opportunities_category_enforcer_name">Enforcer</string>
+    <string name="opportunities_category_enforcer_description">Opportunities for those focused on the
+Enforcer Career path or who are interested in
+Combat against non-capsuleers.</string>
+    <string name="opportunities_category_explorer_name">Explorer</string>
+    <string name="opportunities_category_explorer_description">Opportunities for those focused on the
+Explorer Career path or who are interested in
+exploration, scanning, or hacking.</string>
+    <string name="opportunities_category_industrialist_name">Industrialist</string>
+    <string name="opportunities_category_industrialist_description">Opportunities for those focused on the
+Industrialist Career path or who are interested
+in resource gathering, manufacturing, or hauling.</string>
+    <string name="opportunities_category_soldier_of_fortune_name">Soldier of Fortune</string>
+    <string name="opportunities_category_soldier_of_fortune_description">Opportunities for those focused on the
+Soldier of Fortune Career path or who are interested
+in combat against other capsuleers.</string>
+    <string name="opportunities_category_combat_name">Combat</string>
+    <string name="opportunities_category_combat_description">Engaging with hostile forces.</string>
+    <string name="opportunities_category_cosmic_signatures_name">Cosmic Signatures</string>
+    <string name="opportunities_category_cosmic_signatures_description">A site that needs to be located by probe
+scanning before you can travel to it.</string>
+    <string name="opportunities_category_fleet_name">Fleet</string>
+    <string name="opportunities_category_fleet_description">Form a fleet with other capsuleers to
+cooperate and complete objectives.</string>
+    <string name="opportunities_category_hauling_name">Hauling</string>
+    <string name="opportunities_category_hauling_description">Transporting items from location to location.</string>
+    <string name="opportunities_category_logistics_name">Logistics</string>
+    <string name="opportunities_category_logistics_description">Using remote modules to boost, repair, or
+transfer energy to friendly targets.</string>
+    <string name="opportunities_category_manufacturing_name">Manufacturing</string>
+    <string name="opportunities_category_manufacturing_description">Using blueprints to produce items.</string>
+    <string name="opportunities_category_mining_name">Mining</string>
+    <string name="opportunities_category_mining_description">Harvesting ore from asteroids.</string>
+    <string name="opportunities_lifecycle_current_action">Current</string>
+    <string name="opportunities_lifecycle_history_action">History</string>
+    <string name="opportunities_features_heading">Features</string>
+    <string name="opportunities_all_filter_name">All</string>
+    <string name="opportunities_career_paths_heading">Career Paths</string>
+    <string name="opportunities_other_tags_heading">Other Tags</string>
+    <string name="opportunities_loading_tooltip">Loading opportunities…</string>
+    <string name="opportunities_category_unclassified_name">Unclassified</string>
+    <string name="opportunities_closed_status">Closed</string>
+    <string name="opportunities_completed_status">Completed</string>
+    <string name="opportunities_expired_status">Expired</string>
+    <string name="opportunities_window_title">Opportunities</string>
+    <string name="opportunities_active_tab">Active</string>
+    <string name="opportunities_participated_tab">Participated</string>
+    <string name="opportunities_reward_available_to_you_label">Available to you</string>
+    <string name="opportunities_reward_available_to_members_label">Available to all members</string>
+    <string name="opportunities_completed_today_label">Completed Today</string>
+    <string name="opportunities_completed_week_label">Completed This Week</string>
+    <string name="opportunities_filters_action">Filters</string>
+    <string name="opportunities_sort_action">Sort By</string>
+    <string name="opportunities_all_creators_filter_name">All creators</string>
+    <string name="opportunities_member_corporations_filter_name">All your corporations</string>
+    <string name="opportunities_view_in_game_action">View In-Game</string>
+    <string name="opportunities_reward_available_in_project_label">Available in Project</string>
+    <string name="opportunities_in_progress_status">In Progress</string>
+    <string name="opportunities_deleted_status">Deleted</string>
+    <string name="opportunities_ready_status">Ready to Start</string>
+    <string name="opportunities_empty_title">No Opportunities found</string>
+    <string name="opportunities_active_projects_limit_tooltip">A maximum of 100 Projects
+can be active at once per corporation</string>
+    <string name="opportunities_completed_today_tooltip">Number of projects completed
+in the last 24 hours</string>
+    <string name="opportunities_accepted_jobs_limit_tooltip">The Freelancing skill determines the maximum number of
+Freelance Jobs that can be accepted simultaneously</string>
+    <string name="opportunities_sort_name_label">Name</string>
+    <string name="opportunities_sort_name_reversed_label">Name (Reversed)</string>
+    <string name="opportunities_sort_date_created_label">Date Created</string>
+    <string name="opportunities_sort_date_created_reversed_label">Date Created (Newest first)</string>
+    <string name="opportunities_sort_time_remaining_label">Time Remaining</string>
+    <string name="opportunities_sort_time_remaining_reversed_label">Time Remaining (Longest first)</string>
+    <string name="opportunities_sort_progress_label">Progress</string>
+    <string name="opportunities_sort_progress_reversed_label">Progress (Highest first)</string>
+    <string name="opportunities_sort_number_of_jumps_label">Number of Jumps</string>
+    <string name="opportunities_sort_number_of_jumps_reversed_label">Number of Jumps (Farthest first)</string>
+    <string name="opportunities_sort_last_updated_label">Last Updated</string>
+    <string name="opportunities_sort_last_updated_reversed_label">Last Updated (Newest first)</string>
+    <string name="opportunities_expiry_prefix">Expires in </string>
+    <string name="opportunities_corporation_project_participating_tooltip">You are a participant in this project</string>
+    <string name="opportunities_corporation_project_participated_tooltip">You were a participant in this project</string>
+    <string name="opportunities_freelance_job_participating_tooltip">You are a participant in this job</string>
+    <string name="opportunities_freelance_job_participated_tooltip">You were a participant in this job</string>
+    <string name="opportunities_mercenary_tactical_operation_participating_tooltip">You are a participant in this operation</string>
+    <string name="opportunities_mercenary_tactical_operation_participated_tooltip">You were a participant in this operation</string>
+    <plurals name="opportunities_active_projects_label">
+        <item quantity="one">Active Project</item>
+        <item quantity="other">Active Projects</item>
+    </plurals>
+    <plurals name="opportunities_available_jobs_label">
+        <item quantity="one">Job Available</item>
+        <item quantity="other">Jobs Available</item>
+    </plurals>
+    <plurals name="opportunities_job_corporations_label">
+        <item quantity="one">Corporation</item>
+        <item quantity="other">Corporations</item>
+    </plurals>
+    <plurals name="opportunities_accepted_jobs_label">
+        <item quantity="one">Job Accepted</item>
+        <item quantity="other">Jobs Accepted</item>
+    </plurals>
+    <plurals name="opportunities_count_label">
+        <item quantity="one">%1$d Opportunity</item>
+        <item quantity="other">%1$d Opportunities</item>
+    </plurals>
+
+    <string name="opportunities_contribution_capture_fw_complex_name">Capture Factional Warfare Complexes</string>
+    <string name="opportunities_contribution_capture_fw_complex_description">Capture complexes for your militia in Factional Warfare.</string>
+    <string name="opportunities_contribution_capture_fw_complex_progress_unit">Complexes captured</string>
+    <string name="opportunities_contribution_capture_fw_complex_reward_unit">complex captured</string>
+    <string name="opportunities_contribution_damage_ship_name">Damage Capsuleers</string>
+    <string name="opportunities_contribution_damage_ship_description">Damage ships piloted by capsuleers.</string>
+    <string name="opportunities_contribution_damage_ship_progress_unit">Damage dealt</string>
+    <string name="opportunities_contribution_damage_ship_reward_unit">point of damage</string>
+    <string name="opportunities_contribution_defend_fw_complex_name">Defend Factional Warfare Complexes</string>
+    <string name="opportunities_contribution_defend_fw_complex_description">Defend complexes for your militia in Factional Warfare.</string>
+    <string name="opportunities_contribution_defend_fw_complex_progress_unit">Complexes defended</string>
+    <string name="opportunities_contribution_defend_fw_complex_reward_unit">complex defended</string>
+    <string name="opportunities_contribution_deliver_item_name">Deliver</string>
+    <string name="opportunities_contribution_deliver_item_description">Deliver items of a specific type
+to the Projects hangar in a
+corporation office.</string>
+    <string name="opportunities_contribution_deliver_item_progress_unit">Items delivered</string>
+    <string name="opportunities_contribution_deliver_item_reward_unit">item delivered</string>
+    <string name="opportunities_contribution_destroy_npc_name">Destroy Non-Capsuleers</string>
+    <string name="opportunities_contribution_destroy_npc_description">Destroy ships piloted by non-capsuleers.</string>
+    <string name="opportunities_contribution_destroy_npc_progress_unit">Non-capsuleers destroyed</string>
+    <string name="opportunities_contribution_destroy_npc_reward_unit">kill</string>
+    <string name="opportunities_contribution_destroy_ship_name">Destroy Capsuleer's Ship</string>
+    <string name="opportunities_contribution_destroy_ship_description">Destroy ships piloted by capsuleers.</string>
+    <string name="opportunities_contribution_destroy_ship_progress_unit">Capsuleers destroyed</string>
+    <string name="opportunities_contribution_destroy_ship_reward_unit">kill</string>
+    <string name="opportunities_contribution_earn_loyalty_point_name">Earn Loyalty Points</string>
+    <string name="opportunities_contribution_earn_loyalty_point_description">Earn Loyalty Points from either any source or a specific corporation.</string>
+    <string name="opportunities_contribution_earn_loyalty_point_progress_unit">Loyalty points earned</string>
+    <string name="opportunities_contribution_earn_loyalty_point_reward_unit">loyalty point earned</string>
+    <string name="opportunities_contribution_lost_ship_name">Ship Loss to Capsuleers</string>
+    <string name="opportunities_contribution_lost_ship_description">Receive a corporation ISK payout for losing a ship.</string>
+    <string name="opportunities_contribution_lost_ship_progress_unit">ships lost</string>
+    <string name="opportunities_contribution_lost_ship_reward_unit">ship lost</string>
+    <string name="opportunities_contribution_manual_name">Manual</string>
+    <string name="opportunities_contribution_manual_description">Manually update progress for any participation or measurement that can't be automatically tracked.</string>
+    <string name="opportunities_contribution_manual_reward_unit">unit of progress</string>
+    <string name="opportunities_contribution_manufacture_item_name">Manufacture</string>
+    <string name="opportunities_contribution_manufacture_item_description">Install manufacturing jobs for items of a specific type.</string>
+    <string name="opportunities_contribution_manufacture_item_progress_unit">Items manufactured</string>
+    <string name="opportunities_contribution_manufacture_item_reward_unit">item manufactured</string>
+    <string name="opportunities_contribution_mine_material_name">Mine Materials</string>
+    <string name="opportunities_contribution_mine_material_description">Mine raw materials.</string>
+    <string name="opportunities_contribution_mine_material_progress_unit">Materials mined</string>
+    <string name="opportunities_contribution_mine_material_reward_unit">unit</string>
+    <string name="opportunities_contribution_remote_boost_shield_name">Remote Boost Shield</string>
+    <string name="opportunities_contribution_remote_boost_shield_description">Remote boost a capsuleer's shields.</string>
+    <string name="opportunities_contribution_remote_boost_shield_progress_unit">HP boosted</string>
+    <string name="opportunities_contribution_remote_boost_shield_reward_unit">hit point boosted</string>
+    <string name="opportunities_contribution_remote_repair_armor_name">Remote Repair Armor</string>
+    <string name="opportunities_contribution_remote_repair_armor_description">Remote repair a capsuleer's armor.</string>
+    <string name="opportunities_contribution_remote_repair_armor_progress_unit">HP repaired</string>
+    <string name="opportunities_contribution_remote_repair_armor_reward_unit">hit point repaired</string>
+    <string name="opportunities_contribution_salvage_wreck_name">Salvage Wrecks</string>
+    <string name="opportunities_contribution_salvage_wreck_description">Successfully salvage wrecks of any kind.</string>
+    <string name="opportunities_contribution_salvage_wreck_progress_unit">Wrecks salvaged</string>
+    <string name="opportunities_contribution_salvage_wreck_reward_unit">wreck salvaged</string>
+    <string name="opportunities_contribution_scan_signature_name">Scan Signatures</string>
+    <string name="opportunities_contribution_scan_signature_description">Scan cosmic signatures to 100% resolution with a probe scanner.</string>
+    <string name="opportunities_contribution_scan_signature_progress_unit">Signatures scanned</string>
+    <string name="opportunities_contribution_scan_signature_reward_unit">signature scanned</string>
+    <string name="opportunities_contribution_ship_insurance_name">Ship Insurance</string>
+    <string name="opportunities_contribution_ship_insurance_description">Receive ISK compensation for losing a ship, based on the Kill Report market value of the ship and its fitting.
+
+This project provides an additional insurance paid by the corporation for the ships lost by its members. It works in addition to the ship insurance that capsuleers can purchase themselves in stations.</string>
+    <string name="opportunities_contribution_ship_insurance_progress_unit">Compensated</string>
+    <string name="opportunities_contribution_unknown_description">Project of an unknown type.</string>
+    <string name="opportunities_career_unspecified_fallback_name">Unspecified</string>
+    <string name="opportunities_career_explorer_fallback_name">Explorer</string>
+    <string name="opportunities_career_industrialist_fallback_name">Industrialist</string>
+    <string name="opportunities_career_enforcer_fallback_name">Enforcer</string>
+    <string name="opportunities_career_soldier_of_fortune_fallback_name">SoldierOfFortune</string>
+    <string name="opportunities_details_title">Opportunity Details</string>
+    <string name="opportunities_project_type_label">Project</string>
+    <string name="opportunities_job_type_label">Job</string>
+    <string name="opportunities_operation_type_label">Operation</string>
+    <string name="opportunities_operational_intel_heading">Operational Intel</string>
+    <string name="opportunities_creator_heading">Creator</string>
+    <string name="opportunities_description_heading">Description</string>
+    <string name="opportunities_objectives_heading">Objectives</string>
+    <string name="opportunities_contribution_method_label">Contribution Method</string>
+    <string name="opportunities_participants_heading">Participants</string>
+    <string name="opportunities_contributor_column">Contributor</string>
+    <string name="opportunities_total_amount_column">Total Amount</string>
+    <string name="opportunities_project_target_column">Of Project Target</string>
+    <string name="opportunities_payout_column">Payout</string>
+    <string name="opportunities_unknown_alliance_name">Unknown</string>
+    <string name="opportunities_participation_unspecified_status">Unspecified</string>
+    <string name="opportunities_participation_accepted_status">Accepted</string>
+    <string name="opportunities_participation_removed_status">Removed</string>
+    <string name="opportunities_participation_resigned_status">Resigned</string>
+    <string name="opportunities_participant_column">Participant</string>
+    <string name="opportunities_corporation_column">Corporation</string>
+    <string name="opportunities_alliance_column">Alliance</string>
+    <string name="opportunities_target_value_column">Of Target Value</string>
+    <string name="opportunities_isk_payout_column">ISK Payout</string>
+    <string name="opportunities_state_column">State</string>
+    <string name="opportunities_contributions_empty_description">No contributions found</string>
+    <string name="opportunities_contributions_permission_description">You are not a Project Manager</string>
+    <string name="opportunities_own_contribution_heading">Your Contribution</string>
+    <string name="opportunities_remaining_compensation_label">Remaining Compensation</string>
+    <string name="opportunities_available_reward_label">Available to earn</string>
+    <string name="opportunities_total_earnings_label">ISK total earnings</string>
+    <string name="opportunities_own_earnings_tooltip_heading">My Total Earnings:</string>
+    <string name="opportunities_not_participating_description">You are not participating in this project</string>
+    <string name="opportunities_progress_heading">Progress</string>
+    <string name="opportunities_allocated_reward_tooltip_heading">Total ISK Allocated:</string>
+    <string name="opportunities_paid_compensation_tooltip_heading">Total compensation paid to all capsuleers:</string>
+    <string name="opportunities_remaining_compensation_tooltip_heading">Remaining compensation:</string>
+    <string name="opportunities_coverage_limit_label">Coverage limit per loss</string>
+    <string name="opportunities_coverage_ratio_label">Coverage Ratio</string>
+    <string name="opportunities_coverage_ratio_tooltip">The percentage of the value of the ship plus fitting lost that will be compensated.</string>
+    <string name="opportunities_paid_reward_tooltip_heading">Total earned by all capsuleers:</string>
+    <string name="opportunities_remaining_reward_tooltip_heading">Remaining ISK:</string>
+    <string name="opportunities_age_requirements_met_heading">AGE REQUIREMENTS MET</string>
+    <string name="opportunities_age_requirements_unmet_heading">YOU DO NOT MEET AGE REQUIREMENTS</string>
+    <string name="opportunities_end_date_prefix">End date </string>
+    <string name="opportunities_created_date_heading">Created on %1$s</string>
+    <string name="opportunities_contributors_error_description">Couldn't load contributors: %1$s</string>
+    <string name="opportunities_participation_limit_tooltip">This project has a participation
+limit of %1$s. This means you can only
+contribute up to that limit.</string>
+    <string name="opportunities_remaining_reward_label">Remaining ISK in %1$s</string>
+    <string name="opportunities_reward_per_contribution_label">Reward per %1$s</string>
+    <string name="opportunities_age_range_description">Available to capsuleers who are %1$s and %2$s.</string>
+    <string name="opportunities_minimum_age_description">Available to capsuleers who are %1$s.</string>
+    <string name="opportunities_maximum_age_description">Available to capsuleers who are %1$s.</string>
+    <string name="opportunities_age_unspecified_description">Available to capsuleers who are.</string>
+    <string name="opportunities_gauge_contribution_limit_tooltip">This project has a contribution limit</string>
+    <string name="opportunities_gauge_overall_progress_prefix">Overall Progress </string>
+    <string name="opportunities_gauge_own_progress_prefix">Your Progress </string>
+    <string name="opportunities_attribute_type_label">Type</string>
+    <string name="opportunities_attribute_group_label">Group</string>
+    <string name="opportunities_attribute_ship_type_label">Ship Type</string>
+    <string name="opportunities_attribute_ship_group_label">Ship Group</string>
+    <string name="opportunities_attribute_solar_system_label">Solar System</string>
+    <string name="opportunities_attribute_constellation_label">Constellation</string>
+    <string name="opportunities_attribute_region_label">Region</string>
+    <string name="opportunities_attribute_capsuleer_label">Capsuleer</string>
+    <string name="opportunities_attribute_corporation_label">Corporation</string>
+    <string name="opportunities_attribute_alliance_label">Alliance</string>
+    <string name="opportunities_attribute_faction_label">Faction</string>
+    <string name="opportunities_attribute_unknown_station_label">Unknown Station</string>
+    <string name="opportunities_attribute_unknown_structure_label">Unknown Structure</string>
+    <plurals name="opportunities_minimum_age_clause">
+        <item quantity="one">at least %1$d day old</item>
+        <item quantity="other">at least %1$d days old</item>
+    </plurals>
+    <plurals name="opportunities_maximum_age_clause">
+        <item quantity="one">no more than %1$d day old</item>
+        <item quantity="other">no more than %1$d days old</item>
+    </plurals>
+
+    <string name="opportunities_attribute_capture_fw_complex_complex_type_name">Complex Type</string>
+    <string name="opportunities_attribute_capture_fw_complex_complex_type_description">The type of complex that
+must be captured.</string>
+    <string name="opportunities_attribute_capture_fw_complex_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_capture_fw_complex_solar_system_description">The solar system in which
+complexes must be captured.</string>
+    <string name="opportunities_attribute_capture_fw_complex_faction_name">Faction to capture for</string>
+    <string name="opportunities_attribute_capture_fw_complex_faction_description">The faction you must capture
+complexes for.</string>
+    <string name="opportunities_attribute_damage_ship_identities_name">Capsuleers or Organisations</string>
+    <string name="opportunities_attribute_damage_ship_identities_description">Either the capsuleers who must
+be piloting the ships being
+damaged, or the corporations,
+alliances, or factions to which
+the damaged ship's pilot must
+belong.</string>
+    <string name="opportunities_attribute_damage_ship_ships_name">Ship Types or Groups</string>
+    <string name="opportunities_attribute_damage_ship_ships_description">The types or groups of ships
+to which damage must be
+dealt.</string>
+    <string name="opportunities_attribute_damage_ship_locations_name">Locations</string>
+    <string name="opportunities_attribute_damage_ship_locations_description">Solar Systems, Constellations,
+or Regions in which the
+damage to capsuleer ships
+must be dealt.</string>
+    <string name="opportunities_attribute_defend_fw_complex_complex_type_name">Complex Type</string>
+    <string name="opportunities_attribute_defend_fw_complex_complex_type_description">The type of complex that
+must be defended.</string>
+    <string name="opportunities_attribute_defend_fw_complex_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_defend_fw_complex_solar_system_description">The solar system in which
+complexes must be defended.</string>
+    <string name="opportunities_attribute_defend_fw_complex_faction_name">Faction to capture for</string>
+    <string name="opportunities_attribute_defend_fw_complex_faction_description">The faction whose complexes
+you must defend.</string>
+    <string name="opportunities_attribute_deliver_item_item_name">Item Type</string>
+    <string name="opportunities_attribute_deliver_item_item_description">The type of item to be delivered.</string>
+    <string name="opportunities_attribute_deliver_item_destination_name">Destination</string>
+    <string name="opportunities_attribute_deliver_item_destination_description">The Corporation Office to which
+items must be delivered.</string>
+    <string name="opportunities_attribute_destroy_npc_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_destroy_npc_solar_system_description">The solar system in which the
+ship must be destroyed.</string>
+    <string name="opportunities_attribute_destroy_ship_identities_name">Capsuleers or Organisations</string>
+    <string name="opportunities_attribute_destroy_ship_identities_description">Either the capsuleers who must
+own the destroyed ships, or
+the organizations they must
+belong to (corporation, alliance,
+faction).</string>
+    <string name="opportunities_attribute_destroy_ship_ships_name">Ship Types or Groups</string>
+    <string name="opportunities_attribute_destroy_ship_ships_description">The types or groups of ships
+that must be destroyed.</string>
+    <string name="opportunities_attribute_destroy_ship_locations_name">Locations</string>
+    <string name="opportunities_attribute_destroy_ship_locations_description">Solar Systems, Constellations,
+or Regions in which the ship
+must be destroyed.</string>
+    <string name="opportunities_attribute_earn_loyalty_point_corporations_name">Corporations</string>
+    <string name="opportunities_attribute_earn_loyalty_point_corporations_description">The corporations that have
+issued the Loyalty Points.</string>
+    <string name="opportunities_attribute_lost_ship_identities_name">Capsuleers or Organisations</string>
+    <string name="opportunities_attribute_lost_ship_identities_description">The capsuleer or organization
+responsible for the destruction
+of the ship.</string>
+    <string name="opportunities_attribute_lost_ship_ship_name">Ship Type</string>
+    <string name="opportunities_attribute_lost_ship_ship_description">The type of the ship lost.</string>
+    <string name="opportunities_attribute_lost_ship_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_lost_ship_solar_system_description">The solar system in which the
+ship was lost.</string>
+    <string name="opportunities_attribute_manufacture_item_owner_name">On the Behalf Of</string>
+    <string name="opportunities_attribute_manufacture_item_owner_description">On whose behalf the job must
+be run.</string>
+    <string name="opportunities_attribute_manufacture_item_item_name">Item Type</string>
+    <string name="opportunities_attribute_manufacture_item_item_description">The type of item to be
+manufactured.</string>
+    <string name="opportunities_attribute_manufacture_item_facility_name">Station or Structure</string>
+    <string name="opportunities_attribute_manufacture_item_facility_description">The station or structure in
+which the manufacturing jobs
+must be installed.</string>
+    <string name="opportunities_attribute_mine_material_locations_name">Locations</string>
+    <string name="opportunities_attribute_mine_material_locations_description">Solar Systems, Constellations,
+or Regions in which the
+materials must be mined.</string>
+    <string name="opportunities_attribute_mine_material_materials_name">Material Types or Groups</string>
+    <string name="opportunities_attribute_mine_material_materials_description">The types or groups of ore or
+ice products to be mined.</string>
+    <string name="opportunities_attribute_remote_boost_shield_identity_name">Capsuleer or Organisation</string>
+    <string name="opportunities_attribute_remote_boost_shield_identity_description">Either the capsuleer who must
+own the ship being remote
+boosted, or an organization
+they must belong to
+(corporation, alliance, faction).</string>
+    <string name="opportunities_attribute_remote_boost_shield_ship_name">Ship Type</string>
+    <string name="opportunities_attribute_remote_boost_shield_ship_description">The type of ship whose shield
+must be boosted.</string>
+    <string name="opportunities_attribute_remote_boost_shield_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_remote_boost_shield_solar_system_description">The solar system in which the
+shield must be boosted.</string>
+    <string name="opportunities_attribute_remote_repair_armor_identity_name">Capsuleer or Organisation</string>
+    <string name="opportunities_attribute_remote_repair_armor_identity_description">Either the capsuleer who must
+own the ship being remote
+repaired, or an organization
+they must belong to
+(corporation, alliance, faction).</string>
+    <string name="opportunities_attribute_remote_repair_armor_ship_name">Ship Type</string>
+    <string name="opportunities_attribute_remote_repair_armor_ship_description">The type of ship whose armor
+must be repaired.</string>
+    <string name="opportunities_attribute_remote_repair_armor_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_remote_repair_armor_solar_system_description">The solar system in which the
+armor must be repaired.</string>
+    <string name="opportunities_attribute_salvage_wreck_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_salvage_wreck_solar_system_description">The solar system in which the
+salvaging must take place.</string>
+    <string name="opportunities_attribute_scan_signature_signature_name">Signature Type</string>
+    <string name="opportunities_attribute_scan_signature_signature_description">The type of cosmic signature
+which must be scanned.</string>
+    <string name="opportunities_attribute_scan_signature_solar_system_name">Solar System</string>
+    <string name="opportunities_attribute_scan_signature_solar_system_description">The solar system in which the
+scanned signature must be
+located.</string>
+    <string name="opportunities_attribute_ship_insurance_conflict_name">Require Capsuleer Involvement?</string>
+    <string name="opportunities_attribute_ship_insurance_conflict_description">Require that another capsuleer
+be involved in the destruction
+of the ship.</string>
+    <string name="opportunities_attribute_ship_insurance_identities_name">Capsuleers or Organisations</string>
+    <string name="opportunities_attribute_ship_insurance_identities_description">Capsuleers or organizations
+responsible for the destruction
+of the ship.</string>
+    <string name="opportunities_attribute_ship_insurance_ships_name">Ship Types or Groups</string>
+    <string name="opportunities_attribute_ship_insurance_ships_description">Types or Groups of ships that
+are covered by this project. If
+empty, all ship types are covered.</string>
+    <string name="opportunities_attribute_ship_insurance_locations_name">Locations</string>
+    <string name="opportunities_attribute_ship_insurance_locations_description">Solar Systems, Constellations,
+or Regions in which the loss
+must take place.</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_hostiles_name">Hostiles</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_hostiles_description">Hostiles to destroy in this operation</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_status_name">Status</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_status_description">Current status of this operation</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_location_name">Location</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_location_description">The location of the operation</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_ship_restrictions_name">Ship Restrictions</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_ship_restrictions_description">The types or groups of ships
+that can access this site.</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_den_effects_name">Mercenary Den Effects</string>
+    <string name="opportunities_attribute_mercenary_tactical_operation_den_effects_description">The effects completing this
+operation will provide to
+the Mercenary Den</string>
+    <string name="opportunities_operation_development_impact_value">Development Impact: %1$d</string>
+    <string name="opportunities_operation_anarchy_impact_value">Anarchy Impact: %1$d</string>
+    <string name="opportunities_operation_infomorph_bonus_value">Infomorph Bonus: %1$d</string>
+    <string name="opportunities_attribute_novice_complex_value">Novice Complex</string>
+    <string name="opportunities_attribute_small_complex_value">Small Complex</string>
+    <string name="opportunities_attribute_medium_complex_value">Medium Complex</string>
+    <string name="opportunities_attribute_large_complex_value">Large Complex</string>
+    <string name="opportunities_attribute_unknown_complex_value">Unknown Complex</string>
+    <string name="opportunities_attribute_owner_any_value">Any</string>
+    <string name="opportunities_attribute_owner_corporation_value">Corporation</string>
+    <string name="opportunities_attribute_owner_self_value">Self</string>
+    <string name="opportunities_attribute_signature_data_value">Data Site</string>
+    <string name="opportunities_attribute_signature_gas_value">Gas Site</string>
+    <string name="opportunities_attribute_signature_relic_value">Relic Site</string>
+    <string name="opportunities_attribute_signature_ore_value">Ore Site</string>
+    <string name="opportunities_attribute_signature_combat_value">Combat Site</string>
+    <string name="opportunities_attribute_signature_wormhole_value">Wormhole</string>
+    <string name="opportunities_attribute_signature_unknown_value">Unknown Signature Type</string>
+    <string name="opportunities_attribute_conflict_required_value">Required – only covers losses that involved a capsuleer attacked</string>
+    <string name="opportunities_attribute_conflict_unrequired_value">Unrequired – covers losses regardless of capsuleer attacker involvement</string>
+    <string name="opportunities_attribute_specific_office_value">Specific Corp Office</string>
+    <string name="opportunities_attribute_any_value">Any</string>
+    <string name="opportunities_attribute_any_office_value">Any Corp Office</string>
+    <string name="opportunities_attribute_any_ships_implants_covered_value">Any – implants losses covered on capsule loss</string>
+    <string name="opportunities_attribute_any_ships_implants_not_covered_value">Any – implants losses not covered on capsule loss</string>
+    <string name="opportunities_operation_unspecified_status">Unspecified</string>
+    <string name="opportunities_operation_available_status">Ready to Start</string>
+    <string name="opportunities_operation_started_status">In progress</string>
+    <string name="opportunities_operation_completed_status">Completed</string>
+    <string name="opportunities_operation_expired_status">Expired</string>
+    <string name="opportunities_operation_removed_status">Removed</string>
+    <string name="opportunities_mercenary_tactical_operation_fallback_name">Mercenary Tactical Operation</string>
+    <string name="opportunities_missing_description">No description</string>
+    <string name="opportunities_unknown_configuration_name">Unknown</string>
+    <string name="opportunities_unknown_error">Unknown error</string>
+    <string name="opportunities_unknown_hostiles">Unknown</string>
+</resources>

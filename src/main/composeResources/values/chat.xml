@@ -1,0 +1,16 @@
+<resources>
+    <string name="chat_window_title">Chat</string>
+    <string name="chat_setting_portraits">Show portraits</string>
+    <string name="chat_setting_standings">Show standing icon</string>
+    <string name="chat_empty_tabs">No open channels</string>
+    <string name="chat_empty_messages">No messages yet</string>
+    <string name="chat_recent_speakers_description">This counter and list shows characters that have recently sent a message, and not all characters in the channel. Similar to wormhole local in-game.</string>
+    <string name="chat_action_copy_message">Copy</string>
+    <string name="chat_action_copy_all_messages">Copy All</string>
+    <string name="chat_channel_selection_heading">Choose channels to open</string>
+    <string name="chat_action_view_channel">View</string>
+    <string name="chat_action_open_channel">Open</string>
+    <string name="chat_empty_channels">No channels available. Log in to the game and get chatting.</string>
+    <!-- %1$s is a character ID used when the character name is unavailable; preserve the ID exactly -->
+    <string name="chat_character_id">Character %1$s</string>
+</resources>

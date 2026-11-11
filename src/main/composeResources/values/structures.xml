@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="structures_window_title">Structures</string>
+    <string name="structures_skyhooks_tab">Skyhooks</string>
+    <string name="structures_sovereignty_hubs_tab">Sovereignty Hubs</string>
+    <string name="structures_mercenary_dens_tab">Mercenary Dens</string>
+    <string name="structures_skyhooks_filtered_empty_title">All Skyhooks filtered out</string>
+    <string name="structures_skyhooks_filtered_empty_description">Select a different resource type to see matching Skyhooks.</string>
+    <string name="structures_skyhooks_empty_title">No Skyhooks found</string>
+    <string name="structures_skyhooks_empty_description">Add a character with the Station Manager role in a corporation with Skyhooks.</string>
+    <string name="structures_sovereignty_hubs_empty_title">No Sovereignty Hubs found</string>
+    <string name="structures_sovereignty_hubs_empty_description">Add a character with the Station Manager role in a corporation with Sovereignty Hubs.</string>
+    <string name="structures_mercenary_dens_empty_title">No Mercenary Dens found</string>
+    <string name="structures_mercenary_dens_empty_description">Deploy a Mercenary Den to see it here.</string>
+    <string name="structures_resource_filter_label">Resource filter</string>
+    <string name="structures_resource_filter_all_name">All</string>
+    <string name="structures_resource_filter_power_name">Power</string>
+    <string name="structures_resource_filter_workforce_name">Workforce</string>
+    <string name="structures_loading_mercenary_dens_title">Loading mercenary dens…</string>
+    <string name="structures_loading_skyhooks_title">Loading skyhooks…</string>
+    <string name="structures_loading_sovereignty_hubs_title">Loading sovereignty hubs…</string>
+    <string name="structures_loading_details_title">Loading structure details…</string>
+    <string name="structures_vulnerability_secure_status">Secure</string>
+    <string name="structures_vulnerability_label">Vulnerability</string>
+    <string name="structures_vulnerability_vulnerable_status">Vulnerable</string>
+    <string name="structures_vulnerability_starts_in_label">Vulnerable In</string>
+    <string name="structures_vulnerability_duration_label">Vulnerable For</string>
+    <string name="structures_vulnerability_window_tooltip">From: %1$s
+To: %2$s</string>
+    <string name="structures_vulnerability_upcoming_duration">%1$s, for %2$s</string>
+    <string name="structures_theft_vulnerability_label">Theft Vulnerability</string>
+    <string name="structures_mercenary_den_infomorph_quantity_label">Infomorph Decryption Keys</string>
+    <string name="structures_mercenary_den_infomorph_rate_label">Infomorph Decryption Key Rate</string>
+    <string name="structures_mercenary_den_workforce_impact_label">Workforce Impact</string>
+    <string name="structures_mercenary_den_reinforcement_ended_status">Reinforcement ended</string>
+    <string name="structures_mercenary_den_active_status">Active</string>
+    <string name="structures_mercenary_den_paused_status">Paused</string>
+    <string name="structures_mercenary_den_disabled_status">Disabled</string>
+    <string name="structures_mercenary_den_unknown_label">Unknown</string>
+    <string name="structures_mercenary_den_skyhook_owner_heading">Skyhook Owner</string>
+    <string name="structures_mercenary_den_operations_heading">Mercenary Tactical Operations</string>
+    <string name="structures_mercenary_den_view_operation_action">View Details</string>
+    <string name="structures_mercenary_den_operations_empty_description">No operations currently available</string>
+    <string name="structures_mercenary_den_infomorph_rate_value">%1$d-%2$d/h</string>
+    <string name="structures_mercenary_den_development_heading">Development</string>
+    <string name="structures_mercenary_den_anarchy_heading">Anarchy</string>
+    <string name="structures_mercenary_den_evolution_level">Level %1$d</string>
+    <string name="structures_mercenary_den_evolution_progress_tooltip">%1$s Progress:
+Level %2$d (%3$d/%4$d)
+%5$s</string>
+    <string name="structures_mercenary_den_infomorph_bonus_description">%1$s Infomorph Production Bonus</string>
+    <string name="structures_mercenary_den_workforce_disruption_description">%1$s Workforce Disrupted</string>
+    <string name="structures_mercenary_den_regular_infomorph_rate_description">Regular Infomorph Production Rate</string>
+    <string name="structures_mercenary_den_no_workforce_disruption_description">No Workforce Disruption</string>
+    <string name="structures_mercenary_den_title">Mercenary Den – %1$s</string>
+    <string name="structures_mercenary_den_operation_unspecified_status">Unspecified</string>
+    <string name="structures_mercenary_den_operation_available_status">Available</string>
+    <string name="structures_mercenary_den_operation_started_status">Started</string>
+    <string name="structures_mercenary_den_operation_completed_status">Completed</string>
+    <string name="structures_mercenary_den_operation_expired_status">Expired</string>
+    <string name="structures_mercenary_den_operation_removed_status">Removed</string>
+    <plurals name="structures_loading_mercenary_dens_complete">
+        <item quantity="one">%1$d mercenary dens loaded</item>
+        <item quantity="other">%1$d mercenary dens loaded</item>
+    </plurals>
+    <plurals name="structures_loading_mercenary_dens_progress">
+        <item quantity="one">%1$d/%2$d mercenary dens loaded…</item>
+        <item quantity="other">%1$d/%2$d mercenary dens loaded…</item>
+    </plurals>
+    <plurals name="structures_loading_skyhooks_complete">
+        <item quantity="one">%1$d skyhooks loaded</item>
+        <item quantity="other">%1$d skyhooks loaded</item>
+    </plurals>
+    <plurals name="structures_loading_skyhooks_progress">
+        <item quantity="one">%1$d/%2$d skyhooks loaded…</item>
+        <item quantity="other">%1$d/%2$d skyhooks loaded…</item>
+    </plurals>
+    <plurals name="structures_loading_sovereignty_hubs_complete">
+        <item quantity="one">%1$d sovereignty hubs loaded</item>
+        <item quantity="other">%1$d sovereignty hubs loaded</item>
+    </plurals>
+    <plurals name="structures_loading_sovereignty_hubs_progress">
+        <item quantity="one">%1$d/%2$d sovereignty hubs loaded…</item>
+        <item quantity="other">%1$d/%2$d sovereignty hubs loaded…</item>
+    </plurals>
+
+    <string name="structures_skyhook_produced_power_label">Produced Power</string>
+    <string name="structures_skyhook_produced_workforce_label">Produced Workforce</string>
+    <string name="structures_skyhook_mercenary_anarchy_label">Mercenary Den Anarchy</string>
+    <string name="structures_skyhook_reinforcement_ended_status">Reinforcement ended</string>
+    <string name="structures_skyhook_extraction_rate_label">Units Per Hour</string>
+    <string name="structures_skyhook_secured_stock_label">Secured Stock</string>
+    <string name="structures_skyhook_unsecured_stock_label">Unsecured Stock</string>
+    <string name="structures_skyhook_stored_resource_label">Stored Resource</string>
+    <string name="structures_skyhook_siphoned_workforce_value">Siphoned workforce: %1$d</string>
+    <string name="structures_skyhook_power_title_suffix"> – Power</string>
+    <string name="structures_skyhook_workforce_title_suffix"> – Workforce</string>
+    <string name="structures_skyhook_reagent_title_suffix"> – %1$s</string>
+    <string name="structures_skyhook_title">Orbital Skyhook – %1$s</string>
+    <!-- %1$s and %2$s are stored and maximum volumes, preformatted with zero decimal places; m3 means cubic meters -->
+    <string name="structures_skyhook_storage_volume_value">%1$s/%2$s m3</string>
+    <string name="structures_skyhook_resource_quantity_value">%1$s x</string>
+    <string name="structures_skyhook_secured_stock_full_label">Secured Stock Full</string>
+    <string name="structures_skyhook_unsecured_stock_full_label">Unsecured Stock Full</string>
+    <string name="structures_skyhook_storage_full_duration">in %1$s</string>
+    <string name="structures_sovereignty_hub_upgrade_online_status">Online</string>
+    <string name="structures_sovereignty_hub_upgrade_low_status">Low</string>
+    <string name="structures_sovereignty_hub_upgrade_pending_status">Pending</string>
+    <string name="structures_sovereignty_hub_upgrade_offline_status">Offline</string>
+    <string name="structures_sovereignty_hub_upgrade_unknown_status">Unknown state</string>
+    <string name="structures_sovereignty_hub_fuel_full_status">Fuel Full</string>
+    <string name="structures_sovereignty_hub_fuel_low_status">Fuel Low</string>
+    <string name="structures_sovereignty_hub_fuel_critical_status">Fuel Critical</string>
+    <string name="structures_sovereignty_hub_fuel_depleted_status">Depleted</string>
+    <string name="structures_sovereignty_hub_fuel_unused_status">Unused</string>
+    <string name="structures_sovereignty_hub_power_label">Power</string>
+    <string name="structures_sovereignty_hub_workforce_label">Workforce</string>
+    <string name="structures_sovereignty_hub_transport_pending_heading">Pending Workforce Transport Configuration</string>
+    <string name="structures_sovereignty_hub_transport_heading">Workforce Transport</string>
+    <string name="structures_sovereignty_hub_transport_export_mode">Export</string>
+    <string name="structures_sovereignty_hub_transport_import_mode">Import</string>
+    <string name="structures_sovereignty_hub_transport_transit_mode">Transit</string>
+    <string name="structures_sovereignty_hub_transport_idle_mode">Idle</string>
+    <string name="structures_sovereignty_hub_upgrade_power_allocation_value">Power Allocation: %1$s</string>
+    <string name="structures_sovereignty_hub_upgrade_power_production_value">Power Production: %1$s</string>
+    <string name="structures_sovereignty_hub_upgrade_workforce_allocation_value">Workforce Allocation: %1$s</string>
+    <string name="structures_sovereignty_hub_upgrade_workforce_production_value">Workforce Production: %1$s</string>
+    <string name="structures_sovereignty_hub_upgrade_fuel_startup_cost_value">Fuel startup cost: %1$s</string>
+    <string name="structures_sovereignty_hub_upgrade_fuel_value">Fuel: %1$s</string>
+    <string name="structures_sovereignty_hub_upgrade_fuel_consumption_value">Fuel consumption: %1$s/h</string>
+    <string name="structures_sovereignty_hub_fuel_rate_value">%1$d/h</string>
+    <string name="structures_sovereignty_hub_title">Sovereignty Hub – %1$s</string>
+    <string name="structures_sovereignty_hub_fuel_depletion_tooltip">%1$s depletes
+%2$s</string>
+    <string name="structures_sovereignty_hub_fuel_empty_tooltip">No %1$s available</string>
+    <string name="structures_sovereignty_hub_transport_transit_pending_description">This sovereignty hub will be set to transit workforce between systems.</string>
+    <string name="structures_sovereignty_hub_transport_transit_description">This sovereignty hub is set to transit workforce between systems.</string>
+    <string name="structures_sovereignty_hub_transport_idle_pending_description">This sovereignty hub will not be transporting workforce between systems.</string>
+    <string name="structures_sovereignty_hub_transport_idle_description">This sovereignty hub is not transporting workforce between systems.</string>
+    <string name="structures_sovereignty_hub_transport_import_pending_description">This sovereignty hub will be importing workforce from: %1$s.</string>
+    <string name="structures_sovereignty_hub_transport_import_description">This sovereignty hub is importing %1$s.</string>
+    <plurals name="structures_skyhook_extraction_rate_value">
+        <item quantity="one">%1$s units</item>
+        <item quantity="other">%1$s units</item>
+    </plurals>
+    <plurals name="structures_skyhook_stored_quantity_value">
+        <item quantity="one">%1$s unit</item>
+        <item quantity="other">%1$s units</item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_fuel_time_weeks">
+        <item quantity="one">%1$d week</item>
+        <item quantity="other">%1$d weeks</item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_fuel_time_days">
+        <item quantity="one">%1$d day</item>
+        <item quantity="other">%1$d days</item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_fuel_time_hours">
+        <item quantity="one">%1$d hour</item>
+        <item quantity="other">%1$d hours</item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_fuel_time_hour_clock">
+        <item quantity="one">%1$s hour</item>
+        <item quantity="other">%1$s hours</item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_fuel_time_minute_clock">
+        <item quantity="one">%1$s minutes</item>
+        <item quantity="other">%1$s minutess</item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_transport_export_description">
+        <item quantity="one"><![CDATA[This sovereignty hub is exporting <font color="textPrimary">%1$s</font> workforce unit to %2$s.]]></item>
+        <item quantity="other"><![CDATA[This sovereignty hub is exporting <font color="textPrimary">%1$s</font> workforce units to %2$s.]]></item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_transport_export_pending_description">
+        <item quantity="one"><![CDATA[This sovereignty hub will be exporting <font color="textPrimary">%1$s</font> workforce unit to %2$s.]]></item>
+        <item quantity="other"><![CDATA[This sovereignty hub will be exporting <font color="textPrimary">%1$s</font> workforce units to %2$s.]]></item>
+    </plurals>
+    <plurals name="structures_sovereignty_hub_transport_import_source_description">
+        <item quantity="one"><![CDATA[<font color="textPrimary">%1$s</font> workforce units from %2$s]]></item>
+        <item quantity="other"><![CDATA[<font color="textPrimary">%1$s</font> workforce units from %2$s]]></item>
+    </plurals>
+</resources>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="notification_history_window_title">Notification History</string>
+    <string name="notification_history_compact_mode">Compact mode</string>
+    <string name="notification_history_empty">No recent notifications.
+Past notifications from your Alerts will show here.</string>
+    <string name="notification_history_rift_tab">RIFT Notifications</string>
+    <string name="notification_history_eve_tab">EVE Notifications</string>
+    <!-- Secondary-colored prefix precedes a primary-colored group name or reason; retain the trailing space -->
+    <string name="notification_history_reason_prefix">Reason: </string>
+    <!-- Secondary-colored suffix follows a primary-colored player-defined group name; retain the leading space -->
+    <string name="notification_history_group_suffix"> alert group</string>
+    <!-- Secondary-colored note follows the stored alert reason; retain the two leading newlines -->
+    <string name="notification_history_deleted_alert_suffix">
+
+The alert that triggered this notification no longer exists.</string>
+    <string name="notification_history_default_reason">RIFT notification</string>
+    <string name="notification_history_sovereignty_import_reason">Sovereignty upgrades were imported</string>
+    <string name="notification_history_filters_action">Filters</string>
+    <string name="notification_history_link_hint">Hint: You can right-click any link in the notifications</string>
+    <string name="notification_history_eve_empty">No EVE notifications</string>
+    <string name="notification_history_filters_empty">No notifications match the filters</string>
+    <string name="notification_history_settings_title">Notification Settings</string>
+    <string name="notification_history_history_visibility_title">History visibility</string>
+    <string name="notification_history_history_visibility_description">Choose which notifications are shown in the list</string>
+    <string name="notification_history_alert_visibility_title">Alert visibility</string>
+    <string name="notification_history_alert_visibility_description">Choose which notifications are monitored for Alerts.
+You can create notification alerts in the Alerts window.</string>
+    <string name="notification_history_hide_type_action">Hide this type</string>
+    <string name="notification_history_type_group_agents">Agents</string>
+    <string name="notification_history_type_group_bills">Bills</string>
+    <string name="notification_history_type_group_ccp">CCP Notifications</string>
+    <string name="notification_history_type_group_contacts">Contacts</string>
+    <string name="notification_history_type_group_corporate">Corporate</string>
+    <string name="notification_history_type_group_faction_warfare">Faction Warfare</string>
+    <string name="notification_history_type_group_hypernet">HyperNet</string>
+    <string name="notification_history_type_group_insurance">Insurance</string>
+    <string name="notification_history_type_group_insurgencies">Insurgencies</string>
+    <string name="notification_history_type_group_miscellaneous">Miscellaneous</string>
+    <string name="notification_history_type_group_old">Old</string>
+    <string name="notification_history_type_group_skill_training">Skill Training</string>
+    <string name="notification_history_type_group_sovereignty">Sovereignty</string>
+    <string name="notification_history_type_group_structures">Structures</string>
+    <string name="notification_history_type_group_war">War</string>
+</resources>

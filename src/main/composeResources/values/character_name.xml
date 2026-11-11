@@ -1,0 +1,8 @@
+<resources>
+    <!-- These explain EVE name-validation rules; preserve the numeric limits and quoted punctuation -->
+    <string name="character_name_validation_characters">EVE character names may only contain letters, digits, spaces, "'", and "-"</string>
+    <string name="character_name_validation_length">EVE character names must be between 3 and 37 characters long</string>
+    <string name="character_name_validation_edges">EVE character names cannot start or end with a "'" or "-"</string>
+    <string name="character_name_validation_parts">EVE character names can have a first name of up to 25 characters, middle name up to 35 characters, and last name up to 12 characters</string>
+    <string name="character_name_validation_invalid">Invalid character name</string>
+</resources>

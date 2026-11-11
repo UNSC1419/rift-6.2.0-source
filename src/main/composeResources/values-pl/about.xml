@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_patrons_become_member_patreon_text">Wesprzyj na Patreonie</string>
+    <string name="about_patrons_patrons_text">PATRONI</string>
+    <string name="about_patrons_support_rift_text">Wesprzyj RIFT</string>
+    <string name="about_affiliate_code_click_copy_discount_code_text">Kliknij, aby skopiować kod rabatowy</string>
+    <string name="about_affiliate_code_discount_code_text">KOD RABATOWY 3%</string>
+    <string name="about_affiliate_code_plex_omega_more_text">PLEX, Omega i więcej</string>
+    <string name="about_creator_copy">Kliknij, aby skopiować kod</string>
+    <string name="about_creator_title">KOD TWÓRCY</string>
+    <!-- The entire label links to the EVE Store; EVE Store is a service name -->
+    <string name="about_creator_store">Użyj w EVE Store</string>
+    <string name="about_window_title">Informacje o RIFT</string>
+    <string name="about_update_available_status">Dostępna aktualizacja</string>
+    <string name="about_update_ready_description">Nowsza wersja RIFT jest gotowa do instalacji.</string>
+    <string name="about_update_button">Zaktualizuj teraz</string>
+    <string name="about_legal_action">Informacje prawne</string>
+    <string name="about_credits_action">Podziękowania</string>
+    <string name="about_update_check_error">Nie udało się sprawdzić aktualizacji</string>
+    <string name="about_update_check_status">Sprawdzanie aktualizacji…</string>
+    <string name="about_development_version_status">Wersja rozwojowa</string>
+    <string name="about_portable_version_status">Wersja przenośna</string>
+    <string name="about_update_availability_unknown">Nie udało się sprawdzić aktualizacji</string>
+    <string name="about_up_to_date_status">Wersja aktualna</string>
+    <string name="about_developer_caption">Autor: Nohus</string>
+    <string name="about_discord_description">Dołącz do Discorda!</string>
+    <string name="about_discord_invite_action">Link z zaproszeniem</string>
+    <string name="about_debug_action">Debugowanie</string>
+    <string name="about_release_notes_action">Co nowego</string>
+    <!-- Preserve highlighted package/tool identities, archive suffix, and the exact shell command -->
+    <string name="about_linux_update_description"><![CDATA[Jeśli zainstalowano pakiet <font color="textHighlighted">DEB</font>, aplikację można zaktualizować za pomocą menedżera pakietów. Można na przykład uruchomić polecenie <font color="textHighlighted">sudo apt update && sudo apt upgrade</font>.
+
+W przypadku wersji <font color="textHighlighted">AppImage</font> można użyć narzędzia AppImageUpdate lub pobrać nową wersję ręcznie.
+
+W przypadku pakietu <font color="textHighlighted">.tar.gz</font> trzeba pobrać nową wersję ręcznie.]]></string>
+    <string name="about_windows_update_description">Aktualizacjami aplikacji zarządza system Windows, który od czasu do czasu ją aktualizuje. Aby wymusić aktualizację do nowej wersji, można ponownie uruchomić pobrany instalator lub sprawdzić Microsoft Store, jeśli aplikacja została z niego zainstalowana.</string>
+    <string name="about_macos_move_application_description">Nie można zaktualizować aplikacji uruchomionej z folderu na pobrane. Przenieś ją do folderu Aplikacje.</string>
+    <string name="about_macos_restart_description">Uruchom aplikację ponownie, aby zastosować najnowszą aktualizację.</string>
+    <!-- Preserve contributor identities and their highlighted color -->
+    <string name="about_credits_description"><![CDATA[Podziękowania dla <font color="textHighlighted">smultar</font> za projekt ikony aplikacji.
+Podziękowania dla <font color="textHighlighted">Wollari</font> za układy map regionów.
+Podziękowania dla <font color="textHighlighted">FC</font> za stworzenie EVE Online.]]></string>
+    <string name="about_build_time_caption">Data kompilacji: %1$s</string>
+    <!-- Shared version caption used by About, Splash, Debug and release-note headings; keep the version identifier unchanged -->
+    <string name="about_version_caption">Wersja %1$s</string>
+</resources>

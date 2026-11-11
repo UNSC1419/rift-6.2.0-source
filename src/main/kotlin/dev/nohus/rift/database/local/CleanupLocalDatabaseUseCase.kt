@@ -1,0 +1,28 @@
+package dev.nohus.rift.database.local
+
+import dev.nohus.rift.repositories.character.CharactersRepository
+import io.github.oshai.kotlinlogging.KotlinLogging
+import org.jetbrains.exposed.v1.core.less
+import org.jetbrains.exposed.v1.jdbc.deleteWhere
+import org.koin.core.annotation.Single
+import java.time.Instant
+
+private val logger = KotlinLogging.logger {}
+
+@Single
+class CleanupLocalDatabaseUseCase(
+    private val localDatabase: LocalDatabase,
+) {
+
+    suspend operator fun invoke() {
+        val currentTime = Instant.now().toEpochMilli()
+        val deletedCharacters = localDatabase.transaction {
+            Characters2.deleteWhere {
+                Characters2.checkTimestamp less currentTime - CharactersRepository.expiryDuration
+            }
+        }
+        if (deletedCharacters > 0) {
+            logger.info { "Deleted expired rows from database: $deletedCharacters characters" }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<resources>
+    <string name="clipboard_import_window_title">Clipboard Import Tester</string>
+    <string name="clipboard_import_jump_bridges_tab">Jump Bridges</string>
+    <string name="clipboard_import_sovereignty_upgrades_tab">Sovereignty Upgrades</string>
+    <string name="clipboard_import_map_markers_tab">Map Markers</string>
+    <string name="clipboard_import_choose_import_guidance">Choose what are you trying to import above</string>
+    <string name="clipboard_import_map_markers_empty">Your clipboard is empty.
+Copy a list of map markers.</string>
+    <string name="clipboard_import_map_markers_invalid">Your clipboard doesn't contain any valid map markers.</string>
+    <!-- %1$s is the system name from a valid marker -->
+    <string name="clipboard_import_map_marker_valid_line">This line is correct and contains a marker for %1$s</string>
+    <!-- %1$s is the literal English parser diagnostic; this message localizes only its UI wrapper -->
+    <string name="clipboard_import_map_marker_invalid_line">This line is invalid: %1$s</string>
+    <string name="clipboard_import_jump_bridges_empty">Your clipboard is empty.
+Copy a list of jump bridges.</string>
+    <string name="clipboard_import_jump_bridges_too_short">Your clipboard only contains 1 line of text.
+Copy a list of jump bridges with at least 2 lines.</string>
+    <string name="clipboard_import_jump_bridges_not_enough">Your clipboard doesn't contain enough jump bridge connections.
+Copy a list of jump bridges with at least 2 connections.</string>
+    <!-- %1$s and %2$s are the origin and destination system names -->
+    <string name="clipboard_import_jump_bridge_valid_line">This line is correct and contains a connection from %1$s to %2$s</string>
+    <string name="clipboard_import_jump_bridge_no_systems_line">This line is ignored because it doesn't contain any system names</string>
+    <!-- %1$s is the system name found in the input -->
+    <string name="clipboard_import_jump_bridge_one_system_line">This line is invalid because it contains only one system name: %1$s</string>
+    <!-- %1$s is the original comma-separated list of system names -->
+    <string name="clipboard_import_jump_bridge_too_many_systems_line">This line is invalid because it contains more than 2 system names: %1$s</string>
+    <string name="clipboard_import_sovereignty_upgrades_empty">Your clipboard is empty.
+Copy a list of sovereignty upgrades.</string>
+    <string name="clipboard_import_sovereignty_upgrades_not_enough">Your clipboard doesn't contain any sovereignty upgrades.</string>
+    <!-- %1$s is the system name; %2$s is the original comma-separated list of upgrade names -->
+    <string name="clipboard_import_sovereignty_upgrade_valid_line">This line is correct and contains upgrades for system: %1$s, upgrades: %2$s</string>
+    <string name="clipboard_import_sovereignty_upgrade_no_system_line">This line is ignored because it doesn't contain any system name</string>
+    <!-- %1$s is the system name found in the input -->
+    <string name="clipboard_import_sovereignty_upgrade_no_upgrades_line">This line is invalid because it only contains a system: %1$s, but no upgrade names</string>
+    <!-- %1$s is the ungrouped number of parsed map markers -->
+    <plurals name="clipboard_import_map_markers_valid">
+        <item quantity="one">You copied a valid list containing %1$s map marker.
+You can import them in Map Markers.</item>
+        <item quantity="other">You copied a valid list containing %1$s map markers.
+You can import them in Map Markers.</item>
+    </plurals>
+    <plurals name="clipboard_import_jump_bridges_valid">
+        <item quantity="one">You copied a valid list of %1$s jump bridge connection.
+You can import them in Settings.</item>
+        <item quantity="other">You copied a valid list of %1$s jump bridge connections.
+You can import them in Settings.</item>
+    </plurals>
+    <plurals name="clipboard_import_sovereignty_upgrades_valid">
+        <item quantity="one">You copied a valid list of sovereignty upgrades for %1$s system.
+You can import them in Settings.</item>
+        <item quantity="other">You copied a valid list of sovereignty upgrades for %1$s systems.
+You can import them in Settings.</item>
+    </plurals>
+</resources>

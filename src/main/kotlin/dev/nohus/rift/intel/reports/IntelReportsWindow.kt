@@ -1,0 +1,221 @@
+package dev.nohus.rift.intel.reports
+
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.AnimationVector1D
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateMapOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
+import dev.nohus.rift.compose.ChatMessage
+import dev.nohus.rift.compose.ContextMenuItem
+import dev.nohus.rift.compose.ContextMenuItem.CheckboxItem
+import dev.nohus.rift.compose.ContextMenuItem.HeaderItem
+import dev.nohus.rift.compose.RiftDropdownWithLabel
+import dev.nohus.rift.compose.RiftSearchField
+import dev.nohus.rift.compose.RiftWindow
+import dev.nohus.rift.compose.ScrollbarLazyColumn
+import dev.nohus.rift.compose.TitleBarStyle
+import dev.nohus.rift.compose.theme.RiftTheme
+import dev.nohus.rift.compose.theme.Spacing
+import dev.nohus.rift.generated.resources.Res
+import dev.nohus.rift.generated.resources.intel_reports_filters_row_all_channels_text
+import dev.nohus.rift.generated.resources.intel_reports_filters_row_filter_label
+import dev.nohus.rift.generated.resources.intel_reports_get_tune_context_menu_items_compact_mode_text
+import dev.nohus.rift.generated.resources.intel_reports_get_tune_context_menu_items_show_channel_name_text
+import dev.nohus.rift.generated.resources.intel_reports_get_tune_context_menu_items_show_channel_region_text
+import dev.nohus.rift.generated.resources.intel_reports_get_tune_context_menu_items_show_newest_top_text
+import dev.nohus.rift.generated.resources.intel_reports_get_tune_context_menu_items_show_reporter_name_text
+import dev.nohus.rift.generated.resources.intel_reports_get_tune_context_menu_items_shown_information_text
+import dev.nohus.rift.generated.resources.intel_reports_get_tune_context_menu_items_user_interface_text
+import dev.nohus.rift.generated.resources.intel_reports_intel_reports_window_content_no_intel_channels_configured_set_text
+import dev.nohus.rift.generated.resources.intel_reports_intel_reports_window_content_no_intel_messages_found_change_text
+import dev.nohus.rift.generated.resources.intel_reports_intel_reports_window_content_no_intel_messages_received_log_text
+import dev.nohus.rift.generated.resources.intel_reports_intel_reports_window_content_no_intel_messages_received_make_text
+import dev.nohus.rift.generated.resources.intel_reports_intel_reports_window_intel_reports_title
+import dev.nohus.rift.generated.resources.intel_reports_no_messages_in_channel
+import dev.nohus.rift.generated.resources.window_warreport
+import dev.nohus.rift.intel.ParsedChannelChatMessage
+import dev.nohus.rift.intel.reports.IntelReportsViewModel.UiState
+import dev.nohus.rift.intel.state.AlertTriggeringMessagesRepository.AlertTriggeringMessage
+import dev.nohus.rift.viewModel
+import dev.nohus.rift.windowing.WindowManager.RiftWindowState
+import org.jetbrains.compose.resources.stringResource
+import java.time.Instant
+
+@Composable
+fun IntelReportsWindow(
+    windowState: RiftWindowState,
+    onCloseRequest: () -> Unit,
+) {
+    val viewModel: IntelReportsViewModel = viewModel()
+    val state by viewModel.state.collectAsState()
+    RiftWindow(
+        title = stringResource(Res.string.intel_reports_intel_reports_window_intel_reports_title),
+        icon = Res.drawable.window_warreport,
+        state = windowState,
+        tuneContextMenuItems = getTuneContextMenuItems(state, viewModel),
+        onCloseClick = onCloseRequest,
+        titleBarStyle = if (state.settings.isUsingCompactMode) TitleBarStyle.Small else TitleBarStyle.Full,
+        withContentPadding = false,
+    ) {
+        IntelReportsWindowContent(
+            state = state,
+            onIntelChannelFilterSelect = viewModel::onIntelChannelFilterSelect,
+            onSearchChange = viewModel::onSearchChange,
+        )
+    }
+}
+
+@Composable
+private fun getTuneContextMenuItems(
+    state: UiState,
+    viewModel: IntelReportsViewModel,
+): List<ContextMenuItem>? {
+    val isUsingCompactMode = state.settings.isUsingCompactMode
+    val isUsingReverseOrder = state.settings.isUsingReverseOrder
+    val isShowingReporter = state.settings.isShowingReporter
+    val isShowingChannel = state.settings.isShowingChannel
+    val isShowingRegion = state.settings.isShowingRegion
+    return buildList {
+        add(HeaderItem(stringResource(Res.string.intel_reports_get_tune_context_menu_items_user_interface_text)))
+        add(CheckboxItem(stringResource(Res.string.intel_reports_get_tune_context_menu_items_compact_mode_text), isSelected = isUsingCompactMode, onClick = { viewModel.onIsUsingCompactModeChange(!isUsingCompactMode) }))
+        add(CheckboxItem(stringResource(Res.string.intel_reports_get_tune_context_menu_items_show_newest_top_text), isSelected = isUsingReverseOrder, onClick = { viewModel.onIsUsingReverseOrderChange(!isUsingReverseOrder) }))
+        add(HeaderItem(stringResource(Res.string.intel_reports_get_tune_context_menu_items_shown_information_text)))
+        add(CheckboxItem(stringResource(Res.string.intel_reports_get_tune_context_menu_items_show_reporter_name_text), isSelected = isShowingReporter, onClick = { viewModel.onIsShowingReporterChange(!isShowingReporter) }))
+        add(CheckboxItem(stringResource(Res.string.intel_reports_get_tune_context_menu_items_show_channel_name_text), isSelected = isShowingChannel, onClick = { viewModel.onIsShowingChannelChange(!isShowingChannel) }))
+        add(CheckboxItem(stringResource(Res.string.intel_reports_get_tune_context_menu_items_show_channel_region_text), isSelected = isShowingRegion, onClick = { viewModel.onIsShowingRegionChange(!isShowingRegion) }))
+    }.takeIf { it.isNotEmpty() }
+}
+
+@Composable
+private fun IntelReportsWindowContent(
+    state: UiState,
+    onIntelChannelFilterSelect: (String?) -> Unit,
+    onSearchChange: (String) -> Unit,
+) {
+    val outerPadding = if (state.settings.isUsingCompactMode) Spacing.medium else Spacing.large
+    Column {
+        FiltersRow(
+            padding = outerPadding,
+            state = state,
+            onIntelChannelFilterSelect = onIntelChannelFilterSelect,
+            onSearchChange = onSearchChange,
+        )
+        if (state.channelChatMessages.isEmpty()) {
+            val text = if (state.intelChannels.isEmpty()) {
+                stringResource(Res.string.intel_reports_intel_reports_window_content_no_intel_channels_configured_set_text)
+            } else if (state.hasOnlineCharacters) {
+                if (state.search != null) {
+                    stringResource(Res.string.intel_reports_intel_reports_window_content_no_intel_messages_found_change_text)
+                } else if (state.filteredChannel != null) {
+                    stringResource(Res.string.intel_reports_no_messages_in_channel, state.filteredChannel.name)
+                } else {
+                    stringResource(Res.string.intel_reports_intel_reports_window_content_no_intel_messages_received_make_text)
+                }
+            } else {
+                stringResource(Res.string.intel_reports_intel_reports_window_content_no_intel_messages_received_log_text)
+            }
+            Text(
+                text = text,
+                style = RiftTheme.typography.headerPrimary,
+                textAlign = TextAlign.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(Spacing.large),
+            )
+        }
+        ScrollingIntelPanel(
+            settings = state.settings,
+            channelChatMessages = state.channelChatMessages,
+            alertTriggeringMessages = state.alertTriggeringMessages,
+            padding = outerPadding,
+        )
+    }
+}
+
+@Composable
+private fun FiltersRow(
+    padding: Dp,
+    state: UiState,
+    onIntelChannelFilterSelect: (String?) -> Unit,
+    onSearchChange: (String) -> Unit,
+) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = padding, end = padding, bottom = Spacing.medium),
+    ) {
+        val allChannelsOption = stringResource(Res.string.intel_reports_filters_row_all_channels_text)
+        RiftDropdownWithLabel(
+            label = stringResource(Res.string.intel_reports_filters_row_filter_label),
+            items = listOf(null) + state.intelChannels.map { it.name }.toSet(),
+            selectedItem = state.filteredChannel?.name,
+            onItemSelected = onIntelChannelFilterSelect,
+            getItemName = { it ?: allChannelsOption },
+            height = if (state.settings.isUsingCompactMode) 24.dp else 32.dp,
+        )
+        Spacer(Modifier.weight(1f))
+        RiftSearchField(
+            search = state.search,
+            isCompact = state.settings.isUsingCompactMode,
+            onSearchChange = onSearchChange,
+            modifier = Modifier.padding(start = Spacing.medium),
+        )
+    }
+}
+
+@Composable
+private fun ScrollingIntelPanel(
+    settings: IntelReportsSettings,
+    channelChatMessages: List<ParsedChannelChatMessage>,
+    alertTriggeringMessages: List<AlertTriggeringMessage>,
+    padding: Dp,
+) {
+    val listState = rememberLazyListState()
+    LaunchedEffect(channelChatMessages) {
+        if (settings.isUsingReverseOrder) {
+            if (channelChatMessages.isNotEmpty()) {
+                listState.scrollToItem(0)
+            }
+        } else {
+            channelChatMessages.lastIndex.takeIf { it > -1 }?.let {
+                listState.scrollToItem(it)
+            }
+        }
+    }
+
+    val enterAnimations: MutableMap<Instant, Animatable<Float, AnimationVector1D>> = remember { mutableStateMapOf() }
+    ScrollbarLazyColumn(
+        listState = listState,
+        verticalArrangement = Arrangement.spacedBy(4.dp),
+        modifier = Modifier.padding(start = padding, bottom = padding),
+        scrollbarModifier = Modifier.padding(end = padding / 2),
+    ) {
+        items(channelChatMessages) { message ->
+            val alertTriggerTimestamp = alertTriggeringMessages.firstOrNull { it.message == message }?.alertTriggerTimestamp
+            ChatMessage(
+                settings = settings,
+                message = message,
+                alertTriggerTimestamp = alertTriggerTimestamp,
+                enterAnimation = enterAnimations.getOrPut(message.chatMessage.timestamp) { Animatable(0f) },
+            )
+        }
+    }
+}

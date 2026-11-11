@@ -1,0 +1,100 @@
+<resources>
+    <!-- %1$s is the untranslatable player-defined chat channel name -->
+    <string name="alerts_chat_message_title">Chat message in %1$s</string>
+    <!-- %1$s is the author name; %2$s is the original external chat message -->
+    <string name="alerts_chat_message_body">%1$s: %2$s</string>
+    <!-- %1$s is the untranslatable Jabber chat name -->
+    <string name="alerts_jabber_message_title">Jabber message in %1$s</string>
+    <string name="alerts_planet_attention_title">Your colony needs attention</string>
+    <string name="alerts_planet_attention_future_title">Your colony will need attention</string>
+    <!-- %1$s is the planet name; keep the indexed placeholder unchanged -->
+    <string name="alerts_planet_attention_body">Planet %1$s</string>
+    <!-- %1$s is the planet name; %2$s is a complete localized duration -->
+    <string name="alerts_planet_attention_future_body">Planet %1$s will need attention in %2$s</string>
+    <!-- %1$s is a character name; %2$s is the complete alert body; native/push output only -->
+    <string name="alerts_planet_attention_character_body">%1$s: %2$s</string>
+    <!-- %1$s is the external fleet commander name; retain the trailing newline in each fleet title -->
+    <string name="alerts_ping_peacetime_title">Peacetime fleet under %1$s
+</string>
+    <string name="alerts_ping_strategic_title">Strategic fleet under %1$s
+</string>
+    <!-- %1$s is the external participation type; %2$s is the fleet commander name; retain the trailing newline -->
+    <string name="alerts_ping_custom_title">%1$s fleet under %2$s
+</string>
+    <string name="alerts_ping_fleet_title">Fleet under %1$s
+</string>
+    <!-- %1$s is the formup location list; %2$s is the external doctrine; %3$s is the original ping description; retain line breaks -->
+    <string name="alerts_ping_fleet_formup_doctrine_body">Formup: %1$s
+Doctrine: %2$s
+%3$s
+</string>
+    <!-- %1$s is the formup location list; %2$s is the original ping description; retain line breaks -->
+    <string name="alerts_ping_fleet_formup_body">Formup: %1$s
+%2$s
+</string>
+    <!-- %1$s is the external doctrine; %2$s is the original ping description; retain line breaks -->
+    <string name="alerts_ping_fleet_doctrine_body">Doctrine: %1$s
+%2$s
+</string>
+    <!-- %1$s is the original ping description; retain the trailing newline -->
+    <string name="alerts_ping_fleet_body">%1$s
+</string>
+    <!-- %1$s is the external announcement sender name -->
+    <string name="alerts_ping_announcement_title">Announcement from %1$s</string>
+    <!-- %1$s is a comma-separated list of player-defined contact labels -->
+    <string name="alerts_intel_labeled_contacts_title">Hostile labeled "%1$s" reported</string>
+    <string name="alerts_intel_specific_character_title">Specific hostile reported</string>
+    <string name="alerts_intel_specific_ship_class_title">Specific ship class reported</string>
+    <string name="alerts_intel_hostile_title">Hostile reported</string>
+    <string name="alerts_intel_gate_camp_title">Gate camp reported</string>
+    <string name="alerts_intel_hostile_ship_title">Hostile ship reported</string>
+    <string name="alerts_intel_bubbles_title">Bubbles reported</string>
+    <string name="alerts_intel_wormhole_title">Wormhole reported</string>
+    <string name="alerts_intel_title">Intel alert</string>
+    <!-- %1$s is a complete localized report title; %2$s is the reported solar system name -->
+    <string name="alerts_intel_system_title">%1$s in %2$s</string>
+    <!-- %1$s is the reference solar system name -->
+    <string name="alerts_intel_same_system_body">In system %1$s</string>
+    <!-- %1$s is the jump count; %2$s is the reference solar system name -->
+    <plurals name="alerts_intel_system_distance_body">
+        <item quantity="one">%1$s jump away from %2$s</item>
+        <item quantity="other">%1$s jumps away from %2$s</item>
+    </plurals>
+    <!-- %1$s is the reference character name -->
+    <string name="alerts_intel_same_named_character_system_body">In your system (%1$s)</string>
+    <!-- %1$s is the jump count; %2$s is the reference character name -->
+    <plurals name="alerts_intel_named_character_distance_body">
+        <item quantity="one">%1$s jump away from %2$s</item>
+        <item quantity="other">%1$s jumps away from %2$s</item>
+    </plurals>
+    <string name="alerts_intel_same_character_system_body">In your system</string>
+    <!-- %1$s is the jump count -->
+    <plurals name="alerts_intel_character_distance_body">
+        <item quantity="one">%1$s jump away from your character</item>
+        <item quantity="other">%1$s jumps away from your character</item>
+    </plurals>
+    <string name="alerts_game_action_under_attack_title">Under attack</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_under_attack_body"><![CDATA[Attacker is <font color="textHighlighted">%1$s</font>]]></string>
+    <string name="alerts_game_action_attacking_title">Attacking</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_attacking_body"><![CDATA[Target is <font color="textHighlighted">%1$s</font>]]></string>
+    <string name="alerts_game_action_warp_scrambled_title">Warp scrambled</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_warp_scrambled_body"><![CDATA[Tackled by <font color="textHighlighted">%1$s</font>]]></string>
+    <string name="alerts_game_action_decloaked_title">Decloaked</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_decloaked_body"><![CDATA[<font color="textHighlighted">%1$s</font> is too close]]></string>
+    <string name="alerts_game_action_combat_stopped_title">Combat stopped</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_combat_stopped_body"><![CDATA[Last target was <font color="textHighlighted">%1$s</font>]]></string>
+    <string name="alerts_game_action_out_of_charges_title">Module out of charges</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_out_of_charges_body"><![CDATA[<font color="textHighlighted">%1$s</font> needs to reload]]></string>
+    <string name="alerts_game_action_conversation_invite_title">Conversation invite</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_conversation_invite_body"><![CDATA[<font color="textHighlighted">%1$s</font> is inviting you to a conversation]]></string>
+    <string name="alerts_game_action_asteroid_depleted_title">Asteroid depleted</string>
+    <!-- %1$s is an external name escaped as HTML text; retain the font tag and color to preserve the name highlight; the whole tagged argument can move -->
+    <string name="alerts_game_action_asteroid_depleted_body"><![CDATA[<font color="textHighlighted">%1$s</font> deactivated]]></string>
+</resources>

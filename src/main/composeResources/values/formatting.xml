@@ -1,0 +1,34 @@
+<resources>
+    <!-- %1$s is the localized integer count; d/h/m/s are short duration units -->
+    <string name="format_duration_days_compact">%1$sd</string>
+    <string name="format_duration_hours_compact">%1$sh</string>
+    <string name="format_duration_minutes_compact">%1$sm</string>
+    <string name="format_duration_seconds_compact">%1$ss</string>
+    <!-- Arguments are complete localized duration components, kept in descending unit order -->
+    <string name="format_duration_join_two">%1$s %2$s</string>
+    <string name="format_duration_join_three">%1$s %2$s %3$s</string>
+    <string name="format_duration_join_four">%1$s %2$s %3$s %4$s</string>
+    <string name="format_duration_join_and">%1$s and %2$s</string>
+    <!-- %1$s is the displayed count; quantity selects the grammatical form -->
+    <plurals name="format_duration_days">
+        <item quantity="one">%1$s day</item>
+        <item quantity="other">%1$s days</item>
+    </plurals>
+    <plurals name="format_duration_hours">
+        <item quantity="one">%1$s hour</item>
+        <item quantity="other">%1$s hours</item>
+    </plurals>
+    <plurals name="format_duration_minutes">
+        <item quantity="one">%1$s minute</item>
+        <item quantity="other">%1$s minutes</item>
+    </plurals>
+    <string name="format_relative_time_just_now">just now</string>
+    <plurals name="format_relative_time_seconds">
+        <item quantity="one">%1$s second ago</item>
+        <item quantity="other">%1$s seconds ago</item>
+    </plurals>
+    <plurals name="format_relative_time_minutes">
+        <item quantity="one">%1$s minute ago</item>
+        <item quantity="other">%1$s minutes ago</item>
+    </plurals>
+</resources>

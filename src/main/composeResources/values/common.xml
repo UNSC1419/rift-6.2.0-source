@@ -1,0 +1,44 @@
+<resources>
+    <!-- Acknowledge an informational or warning dialog -->
+    <string name="common_action_ok">OK</string>
+    <!-- Dismiss a pending operation without proceeding -->
+    <string name="common_action_cancel">Cancel</string>
+    <!-- Accept a pending operation and proceed -->
+    <string name="common_action_confirm">Confirm</string>
+    <string name="common_search_placeholder">Search</string>
+    <string name="common_action_select">Select</string>
+    <string name="common_action_close">Close</string>
+    <string name="common_window_disable_always_above">Disable always above</string>
+    <string name="common_window_enable_always_above">Enable always above</string>
+    <string name="common_window_unlock_window_size_position">Unlock window size and position</string>
+    <string name="common_window_lock_window_size_position">Lock window size and position</string>
+    <string name="common_window_disable_transparency">Disable transparency</string>
+    <string name="common_window_enable_transparency">Enable transparency</string>
+    <string name="common_window_restore_floating">Restore to floating</string>
+    <string name="common_window_maximize">Maximize</string>
+    <string name="common_window_minimize">Minimize</string>
+    <string name="common_action_done">Done</string>
+    <!-- Number of candidate locations shown by the shared solar-system chip; %1$s is the ungrouped count -->
+    <plurals name="common_system_chip_location_count">
+        <item quantity="one">%1$s Location</item>
+        <item quantity="other">%1$s Locations</item>
+    </plurals>
+    <string name="common_system_chip_current_system">Current System</string>
+    <string name="common_system_chip_no_gate_route">No gate route</string>
+    <!-- Location-kind label shown before the constellation name in a chip tooltip -->
+    <string name="common_system_chip_constellation_label">[Constellation]</string>
+    <!-- Location-kind label shown before the region name in a chip tooltip -->
+    <string name="common_system_chip_region_label">[Region]</string>
+    <!-- Display fallback when a shared solar-system chip has no system name; never used for system lookup -->
+    <string name="common_system_chip_unknown_name">Unknown</string>
+    <!-- App-owned standing flag tooltips shared by character and contact displays -->
+    <string name="common_flag_terrible_standing_tooltip">Pilot has Terrible Standing</string>
+    <string name="common_flag_bad_standing_tooltip">Pilot has Bad Standing</string>
+    <string name="common_flag_no_standing_tooltip">Pilot has No Standing</string>
+    <string name="common_flag_good_standing_tooltip">Pilot has Good Standing</string>
+    <string name="common_flag_excellent_standing_tooltip">Pilot has Excellent Standing</string>
+    <string name="common_flag_self_tooltip">Pilot is you</string>
+    <string name="common_flag_corporation_tooltip">Pilot is in your Capsuleer corporation</string>
+    <string name="common_flag_alliance_tooltip">Pilot is in your alliance</string>
+    <string name="common_flag_war_target_tooltip">Pilot is at war with you</string>
+</resources>

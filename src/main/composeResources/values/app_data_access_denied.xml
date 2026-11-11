@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_data_access_denied_heading">Documents access blocked</string>
+    <string name="app_data_access_denied_title">RIFT</string>
+    <string name="app_data_access_denied_description">RIFT was denied access to its application data in Documents and cannot start. Windows ransomware protection (Controlled folder access) may be blocking RIFT.</string>
+    <string name="app_data_access_denied_steps">To allow RIFT to access Documents:
+1. Open Windows Security → Virus &amp; threat protection → Manage ransomware protection.
+2. Select Allow an app through Controlled folder access and approve the permission prompt.
+3. Select Add an allowed app → Recently blocked apps and allow the executable blocked when you started RIFT. If it is not listed, use Browse all apps to select the RIFT executable.
+4. Quit RIFT using the button below, then start it again.</string>
+    <string name="app_data_access_denied_fallback">If Controlled folder access is off, check that your account can write to the RIFT folder in Documents and that other security software is not blocking RIFT.</string>
+    <string name="app_data_access_denied_quit">Quit</string>
+</resources>
